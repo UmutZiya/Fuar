@@ -5,8 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fuar</title>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+  <!-- Css -->
   <link rel="stylesheet" href="style.css">
+  <!-- Js -->
   <link rel="stylesheet" href="main.js">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -14,97 +18,340 @@
 </head>
 
 <body>
-<!-- Header Start -->
-  <header>
-    <a href="#" class="brand">BFM</a>
-    <div class="menu-btn"></div>
-    <div class="navigation">
-      <div class="navigation-items">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Explore</a>
-        <a href="#">Contact</a>
+  <!-- Header Start -->
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top mt-3">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand fs-1 text-white" href="#">Logo</a>
+      <!-- Toggle Btn -->
+      <button 
+      class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- SideBar -->
+      <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <!-- Sidebar Header -->
+        <div class="offcanvas-header text-white border-bottom">
+          <h5 class="offcanvas-title text-white fs-2" id="offcanvasNavbarLabel">Logo</h5>
+          <button 
+          type="button" 
+          class="btn-close btn-close-white shadow-none"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close">
+        </button>
+        </div>
+        <!-- Sidebar Body -->
+        <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 ">
+            <li class="nav-item mx-2">
+              <a class="nav-link text-white fw-bold fs-5" aria-current="page" href="#">Ana Sayfa</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white fw-bold fs-5 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                BFM'yi Keşfedin
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item text-dark  fs-6" href="#">Hakkımızda</a></li>
+                <li><a class="dropdown-item text-dark  fs-6" href="#">BFM Fuar Takvimi</a></li>
+                <li><a class="dropdown-item text-dark  fs-6" href="#">Hazır Ofisler Ve Toplantı Salonları</a></li>
+              </ul>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link text-white fw-bold fs-5" href="#">BFM'de Fuar Organize Edin</a>
+            </li> 
+            <li class="nav-item mx-2">
+              <a class="nav-link text-white fw-bold fs-5" href="#">İletişim</a>
+            </li> 
+          </ul>
+          <!-- Search and Language -->
+           <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <input type="search" class="form-control px-3 fs-7 text-dark" placeholder="Bir şeyler arayın.." aria-label="Search">
+            </form>
+           </div>
+        </div>
       </div>
     </div>
-    <div class="navigation-2">
-      <div class="navigation-items-2">
-        <a href="#" class="">EN</a>
-        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+  </nav>
+</header>
+
+<!-- Slider Start -->
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/slider1.jpg" class="d-block w-100 img-1" alt="...">
+      <div class="container">
+        <div class="carousel-caption text-start">
+          <h1 class="fw-bold">IJS IStanbul Jewelery Show</h1>
+          <p>Dünyadaki en büyük 5 uluslararası mücevher fuarından biri ve bulunduğu bölgenin lider fuarı olan IJS Istanbul Jewelry Show, dünyanın her yerinden gelen mücevher profesyonellerine kapsamlı bir pazar ve yeni iş fırsatları sunuyor.</p>
+          <p><a class="btn btn-lg text-white btn-slider" href="#">Göz at</a></p>
+        </div>
       </div>
     </div>
-  </header>
-<!-- Header End -->
+    <div class="carousel-item">
+      <img src="./images/RS_slider_2.jpg" class="d-block w-100 img-1" alt="...">
+      <div class="container">
+        <div class="carousel-caption text-start">
+          <h1 class="fw-bold fs-2">Another example headline.</h1>
+          <p class="fs-3">Some representative placeholder content for the second slide of the carousel.</p>
+          <p><a class="btn btn-lg text-white btn-slider" href="#">Learn more</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./images/RS_slider_3.jpg" class="d-block w-100 img-1" alt="..."> 
+      <div class="container">
+        <div class="carousel-caption text-start">
+          <h1 class="fw-bold fs-2">One more for good measure.</h1>
+          <p class="fs-3">Some representative placeholder content for the third slide of this carousel.</p>
+          <p><a class="btn btn-lg text-white btn-slider" href="#">Browse gallery</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  <!-- Slider End -->
+  <!-- Section-1 Start -->
+<section>
+  <div class="container mb-5">
+    <h2 class="fw-bold fs-2 mb-3">BFM Fuar Takvimi</h2>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Seçiniz</option>
+      <option value="1">2025</option>
+      <option value="2">2026</option>
+    </select>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Seçiniz</option>
+      <option value="2">Şubat</option>
+      <option value="3">Mart</option>
+      <option value="4">Nisan</option>
+      <option value="5">Mayıs</option>
+      <option value="6">Haziran</option>
+      <option value="7">Temmuz</option>
+      <option value="8">Ağustos</option>
+      <option value="9">Eylül</option>
+      <option value="10">Ekim</option>
+      <option value="11">Kasım</option>
+      <option value="12">Aralık</option>
+    </select>
+  </div>
 
-<!-- Section Start -->
-<section class="home">
-  <img class="image-slide" src="images/slider1.jpg">
-  <img class="image-slide" src="images/slider-1.jpg">
-  <img class="image-slide" src="images/slider-2.jpg">
-  <div class="content">
-    <h1>Wonderful. <br> <span>Island</span></h1>
-    <p>Lorem, ipsum dolor.</p>
-    <a href="#">Detaylı Bilgi <i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-  <div class="media-icons">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="slider-navigation">
-    <div class="nav-btn active"></div>
-    <div class="nav-btn"></div>
-    <div class="nav-btn"></div>
-  </div>
+  <div class="container news">
+    <h2 class="fs-4 text-danger"> <a href="#">IJS Istanbul Jewelry Show 2025 - 57. İstanbul Uluslararası Mücevherat, Saat ve Malzemeleri Fuarı</a></h2>
+    <p class="fs-4 fw-light mt-3">16 - 19 Nisan</p>
+    <p class="fw-lighter mt-3 fs-6">UBM İstanbul Fuarcılık ve Gösteri Hizmetleri A.Ş.</p>
+    <hr>
 
+    <h2 class="fs-4 text-danger"> <a href="">Mobilefest - Agora, Avrasya Teknoloji Haftası</a></h2>
+    <p class="fs-4 fw-light mt-3">17 - 19 Nisan 2025</p>
+    <p class="fw-lighter mt-3 fs-6">HIS Fuarcılık Hizmetleri Ltd. Şti.</p>
+    <hr>
+
+    <h2 class="fs-4 text-danger"> <a href="#">VIV SELECT TÜRKİYE 2025 - 11. Tavukçuluk ve Teknolojileri Uluslararası İhtisas Fuarı</a></h2>
+    <p class="fs-4 fw-light mt-3">24 - 26 Nisan 2025</p>
+    <p class="fw-lighter mt-3 fs-6">HKF Fuarcılık A.Ş.</p>
+    <hr>
+
+    <h2 class="fs-4 text-danger"> <a href="#">FOTEG İstanbul 2025 - Gıda İşleme Teknolojileri Uluslararası İhtisas Fuarı</a></h2>
+    <p class="fs-4 fw-light mt-3">24 - 26 Nisan 2025</p>
+    <p class="fw-lighter mt-3 fs-6">HKF Fuarcılık A.Ş.</p>
+    <hr>
+
+    <h2 class="fs-4 text-danger"><a href="#">ICCI 2025 - Uluslararası Enerji ve Çevre Fuarı ve Konferansı</a></h2>
+    <p class="fs-4 fw-light mt-3">24 - 26 Nisan 2025</p>
+    <p class="fw-lighter mt-3 fs-6">Sektörel Fuarcılık A.Ş.</p>
+    <hr>
+
+    <h2 class="fs-4 text-danger"><a href="#">Electricity Eurasia 2025 - Elektrik ve Elektrik Ekipmanları Fuarı</a></h2>
+    <p class="fs-4 fw-light mt-3">24 - 26 Nisan 2025</p>
+    <p class="fw-lighter mt-3 fs-6">Sektörel Fuarcılık A.Ş.</p>
+    <hr>
+
+    <h2 class="fs-4 text-danger"><a href="#">AYSAF 2025 - Ayakkabı ve Yan Sanayi Fuarı</a></h2>
+    <p class="fs-4 fw-light mt-3">29 Nisan - 2 Mayıs 2025</p>
+    <p class="fw-lighter mt-3 fs-6">Artkim Fuarcılık Tic. A.Ş.</p>
+    <hr>
+
+    <h2 class="fs-4 text-danger"><a href="#">Paper Eurasia 2025 - Kağıt, Oluklu Mukavva, Hijyenik Kağıt ve Ambalaj Ürünleri Fuarı</a></h2>
+    <p class="fs-4 fw-light mt-3">7 - 9 Mayıs 2025</p>
+    <p class="fw-lighter mt-3 fs-6">Primis Expo Uluslararası Fuarcılık A.Ş.</p>
+    <hr>
+
+    <h2 class="fs-4 text-danger"><a href="#">IDEX İstanbul 2025 - Uluslararası Dental Fuar ve Konferansı</a></h2>
+    <p class="fs-4 fw-light mt-3">7 - 10 Mayıs 2025</p>
+    <p class="fw-lighter mt-3 fs-6">Dişsiad Kongre ve Kon.Org.Ltd.Şti.</p>
+    <hr>
+  </div>
+  <div id="pagination" class="page-number d-flex">
+    <button class="btn btn-danger page-button">1</button>
+    <button class="btn btn-outline-danger page-button">2</button>
+    <button class="btn btn-outline-danger page-button">3</button>
+    <button class="btn btn-outline-danger page-button">4</button>
+    <button class="btn btn-outline-danger page-button">5</button>
+  </div>
+</div>
 </section>
 
-<script type="text/javascript">
-//Javascrit of responsive navigation menu
-const menuBtn = document.querySelector(".menu-btn");
-const navigation = document.querySelector(".navigation");
+<!-- Footer Start -->
 
-menuBtn.addEventListener("click", () => {
-  menuBtn.classList.toggle("active");
-  navigation.classList.toggle("active");
+<footer class="bg-dark text-white pt-5 pb-4 footer">
+
+  <div class="container text-md-left">
+
+      <div class="row text-md-left">
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold ">BFM'yi Keşfedin</h5>
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">BFM Hakkında</a>
+              </p>
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">Ekibimiz</a>
+              </p>
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">Kalite Politikamız</a>
+              </p>
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">KVKK Dökümanları</a>
+              </p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+              <h5 class="text-uppercase mb-4 font-weight-bold ">BFM'de Fuar Organize Edin</h5>
+
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">Planlar</a>
+              </p>
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">E-Broşürler</a>
+              </p>
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">Toplantı Salonları</a>
+              </p>
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">Ek Hizmetler</a>
+              </p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+              <h5 class="text-uppercase mb-4 font-weight-bold ">BFM Gündem</h5>
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">Fuar Duyuruları</a> 
+              </p>
+
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">BFM'den Haberler</a> 
+              </p>
+
+              <p>
+                  <a href="#" class="text-white" style="text-decoration: none;">Fuar Haberleri</a>
+              </p>
+
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+              <h5 class="text-uppercase mb-4 font-weight-bold">Bize Ulaşın</h5>
+              <p>
+                  Bursa Teknik Üniversitesi Bursa Teknopark, Mimarsinan, Mimar
+                  Sinan Cd. No:177/4, 16310 Yıldırım/Bursa
+              </p>
+
+              <p>
+                  info@f2fbilisim.com
+              </p>
+
+              <p>
+                  +90 534 010 30 14
+              </p>
+
+          </div>
+
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3 ps-5">
+              <p class="fw-bold fs-1 logo">BFM</p>
+              <hr>
+          </div>
+
+      </div>
+
+      <hr class="mb-4">
+
+      <div class="row align-item-center">
+          <div class="col-md-7 col-lg-8">
+              <a>
+                  Powered By <a class="text-warning" href="https://f2fbilisim.com" target="_blank"
+                      style="text-decoration: none;">F2F</a>
+              </a>
+
+          </div>
+
+          <div class="col-md-5 col-lg-4">
+              <div class="text-center text-md-right">
+
+                  <ul class="list-unstyled list-inline">
+                      <li>
+                          <a href="#" class="btn-floating btn-sm text-white fw-normal">
+                              Hüküm Ve Koşullar
+                          </a>
+                          <a href="#" class="btn-floating btn-sm text-white ms-4 fw-normal">
+                              Gizlilik Politikası
+                          </a>
+                      </li>
+
+                  </ul>
+
+              </div>
+          </div>
+
+      </div>
+      <br> <br> <br> 
+
+  </div>
+
+</footer>
+
+
+
+
+
+<script>
+  const buttons = document.querySelectorAll('#pagination .page-button');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    buttons.forEach(btn => {
+      btn.classList.remove('btn-danger');
+      btn.classList.add('btn-outline-danger');
+    });
+
+    button.classList.remove('btn-outline-danger');
+    button.classList.add('btn-danger');
+  });
 });
-// JavaScript for image slider navigation
-const btns = document.querySelectorAll(".nav-btn");
-const slides = document.querySelectorAll(".image-slide");
-
-var sliderNav = function(manual){
-  btns.forEach((btn) => {
-    btn.classList.remove("active");
-  });
-
-  slides.forEach((slide) => {
-    slide.classList.remove("active");
-  });
-
-
-  btns[manual].classList.add("active");
-  slides[manual].classList.add("active");
-}
-
-btns.forEach((btn,i) => {
-  btn.addEventListener("click", () => {
-    sliderNav(i);
-  });
-});
-
-
-
 
 </script>
 
 
-
-
-
-
-  <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
+    integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
