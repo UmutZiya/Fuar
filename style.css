@@ -9,13 +9,521 @@
 }
 /* Header */
 
+/* Menü açıkken scroll'u engelle */
+body.menu-open {
+    overflow: hidden;
+  }
 
-.form-control{
-    opacity: 0.5;
-    border-radius: 1.3rem;
-    width: 180px;
-}
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
 
+  .menu-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    color: inherit;
+  }
+
+  /* Container sadece navbar içeriğini sarmalar */
+.container-navbar {
+    max-width: 1300px; /* İçeriğin genişliğini ayarla */
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Header yüksekliği kadar */
+  }
+
+  /* Ana Header (Navbar) */
+.main-header {
+    position: absolute; /* Sayfa içeriğinin üzerine çıkar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Diğer öğelerin üzerinde kalması için */
+    padding: 15px 0; /* Üst ve alt boşluk */
+    height: 80px; /* Navbar yüksekliğini belirleyebilirsiniz */
+    background-color: transparent; /* Başlangıçta şeffaf */
+    transition: background-color 0.3s ease;
+  }
+
+  .logo img {
+    height: 80px; /* Logonuzun boyutuna göre ayarlayın */
+    display: block;
+  }
+  
+  .main-nav {
+    display: block; /* Mobilde gizlenecek */
+  }
+  
+  .main-nav ul {
+    display: flex;
+    gap: 25px; /* Menü öğeleri arası boşluk */
+  }
+  
+  .main-nav ul li a {
+    /* Başlangıçta navbar şeffafken görünecek renk (genellikle beyaz) */
+    color: #fff;
+    /* Eğer arkaplan açık renkliyse koyu renk kullanın: color: #333; */
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding: 10px 5px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer; /* Buton gibi davranacak */
+  }
+  .main-nav ul li a i {
+    font-size: 0.7rem;
+  }
+  
+  .main-nav ul li a:hover {
+    color: #e74c3c; /* Hover rengi (kırmızı) */
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Başlangıçta navbar şeffafken görünecek renk */
+    color: #fff;
+    /* Eğer arkaplan açık renkliyse koyu renk kullanın: color: #333; */
+  }
+  
+  .social-icons a {
+    color: inherit; /* Ana rengi alır */
+    margin-left: 12px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  .social-icons a:hover {
+    color: #e74c3c;
+  }
+  
+  .lang-switch a {
+    color: rgba(255, 255, 255, 0.7); /* Ana renge göre ayarla */
+    /* color: rgba(51, 51, 51, 0.7); */
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  .lang-switch a.active {
+    color: #fff; /* Ana renge göre ayarla */
+     /* color: #333; */
+  }
+
+  .search-icon {
+    color: inherit; /* Ana rengi alır */
+    font-size: 1.2rem;
+    cursor: pointer; /* Buton gibi davranacak */
+  }
+  .search-icon:hover {
+     color: #e74c3c;
+  }
+  
+  .mobile-menu-toggle {
+    display: none; /* Masaüstünde gizli */
+    color: inherit; /* Ana rengi alır */
+    font-size: 1.5rem;
+     cursor: pointer; /* Buton gibi davranacak */
+  }
+  .mobile-menu-toggle:hover {
+     color: #e74c3c;
+  }
+  
+  
+  /* Tam Ekran Overlay Menü */
+  .fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #c0392b; /* Koyu Kırmızı Arkaplan */
+    z-index: 9999; /* En üstte */
+    display: flex; /* display: none yerine flex/block kullanıyoruz animasyon için */
+    flex-direction: column;
+    padding: 20px 40px;
+    color: #fff;
+    overflow-y: auto; /* İçerik sığmazsa scroll çıksın */
+  
+    /* Başlangıç durumu: Gizli ve yukarıda */
+    opacity: 0;
+    visibility: hidden; /* Başlangıçta görünmez ve tıklanamaz */
+    transform: translateY(-100%); /* Başlangıçta tamamen yukarıda */
+  
+    /* Geçiş animasyonları */
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear 0.4s;
+    /* Önemli:
+       - transform ve opacity 0.4 saniyede 'ease' ile değişecek.
+       - visibility, menü *gizlenirken* 0.4 saniye gecikmeli olarak (animasyon bittikten sonra) anında (0s) 'hidden' olacak.
+    */
+  }
+  
+  .fullscreen-menu.active {
+    /* Aktif durum: Görünür ve yerinde */
+    opacity: 1;
+    visibility: visible; /* Görünür ve tıklanabilir */
+    transform: translateY(0); /* Son pozisyonuna (normal yerine) kaydır */
+  
+    /* Aktif olurken visibility gecikmesini sıfırlamak/kaldırmak için transition'ı tekrar tanımlayabiliriz
+       veya base'deki tanım yeterli olacaktır. Genellikle base'deki tanım yeterlidir.
+       Sadece visibility'nin açılırken gecikmemesini sağlıyoruz. */
+     transition: transform 0.4s ease, opacity 0.6s ease;
+     /* visibility'nin hemen (gecikmesiz) 'visible' olmasını sağlar */
+  }
+  
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    flex-wrap: wrap; /* Küçük ekranlarda alta kayabilir */
+    gap: 15px; /* Öğeler arasına boşluk */
+  }
+  
+  .logo-menu img {
+     height: 45px; /* Menü içindeki logo boyutu */
+  }
+  
+  .menu-search-container {
+    position: relative;
+    flex-grow: 1; /* Esnek genişlik */
+    margin: 0 10px; /* Kenarlara boşluk */
+    min-width: 200px; /* Minimum genişlik */
+    max-width: 400px; /* Maksimum genişlik */
+  }
+  
+  .menu-search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px; /* Sağda ikon için boşluk */
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: #fff;
+    font-size: 1rem;
+  }
+  .menu-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .menu-search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+  }
+  .menu-search-button:hover {
+     color: #fff;
+  }
+  
+  
+  .menu-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto; /* Arama kutusundan sonra sağa yasla */
+  }
+  
+  .menu-header-actions .lang-switch a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .menu-header-actions .lang-switch a.active {
+    color: #fff;
+  }
+  
+  .close-menu-btn {
+    font-size: 2rem;
+    color: #fff;
+    transition: transform 0.3s ease;
+    line-height: 1; /* Dikey hizalama sorunu olmasın */
+  }
+  .close-menu-btn:hover {
+    transform: rotate(90deg);
+  }
+  
+  .menu-content {
+    flex-grow: 1; /* Kalan alanı kapla */
+    display: flex;
+    flex-wrap: wrap; /* Küçük ekranlarda alt alta */
+    justify-content: space-around; /* Sütunları dağıt */
+    padding: 40px 0;
+  }
+  
+  .menu-column {
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+  
+  .menu-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 8px;
+    display: inline-block; /* Alt çizginin yazı kadar olmasını sağlar */
+    cursor: pointer; /* Başlığa tıklayınca kapatma hissi verir */
+    transition: color 0.3s ease;
+  }
+  .menu-column h3:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .menu-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .menu-column ul li a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+  }
+  
+  .menu-column ul li a:hover {
+    color: #fff;
+    padding-left: 5px; /* Hover'da hafif içeri kayma efekti */
+  }
+  
+  .menu-footer {
+    margin-top: auto; /* En alta yasla */
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ortala */
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+  .social-icons-menu a {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+  }
+  .social-icons-menu a:hover {
+    color: #eee; /* Hafif soluk beyaz */
+  }
+
+  /* Responsive Tasarım */
+
+/* Tablet (Örn: 992px altı) */
+@media (max-width: 992px) {
+    /* Ana Navbar */
+    .main-nav {
+        display: none; /* Ana navigasyonu gizle */
+    }
+    .header-actions .social-icons,
+    .header-actions .lang-switch,
+    .header-actions .search-icon {
+         display: none; /* Masaüstü aksiyonlarını gizle */
+    }
+    .mobile-menu-toggle {
+        display: block; /* Hamburger ikonu göster */
+        color: #fff; /* VEYA arkaplanınıza göre #333 */
+    }
+    .main-header .container {
+        justify-content: space-between; /* Logo sola, ikon sağa */
+    }
+  
+    /* Tam Ekran Menü */
+    .fullscreen-menu {
+        padding: 20px; /* Genel iç boşluğu biraz azalt */
+    }
+  
+    /* Menü Başlığı */
+    .menu-header {
+        flex-direction: column; /* Başlık öğelerini alt alta sırala */
+        align-items: flex-start; /* Sola yasla */
+        gap: 15px; /* Öğeler arasına boşluk */
+        padding-bottom: 15px;
+    }
+     .logo-menu {
+        align-self: flex-start; /* Logoyu başa al */
+    }
+    .menu-search-container {
+        margin: 5px 0; /* Dikey boşluk */
+        max-width: none; /* Tam genişlik kullan */
+        width: 100%;
+        order: 3; /* Arama kutusunu en sona al */
+    }
+    .menu-header-actions {
+        width: 100%;
+        justify-content: space-between; /* Buton sola, dil/kapatma sağa */
+        order: 2; /* Aksiyonları arama kutusunun üstüne al */
+        margin-left: 0; /* Otomatik margin'i sıfırla */
+    }
+     .close-menu-btn {
+        position: absolute; /* Kapatma butonunu sağ üste taşı */
+        top: 25px;
+        right: 25px;
+        font-size: 1.8rem; /* Biraz küçültülebilir */
+    }
+  
+    /* Menü İçeriği */
+    .menu-content {
+        justify-content: flex-start; /* Sütunları sola yasla */
+        gap: 25px; /* Sütunlar/Satırlar arası boşluk */
+        padding: 25px 0; /* Dikey boşluk */
+    }
+    .menu-column {
+        flex-basis: calc(50% - 15px); /* Yaklaşık 2 sütun, aradaki boşluğu hesaba kat */
+        padding: 0 5px; /* Sütun içi yan boşlukları azalt */
+        margin-bottom: 15px; /* Alt boşluk */
+    }
+    .menu-column h3{
+        font-size: 1.15rem; /* Başlık fontunu biraz küçült */
+    }
+    .menu-column ul li a{
+        font-size: 0.95rem; /* Link fontunu biraz küçült */
+    }
+  
+    /* Menü Alt Bilgi */
+     .menu-footer {
+        margin-top: 15px;
+     }
+  }
+  
+  
+  /* Mobil (Örn: 768px altı) */
+  @media (max-width: 768px) {
+     /* Ana Navbar */
+     .main-header {
+         height: 65px; /* Navbar yüksekliğini azalt */
+         padding: 10px 0;
+     }
+     .main-header .container {
+         padding: 0 15px; /* Kenar boşluğunu ayarla */
+     }
+     .logo img {
+        height: 35px; /* Mobilde logo küçült */
+    }
+     .mobile-menu-toggle {
+         font-size: 1.4rem; /* Hamburger ikonunu ayarla */
+     }
+  
+    /* Tam Ekran Menü */
+    .fullscreen-menu {
+        padding: 15px; /* İç boşluğu daha da azalt */
+    }
+  
+    /* Menü Başlığı */
+    .menu-header {
+        gap: 12px; /* Boşlukları azalt */
+        padding-bottom: 12px;
+    }
+    .logo-menu img {
+        height: 35px; /* Menü içindeki logo */
+    }
+    .menu-header-actions {
+        gap: 10px; /* Aksiyonlar arası boşluk */
+    }
+    .menu-header-actions .btn-online-ticket{
+        font-size: 0.7rem;
+        padding: 6px 10px;
+    }
+     .menu-header-actions .lang-switch {
+         font-size: 0.8rem;
+     }
+     .close-menu-btn {
+        top: 20px;
+        right: 20px;
+        font-size: 1.7rem;
+    }
+    .menu-search-input {
+        padding: 8px 35px 8px 12px; /* Arama kutusu boyutunu ayarla */
+        font-size: 0.9rem;
+    }
+    .menu-search-button{
+        font-size: 1rem;
+        right: 8px;
+    }
+  
+    /* Menü İçeriği */
+    .menu-content {
+       flex-direction: column; /* Kesinlikle tek sütun */
+       gap: 0; /* Sütunlar arası dikey boşluğu kaldır (her sütun kendi alt boşluğunu yönetsin) */
+       padding: 20px 0;
+       align-items: flex-start; /* Tüm sütunları sola yasla */
+    }
+     .menu-column {
+        flex-basis: 100%; /* Tam genişlik */
+        padding: 0; /* Sütun içi yan boşlukları sıfırla */
+        margin-bottom: 25px; /* Sütunlar arası boşluk */
+        width: 100%; /* Tam genişliği kapla */
+    }
+    .menu-column:last-child {
+        margin-bottom: 0; /* Son sütunun alt boşluğunu kaldır */
+    }
+     .menu-column h3 {
+        font-size: 1.1rem; /* Mobil için başlık boyutu */
+        padding-bottom: 6px;
+        margin-bottom: 10px;
+    }
+     .menu-column ul li {
+         margin-bottom: 8px; /* Liste elemanları arası boşluk */
+     }
+     .menu-column ul li a {
+        font-size: 0.9rem; /* Mobil için link boyutu */
+    }
+  
+    /* Menü Alt Bilgi */
+     .menu-footer {
+        flex-direction: column; /* Alt bilgiyi alt alta */
+        gap: 10px;
+        align-items: center; /* Ortala */
+        text-align: center;
+        margin-top: 20px; /* İçerikle arayı aç */
+        padding-top: 15px;
+     }
+     .social-icons-menu a {
+         margin: 0 8px; /* Sosyal ikonlar arası boşluk */
+         font-size: 1.2rem;
+     }
+  }
+  
+  /* Çok Küçük Ekranlar için Ekstra Ayar (Opsiyonel, örn: 480px altı) */
+  @media (max-width: 480px) {
+    .fullscreen-menu {
+        padding: 10px; /* Daha da az boşluk */
+    }
+    .menu-column h3 {
+        font-size: 1rem;
+    }
+    .menu-column ul li a {
+        font-size: 0.85rem;
+    }
+    .menu-header-actions .btn-online-ticket{
+        font-size: 0.65rem;
+        padding: 5px 8px;
+    }
+     .menu-header-actions .lang-switch {
+         font-size: 0.75rem;
+     }
+     .close-menu-btn {
+        top: 15px;
+        right: 15px;
+        font-size: 1.6rem;
+    }
+    .menu-footer span {
+        font-size: 0.8rem;
+    }
+    .social-icons-menu a {
+         font-size: 1.1rem;
+         margin: 0 6px;
+     }
+  }
 
 /* Slider */
 .carousel-item {
@@ -233,7 +741,11 @@
     }
 }
 
-section {
+.fuar-takvim-section {
+    padding: 100px 200px;
+}
+
+.card-1-section{
     padding: 100px 200px;
 }
 

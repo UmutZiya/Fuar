@@ -18,64 +18,115 @@
 </head>
 
 <body>
-  <!-- Header Start -->
-<header>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top mt-3">
-    <div class="container">
-      <!-- Logo -->
-      <a class="navbar-brand fs-1 text-white" href="#">Logo</a>
-      <!-- Toggle Btn -->
-      <button 
-      class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- SideBar -->
-      <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <!-- Sidebar Header -->
-        <div class="offcanvas-header text-white border-bottom">
-          <h5 class="offcanvas-title text-white fs-2" id="offcanvasNavbarLabel">Logo</h5>
-          <button 
-          type="button" 
-          class="btn-close btn-close-white shadow-none"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close">
-        </button>
-        </div>
-        <!-- Sidebar Body -->
-        <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 ">
-            <li class="nav-item mx-2">
-              <a class="nav-link text-white fw-bold fs-5" aria-current="page" href="#">Ana Sayfa</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white fw-bold fs-5 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                BFM'yi Keşfedin
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item text-dark  fs-6" href="#">Hakkımızda</a></li>
-                <li><a class="dropdown-item text-dark  fs-6" href="#">BFM Fuar Takvimi</a></li>
-                <li><a class="dropdown-item text-dark  fs-6" href="#">Hazır Ofisler Ve Toplantı Salonları</a></li>
-              </ul>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link text-white fw-bold fs-5" href="#">BFM'de Fuar Organize Edin</a>
-            </li> 
-            <li class="nav-item mx-2">
-              <a class="nav-link text-white fw-bold fs-5" href="#">İletişim</a>
-            </li> 
+<!-- Header Start -->
+<header class="main-header">
+  <div class="container-navbar">
+      <a href="#" class="logo mt-5">
+          <!-- Gerçek logo dosyanızın yolunu buraya ekleyin -->
+          <img src="./images/rise_logo1.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo">
+      </a>
+
+      <nav class="main-nav mt-5">
+          <ul>
+              <!-- nav-toggle-button class'ı menüyü açar -->
+              <li><a href="#" class="nav-toggle-button">BFM'yi Keşfedin <i class="fas fa-chevron-down"></i></a></li>
+              <li><a href="#" class="nav-toggle-button">BFM'de Fuar Organize Edin <i class="fas fa-chevron-down"></i></a></li>
+              <li><a href="#" class="nav-toggle-button">BFM'yi Ziyaret Edin <i class="fas fa-chevron-down"></i></a></li>
+              <li><a href="#" class="nav-toggle-button">ETKİNLİKLER <i class="fas fa-chevron-down"></i></a></li>
+              <li><a href="#" class="nav-toggle-button">Bize Ulaşın</a></li>
           </ul>
-          <!-- Search and Language -->
-           <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-              <input type="search" class="form-control px-3 fs-7 text-dark" placeholder="Bir şeyler arayın.." aria-label="Search">
-            </form>
-           </div>
-        </div>
+      </nav>
+
+      <div class="header-actions">
+          <div class="lang-switch mt-4 ms-4">
+              <a href="#" class="active fs-5">TR</a> | <a href="#" class="fs-5">EN</a>
+          </div>
+          <!-- nav-toggle-button class'ı menüyü açar -->
+          <button class="search-icon nav-toggle-button mt-4 " aria-label="Arama Menüsünü Aç">
+              <i class="fas fa-search"></i>
+          </button>
       </div>
-    </div>
-  </nav>
+
+      <!-- Mobil için Hamburger İkonu (nav-toggle-button class'ı menüyü açar/kapatır) -->
+      <button class="mobile-menu-toggle nav-toggle-button" aria-label="Menüyü Aç/Kapat">
+          <i class="fas fa-bars"></i>
+      </button>
+  </div>
 </header>
+<!-- Header End -->
+<!-- Tam Ekran Overlay Menü -->
+<div class="fullscreen-menu">
+  <div class="menu-header">
+       <a href="#" class="logo-menu">
+           <!-- Menüdeki logo -->
+          <img src="./images/rise_logo1.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo">
+      </a>
+      <div class="menu-search-container">
+           <input type="text" placeholder="Katılım..." class="menu-search-input">
+           <button class="menu-search-button"><i class="fas fa-search"></i></button>
+      </div>
+       <div class="menu-header-actions">
+          <div class="lang-switch">
+              <a href="#" class="active">TR</a> | <a href="#">EN</a>
+          </div>
+          <button class="close-menu-btn" aria-label="Menüyü Kapat">
+              <i class="fas fa-times"></i>
+          </button>
+       </div>
+  </div>
+
+  <div class="menu-content">
+      <div class="menu-column">
+          <!-- Başlığa tıklanınca menüyü kapatmak için nav-toggle-button ekledik -->
+          <h3 class="nav-toggle-button">BFM'yi Keşfedin</h3>
+          <ul>
+              <li><a href="#">Hakkımızda</a></li>
+              <li><a href="#">BFM Fuar Takvimi</a></li>
+              <li><a href="#">Hazır Ofisler ve Toplantı Salonları</a></li>
+          </ul>
+      </div>
+      <div class="menu-column">
+          <h3 class="nav-toggle-button">BFM'de Fuar Organize Edin</h3>
+          <ul>
+              <li><a href="#">Organizatör</a></li>
+          </ul>
+      </div>
+      <div class="menu-column">
+          <h3 class="nav-toggle-button">BFM'yi Ziyaret Edin</h3>
+          <ul>
+              <li><a href="#">Ulaşım</a></li>
+              <li><a href="#">Konaklama</a></li>
+              <li><a href="#">Restoran Ve Kafeler</a></li>
+              <li><a href="#">Hizmetler</a></li>
+          </ul>
+      </div>
+       <div class="menu-column">
+          <h3 class="nav-toggle-button">ETKİNLİKLER</h3>
+          <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+          </ul>
+      </div>
+      <div class="menu-column">
+          <h3 class="nav-toggle-button">İLETİŞİM</h3>
+          <!-- İletişim altında alt menü yoksa sadece başlık kalabilir -->
+           <!-- İsterseniz buraya da linkler ekleyebilirsiniz -->
+           <!-- <ul><li><a href="#">İletişim Bilgileri</a></li></ul> -->
+      </div>
+  </div>
+
+  <div class="menu-footer">
+      <span>Bizi Takip Edin</span>
+      <div class="social-icons-menu">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+  </div>
+</div>
 
 <!-- Slider Start -->
 <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
@@ -128,7 +179,7 @@
   <!-- Slider End -->
 
   <!-- Card Slide Start -->
-   <section>
+   <section class="card-1-section">
     <div class="slider-container">
       <div class="slider">
           <!-- Kart 1 -->
@@ -237,7 +288,7 @@
 <!-- Card Slider End -->
 
 <!-- Fuar İnformation Start -->
-<section>
+<section class="fuar-takvim-section">
   <div class="container mb-5">
     <h2 class="fw-bold fs-2 mb-3">BFM Fuar Takvimi</h2>
     <select class="form-select" aria-label="Default select example">

@@ -1,3 +1,67 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggleButtons = document.querySelectorAll('.nav-toggle-button'); // Menüyü açan/kapatan tüm butonlar/linkler
+    const closeMenuButton = document.querySelector('.close-menu-btn');
+    const fullscreenMenu = document.querySelector('.fullscreen-menu');
+    const body = document.body;
+    // Menü içindeki başlıklar (bunlara tıklanınca da kapanması için) - İsteğe bağlı
+    const menuTitleLinks = document.querySelectorAll('.fullscreen-menu .menu-column h3');
+
+    // Menüyü Açma Fonksiyonu
+    const openMenu = () => {
+        if (!fullscreenMenu.classList.contains('active')) {
+            fullscreenMenu.classList.add('active');
+            body.classList.add('menu-open'); // Scroll engelleme için body'e class ekle
+        }
+    };
+
+    // Menüyü Kapatma Fonksiyonu
+    const closeMenu = () => {
+        if (fullscreenMenu.classList.contains('active')) {
+            fullscreenMenu.classList.remove('active');
+            body.classList.remove('menu-open'); // Scroll engellemeyi kaldır
+        }
+    };
+
+    // Menüyü Aç/Kapat Butonlarına Tıklama Olayı
+    menuToggleButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // Linklerin (#) sayfayı yukarı atmasını engelle
+
+            // Eğer tıklanan buton mobil toggle ise veya menü kapalıysa, menünün durumunu değiştir.
+            // Eğer menü zaten açıksa ve tıklanan normal bir menü linkiyse, sadece kapat.
+            if (button.classList.contains('mobile-menu-toggle')) {
+                 if (fullscreenMenu.classList.contains('active')) {
+                    closeMenu();
+                 } else {
+                    openMenu();
+                 }
+            } else if (button.closest('.fullscreen-menu') && fullscreenMenu.classList.contains('active')){
+                 // Eğer açık menü içindeki bir başlığa tıklandıysa kapat
+                 closeMenu();
+            }
+            else {
+                // Diğer tüm durumlarda (ana navbardaki linkler, arama ikonu) menüyü aç
+                openMenu();
+            }
+        });
+    });
+
+    // Kapatma (X) Butonuna Tıklama Olayı
+    if (closeMenuButton) {
+        closeMenuButton.addEventListener('click', () => {
+            closeMenu();
+        });
+    }
+
+    // İsteğe Bağlı: Esc tuşu ile menüyü kapatma
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && fullscreenMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.slider');
     const cards = document.querySelectorAll('.card');
