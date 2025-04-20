@@ -60,7 +60,74 @@ document.addEventListener('DOMContentLoaded', () => {
           closeMenu();
       }
   });
+});
 
+/*============== Sidebar Menu Functionality ===============*/
+document.addEventListener('DOMContentLoaded', () => {
+  // Get all dropdown toggles
+  const dropdownToggles = document.querySelectorAll('.sidebar .dropdown-toggle');
+  
+  // Add click event to each toggle
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Get the target submenu
+      const targetId = this.getAttribute('data-bs-target');
+      const targetSubmenu = document.querySelector(targetId);
+      
+      // Toggle the submenu
+      if (targetSubmenu) {
+        const isOpen = targetSubmenu.classList.contains('show');
+        
+        // Close all other open menus first
+        document.querySelectorAll('.sidebar .collapse.show').forEach(menu => {
+          if (menu !== targetSubmenu) {
+            menu.classList.remove('show');
+            const relatedToggle = document.querySelector(`[data-bs-target="#${menu.id}"]`);
+            if (relatedToggle) {
+              relatedToggle.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+        
+        // Toggle current menu
+        if (isOpen) {
+          targetSubmenu.classList.remove('show');
+          this.setAttribute('aria-expanded', 'false');
+        } else {
+          targetSubmenu.classList.add('show');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      }
+    });
+  });
+  
+  // Mobile menu toggle functionality
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle.d-md-none');
+  const sidebar = document.querySelector('.sidebar');
+  
+  if (mobileMenuToggle && sidebar) {
+    mobileMenuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('show');
+    });
+    
+    // Close sidebar when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !mobileMenuToggle.contains(e.target) && 
+          window.innerWidth < 768 && sidebar.classList.contains('show')) {
+        sidebar.classList.remove('show');
+      }
+    });
+  }
+  
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      sidebar.classList.remove('show');
+    }
+  });
 });
 
 /*================== Card-Slider-1 Js ======================*/
@@ -496,10 +563,6 @@ function setupPagination() {
   }
 }
 
-
-
-
-
 /*============= Card-slider 2 JS ================= */
 document.addEventListener('DOMContentLoaded', function() {
   const cardsData = {
@@ -627,7 +690,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initSwiper();
 });
 /*====== index.html js end =============*/
-
 
 /*====== iletisim.html js start ====*/
  // Form gönderme işlemi
