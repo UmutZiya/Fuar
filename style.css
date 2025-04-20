@@ -1350,9 +1350,9 @@ body.menu-open {
   color: var(--primary-color);
 }
 
-.page-title {
+.page-title-2 {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
