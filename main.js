@@ -1,3 +1,4 @@
+/*=============== Navbar js =============================== */
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggleButtons = document.querySelectorAll('.nav-toggle-button'); // Menüyü açan/kapatan tüm butonlar/linkler
     const closeMenuButton = document.querySelector('.close-menu-btn');
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+/*================== Card-Slider-1 Js ======================*/
 document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.slider');
     const cards = document.querySelectorAll('.card');
@@ -117,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Dokunma olayları için destek
+    // Doknuma olayları için destek
     let touchStartX = 0;
     let touchEndX = 0;
     
@@ -177,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
     slider.addEventListener('mouseup', dragEnd);
     slider.addEventListener('mouseleave', dragEnd);
     slider.addEventListener('mousemove', drag);
-
+ 
     // Dokunmatik event listener'ları güncelleyin
     slider.addEventListener('touchstart', function(e) {
         touchStartX = e.touches[0].clientX;
@@ -246,5 +248,138 @@ document.addEventListener('DOMContentLoaded', function() {
         // ... mevcut resize kodu ...
         currentTranslate = -currentIndex * newCardWidth;
     });
-
 });
+
+
+/*============= Card-slider 2 JS ================= */
+document.addEventListener('DOMContentLoaded', function() {
+    const cardsData = {
+      gundem: [
+        { image: "./images/card-2-slider-1.png", date: "2024-05-01", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+        { image: "./images/card-2-slider-2.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+        { image: "./images/card-2-slider-3.jpg", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+        { image: "./images/card-2-slider-4.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+        { image: "./images/card-2-slider-5.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+        { image: "./images/card-2-slider-6.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+        { image: "./images/card-2-slider-7.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+      ],
+      blog: [
+        { image: "./images/card-2-slider-8.png", date: "2024-05-03", tag: "Blog", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+        { image: "./images/card-2-slider-9.png", date: "2024-05-03", tag: "Blog", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+      ],
+      duyurular: [
+        { image: "./images/card-2-slider-10.jpg", date: "2024-05-04", tag: "Duyuru", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+        { image: "./images/card-2-slider-2.png", date: "2024-05-04", tag: "Duyuru", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+      ],
+      haberler: [
+        { image: "./images/card-2-slider-4.png", date: "2024-05-05", tag: "Haber", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!" },
+      ]
+    };
+  
+    let swiperInstance = null;
+    const swiperWrapper = document.querySelector('.swiper-wrapper');
+    const cardTemplate = document.getElementById('card-template-2');
+    const categoryTabs = document.querySelectorAll('.category-tab-2');
+    const cardSlider = document.querySelector('.card-slider-2');
+  
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      return {
+        year: date.getFullYear(),
+        day: date.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' })
+      };
+    }
+  
+    function createCards(category) {
+      const fragment = document.createDocumentFragment();
+      cardsData[category].forEach(data => {
+        const clone = cardTemplate.content.cloneNode(true);
+        const formattedDate = formatDate(data.date);
+        
+        clone.querySelector('img').src = data.image;
+        clone.querySelector('.date-year-2').textContent = formattedDate.year;
+        clone.querySelector('.date-day-2').textContent = formattedDate.day;
+        clone.querySelector('.card-tag-2').textContent = data.tag;
+        clone.querySelector('.card-title-2').textContent = data.title;
+        
+        fragment.appendChild(clone);
+      });
+      return fragment;
+    }
+  
+    function initSwiper() {
+      swiperInstance = new Swiper('.swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        grabCursor: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          disabledClass: 'swiper-button-disabled',
+        },
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+        mousewheel: {
+          forceToAxis: true,
+        },
+        touchEventsTarget: 'container',
+        touchRatio: 1,
+        touchAngle: 45,
+        grabCursor: true,
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }
+      });
+    }
+  
+    function handleCategoryClick(e) {
+      const category = e.target.dataset.category;
+      
+      categoryTabs.forEach(tab => tab.classList.remove('active'));
+      e.target.classList.add('active');
+      
+      // Kartları gizle
+      cardSlider.style.display = 'none';
+      
+      // Yeni kartları oluştur
+      const newCards = createCards(category);
+      
+      // Eski kartları temizle ve yenilerini ekle
+      swiperWrapper.innerHTML = '';
+      swiperWrapper.appendChild(newCards);
+      
+      // Swiper'ı güncelle
+      if (swiperInstance) {
+        swiperInstance.update();
+        swiperInstance.slideTo(0, 0);
+      }
+      
+      // Kartları göster
+      requestAnimationFrame(() => {
+        cardSlider.style.display = 'block';
+      });
+    }
+  
+    // Event Listeners
+    categoryTabs.forEach(tab => {
+      tab.addEventListener('click', handleCategoryClick);
+    });
+  
+    // Initial Load
+    const initialCards = createCards('gundem');
+    swiperWrapper.appendChild(initialCards);
+    initSwiper();
+  });
+  
+  
+  
+  
+  
+  

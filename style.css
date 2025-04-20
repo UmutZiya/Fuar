@@ -61,6 +61,7 @@ body.menu-open {
     transition: background-color 0.3s ease;
   }
 
+  /* Logo ayarı */
   .logo img {
     height: 120px; /* Logonuzun boyutuna göre ayarlayın */
     display: block;
@@ -96,7 +97,7 @@ body.menu-open {
   }
   
   .main-nav ul li a:hover {
-    color: #79dfec; /* Hover rengi (kırmızı) */
+    color: #008384; /* Hover rengi (kırmızı) */
   }
   
   .header-actions {
@@ -115,7 +116,7 @@ body.menu-open {
     transition: color 0.3s ease;
   }
   .social-icons a:hover {
-    color: #e74c3c;
+    color: #008384;
   }
 
   .lang-switch{
@@ -143,17 +144,19 @@ body.menu-open {
     cursor: pointer; /* Buton gibi davranacak */
   }
   .search-icon:hover {
-     color: #e74c3c;
+     color: 008384;
   }
   
   .mobile-menu-toggle {
     display: none; /* Masaüstünde gizli */
-    color: inherit; /* Ana rengi alır */
+    color: white; /* Ana rengi alır */
     font-size: 1.5rem;
-     cursor: pointer; /* Buton gibi davranacak */
+    cursor: pointer; /* Buton gibi davranacak */
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
   }
   .mobile-menu-toggle:hover {
-     color: #e74c3c;
+     
   }
   
   
@@ -494,7 +497,7 @@ body.menu-open {
    filter: brightness(42%);
 }
 
-/* Card Slider Css */
+/* Card Slider-1 Css */
 
 .slider-container {
     max-width: 1200px;
@@ -519,7 +522,7 @@ body.menu-open {
     flex: 0 0 calc(33.333% - 20px);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     height: 550px;
     background-size: cover;
@@ -563,10 +566,11 @@ body.menu-open {
 .card-link {
     display: inline-flex;
     align-items: center;
-    color:  #79dfec;
+    color:  #008384;
+    opacity: 1;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: auto;
 }
 
@@ -641,7 +645,7 @@ body.menu-open {
     transition: width 0.3s ease;
 }
 
-/* Card-2 Slider */
+/*====== Card-2 Slider ========= */
 
 
 
@@ -673,7 +677,7 @@ body.menu-open {
 
 /* Form */
 .form-select{
-    width: 15%;
+    width: 20%;
     display: inline-block;
     padding-left: 45px;
     padding-right: 45px;
@@ -698,11 +702,240 @@ body.menu-open {
     margin-left: 105px;
  }
 
-
-
-
 /* 2.Card Slider css */
 
+.container-2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Category Tabs */
+.category-tabs-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.category-tab-2 {
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid #d1d5db;
+  background: none;
+  font-weight: 500;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.category-tab-2:hover {
+  border-color: #9ca3af;
+  color: #6b7280;
+}
+
+.category-tab-2.active {
+  border-color: #ef4444;
+  color: #ef4444;
+  transform: scale(1.05);
+}
+
+/* Card Slider Container */
+.card-slider-container-2 {
+  position: relative;
+  padding: 0 6rem;
+  margin-top: 2rem;
+}
+
+/* Card Styles - Fixed Height */
+.card-2 {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 400px; /* Sabit yükseklik */
+}
+
+.card-image-2 {
+  position: relative;
+  height: 200px;
+}
+
+.card-image-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-date-2 {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(255,255,255,0.9);
+  opacity: 0.8;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.date-year-2 {
+  font-size: 0.75rem;
+}
+
+.date-day-2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card-content-2 {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Hide overflow content */
+}
+
+.card-tag-2 {
+  color: #ef4444;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.card-title-2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.read-more-2 {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+  align-self: flex-start;
+  margin-top: auto; /* Push to bottom */
+}
+
+.read-more-2:hover {
+  color: #374151;
+}
+
+.chevron-right-2 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Swiper Customization */
+.swiper {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  position: relative;
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  transition-timing-function: linear;
+  transition: visibility 0.3s ease-in-out;
+}
+
+.swiper-slide {
+  width: 300px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* Swiper Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px !important;
+  height: 40px !important;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50% !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next:hover{
+  background-color: #008384;
+}
+
+.swiper-button-prev:hover{
+  background-color: #008384;
+}
+
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 18px !important;
+  color: #333;
+  font-weight: bold;
+}
+
+.swiper-button-next:hover:after,
+.swiper-button-prev:hover:after {
+  color: #fff;
+}
+
+.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .category-tab-2 {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .card-2 {
+    height: 400px; /* Slightly smaller on mobile */
+  }
+  
+  .card-image-2 {
+    height: 180px;
+  }
+  
+  .card-title-2 {
+    font-size: 1rem;
+  }
+  
+  .card-slider-container-2 {
+    padding: 0 4rem;
+  }
+}
+
+.card-slider-2 {
+  transition: all 0.3s ease-in-out;
+}
 
 /* Footer */
 
@@ -713,6 +946,15 @@ body.menu-open {
 
 .footer h5{
     color: rgb(71, 245, 245);
+}
+
+.footer-poweredby{
+  color: #79dfec;
+}
+
+.logo-footer{
+  height: 120px;
+  display: block;
 }
 
 /* BreakPoints */
