@@ -9,7 +9,9 @@
 }
 
 body{
-
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Yatay kaydırmayı engeller */
 }
 
 /* Header */
@@ -337,30 +339,42 @@ body.menu-open {
 
   /* Responsive Tasarım */
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1490px) {
     .main-nav ul li a {
-        font-size: 1rem; /* Büyük ekranlarda 1.1rem, küçük ekranlarda 1rem */
-        padding: 10px 3px;
+        font-size: 1.1rem; /* Büyük ekranlarda 1.1rem, küçük ekranlarda 1rem */
+        padding: 10px 0px;
+    }
+
+    .lang-switch a{
+      font-size: 1rem;
+      padding: 8px 0px;
     }
 }
 
-/* 992px'den küçük ekranlar için ayarlamalar */
-@media (max-width: 992px) {
+@media (max-width: 1276px) {
   .main-nav ul li a {
-    font-size: 0.95rem; /* Yazı boyutunu küçült */
-    padding: 8px 3px; /* Padding'i azalt */
+      font-size: 0.8rem; /* Büyük ekranlarda 1.1rem, küçük ekranlarda 1rem */
+      padding: 10px 0px;
   }
-  
-  .logo img {
-    height: 60px; /* Logo boyutunu küçült */
+
+  .lang-switch a{
+    font-size: 0.9rem;
+    padding: 8px 0px;
   }
 }
 
+/* 992px'den küçük ekranlar için ayarlamalar */
+
 /* 768px ve altı için mobil stil */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .container-navbar {
     padding: 0 20px; /* Yan boşlukları artır */
     height: 70px; /* Navbar yüksekliğini azalt */
+  }
+
+  .main-nav ul li a {
+    font-size: 0.6rem; /* Yazı boyutunu küçült */
+    padding: 8px 0px; /* Padding'i azalt */
   }
 
   .main-nav,
@@ -375,15 +389,27 @@ body.menu-open {
     margin-top: 5px;
   }
 
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    top: 15px;
+  }
+
   .logo img {
-    height: 50px; /* Mobil logo boyutu */
-    margin-top: 10px !important;
+    height: 150px !important; /* Mobil logo boyutu */
+    margin-top: -47px !important;
   }
 
   /* Header'ı daha kompakt hale getir */
   .main-header {
-    height: 70px;
-    padding: 10px 0;
+   height: 80px !important;
+  }
+
+  .slider-container{
+    padding: 0 4rem;
+    width: 100%;
   }
 
   /* Menü içi responsive ayarlar */
@@ -418,7 +444,7 @@ body.menu-open {
   }
 
   .logo img {
-    height: 45px;
+    height: 100px;
   }
 
   .mobile-menu-toggle {
@@ -566,7 +592,7 @@ body.menu-open {
 .card-link {
     display: inline-flex;
     align-items: center;
-    color:  #008384;
+    color:  #03adad;
     opacity: 1;
     text-decoration: none;
     font-size: 14px;
@@ -640,15 +666,153 @@ body.menu-open {
 
 .progress-fill {
     height: 100%;
-    background-color: #dc3545;
+    background-color: #03adad;
     width: 20%;
     transition: width 0.3s ease;
 }
 
+/* Mobil Slider Ayarları */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 100vh !important;
+  }
+  
+  .carousel-item img {
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  .carousel-caption {
+    width: 90% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    padding: 15px !important;
+    top: 50% !important;
+  }
+
+  .carousel-caption h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .btn-slider {
+    padding: 0.3rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Tüm ekranlar için hizalama */
+.carousel-caption.text-start {
+  left: 10% !important;
+  right: auto !important;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption.text-start {
+    text-align: center !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    padding: 15px;
+  }
+  
+  .carousel-caption .row {
+    justify-content: center !important;
+  }
+  
+  .carousel-caption .col-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+
+/*============= Fuar Takvim Css ===========*/
+
+.custom-select {
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: #333;
+  cursor: pointer;
+}
+
+.custom-select:focus {
+  box-shadow: none;
+  border-color: #008384;
+}
+
+.event-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 0;
+}
+
+.event-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.event-link:hover {
+  background-color: #f8f8f8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-title {
+  color: #03adad;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.event-date {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.event-organizer {
+  color: #000000;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.pagination {
+  justify-content: flex-start;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #03adad;
+  border-color: #03adad;
+}
+
+.pagination .page-item .page-link {
+  color: #333;
+}
+
+.pagination .page-item.active .page-link {
+  color: white;
+}
+
 /*====== Card-2 Slider ========= */
-
-
-
 /* Responsive tasarım */
 @media (max-width: 992px) {
     .card {
@@ -662,47 +826,9 @@ body.menu-open {
     }
 }
 
-.fuar-takvim-section {
+/* .card-1-section{
     padding: 100px 200px;
-}
-
-.card-1-section{
-    padding: 100px 200px;
-}
-
-.news a{
-    text-decoration: none;
-    color: red;
-}
-
-/* Form */
-.form-select{
-    width: 20%;
-    display: inline-block;
-    padding-left: 45px;
-    padding-right: 45px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 35px;
-    margin-right: 50px;
-    border: 1px solid red;
-    border-radius: 13px;
-}
-
-.page-button {
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    margin: 0 0px;
-    font-size: 14px;
-    border-radius: 1px;
-  }
-
- .page-number{
-    margin-left: 105px;
- }
-
-/* 2.Card Slider css */
+} */
 
 .container-2 {
   max-width: 1200px;
@@ -736,8 +862,8 @@ body.menu-open {
 }
 
 .category-tab-2.active {
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: #03adad;
+  color: #000000;
   transform: scale(1.05);
 }
 
@@ -800,7 +926,7 @@ body.menu-open {
 }
 
 .card-tag-2 {
-  color: #ef4444;
+  color: #008384;
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 0.5rem;

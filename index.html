@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fuar</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
@@ -27,7 +27,7 @@
       </a>
 
       <nav class="main-nav mt-5">
-          <ul>
+          <ul class="">
               <!-- nav-toggle-button class'ı menüyü açar -->
               <li><a href="#" class="nav-toggle-button">BFM'yi Keşfedin <i class="fas fa-chevron-down"></i></a></li>
               <li><a href="#" class="nav-toggle-button">BFM'de Fuar Organize Edin <i class="fas fa-chevron-down"></i></a></li>
@@ -185,7 +185,7 @@
   <!-- Card Slide Start -->
    <section class="card-1-section">
        <div class="container">
-        <h2 class="fw-bold fs-1 mb-5 ms-5">Yaklaşan Fuarlar</h2>
+        <h2 class="fw-bold fs-1 mb-5 ms-5 mt-5">Yaklaşan Fuarlar</h2>
        </div>
     <div class="slider-container">
       <div class="slider">
@@ -296,95 +296,68 @@
 <!-- Card Slider End -->
 
 <!-- Fuar İnformation Start -->
-<section class="fuar-takvim-section">
-  <div class="container mb-5">
-    <h2 class="fw-bold fs-2 mb-3">BFM Fuar Takvimi</h2>
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Yıl seçiniz</option>
-      <option value="1">2025</option>
-      <option value="2">2026</option>
-    </select>
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Ay Seçiniz</option>
-      <option value="2">Şubat</option>
-      <option value="3">Mart</option>
-      <option value="4">Nisan</option>
-      <option value="5">Mayıs</option>
-      <option value="6">Haziran</option>
-      <option value="7">Temmuz</option>
-      <option value="8">Ağustos</option>
-      <option value="9">Eylül</option>
-      <option value="10">Ekim</option>
-      <option value="11">Kasım</option>
-      <option value="12">Aralık</option>
-    </select>
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Sektör Seçiniz</option>
-      <option value="1">2025</option>
-      <option value="2">2026</option>
-    </select>
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Lokasyon Seçiniz</option>
-      <option value="1">2025</option>
-      <option value="2">2026</option>
-    </select>
+<div class="container mt-5">
+  <div class="row mb-4">
+      <div class="col-md-3 mb-3">
+          <select id="yearFilter" class="form-select custom-select">
+              <option value="">Yıl seçiniz</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+          </select>
+      </div>
+      <div class="col-md-3 mb-3">
+          <select id="monthFilter" class="form-select custom-select">
+              <option value="">Ay Seçiniz</option>
+              <option value="Ocak">Ocak</option>
+              <option value="Şubat">Şubat</option>
+              <option value="Mart">Mart</option>
+              <option value="Nisan">Nisan</option>
+              <option value="Mayıs">Mayıs</option>
+              <option value="Haziran">Haziran</option>
+              <option value="Temmuz">Temmuz</option>
+              <option value="Ağustos">Ağustos</option>
+              <option value="Eylül">Eylül</option>
+              <option value="Ekim">Ekim</option>
+              <option value="Kasım">Kasım</option>
+              <option value="Aralık">Aralık</option>
+          </select>
+      </div>
+      <div class="col-md-3 mb-3">
+          <select id="sectorFilter" class="form-select custom-select">
+              <option value="">Sektör Seçiniz</option>
+              <option value="Mücevherat">Mücevherat</option>
+              <option value="Teknoloji">Teknoloji</option>
+              <option value="Tavukçuluk">Tavukçuluk</option>
+              <option value="Gıda İşleme">Gıda İşleme</option>
+              <option value="İnşaat">İnşaat</option>
+              <option value="Otomotiv">Otomotiv</option>
+              <option value="Turizm">Turizm</option>
+              <option value="Mobilya">Mobilya</option>
+          </select>
+      </div>
+      <div class="col-md-3 mb-3">
+          <select id="locationFilter" class="form-select custom-select">
+              <option value="">Lokasyon Seçiniz</option>
+              <option value="İstanbul">İstanbul</option>
+              <option value="Ankara">Ankara</option>
+              <option value="Agora">Agora</option>
+              <option value="Antalya">Antalya</option>
+          </select>
+      </div>
   </div>
 
-  <div class="container news">
-    <h2 class="fs-4 text-danger"> <a href="#">IJS Istanbul Jewelry Show 2025 - 57. İstanbul Uluslararası Mücevherat, Saat ve Malzemeleri Fuarı</a></h2>
-    <p class="fs-4 fw-light mt-3">16 - 19 Nisan</p>
-    <p class="fw-lighter mt-3 fs-6">UBM İstanbul Fuarcılık ve Gösteri Hizmetleri A.Ş.</p>
-    <hr>
-
-    <h2 class="fs-4 text-danger"> <a href="">Mobilefest - Agora, Avrasya Teknoloji Haftası</a></h2>
-    <p class="fs-4 fw-light mt-3">17 - 19 Nisan 2025</p>
-    <p class="fw-lighter mt-3 fs-6">HIS Fuarcılık Hizmetleri Ltd. Şti.</p>
-    <hr>
-
-    <h2 class="fs-4 text-danger"> <a href="#">VIV SELECT TÜRKİYE 2025 - 11. Tavukçuluk ve Teknolojileri Uluslararası İhtisas Fuarı</a></h2>
-    <p class="fs-4 fw-light mt-3">24 - 26 Nisan 2025</p>
-    <p class="fw-lighter mt-3 fs-6">HKF Fuarcılık A.Ş.</p>
-    <hr>
-
-    <h2 class="fs-4 text-danger"> <a href="#">FOTEG İstanbul 2025 - Gıda İşleme Teknolojileri Uluslararası İhtisas Fuarı</a></h2>
-    <p class="fs-4 fw-light mt-3">24 - 26 Nisan 2025</p>
-    <p class="fw-lighter mt-3 fs-6">HKF Fuarcılık A.Ş.</p>
-    <hr>
-
-    <h2 class="fs-4 text-danger"><a href="#">ICCI 2025 - Uluslararası Enerji ve Çevre Fuarı ve Konferansı</a></h2>
-    <p class="fs-4 fw-light mt-3">24 - 26 Nisan 2025</p>
-    <p class="fw-lighter mt-3 fs-6">Sektörel Fuarcılık A.Ş.</p>
-    <hr>
-
-    <h2 class="fs-4 text-danger"><a href="#">Electricity Eurasia 2025 - Elektrik ve Elektrik Ekipmanları Fuarı</a></h2>
-    <p class="fs-4 fw-light mt-3">24 - 26 Nisan 2025</p>
-    <p class="fw-lighter mt-3 fs-6">Sektörel Fuarcılık A.Ş.</p>
-    <hr>
-
-    <h2 class="fs-4 text-danger"><a href="#">AYSAF 2025 - Ayakkabı ve Yan Sanayi Fuarı</a></h2>
-    <p class="fs-4 fw-light mt-3">29 Nisan - 2 Mayıs 2025</p>
-    <p class="fw-lighter mt-3 fs-6">Artkim Fuarcılık Tic. A.Ş.</p>
-    <hr>
-
-    <h2 class="fs-4 text-danger"><a href="#">Paper Eurasia 2025 - Kağıt, Oluklu Mukavva, Hijyenik Kağıt ve Ambalaj Ürünleri Fuarı</a></h2>
-    <p class="fs-4 fw-light mt-3">7 - 9 Mayıs 2025</p>
-    <p class="fw-lighter mt-3 fs-6">Primis Expo Uluslararası Fuarcılık A.Ş.</p>
-    <hr>
-
-    <h2 class="fs-4 text-danger"><a href="#">IDEX İstanbul 2025 - Uluslararası Dental Fuar ve Konferansı</a></h2>
-    <p class="fs-4 fw-light mt-3">7 - 10 Mayıs 2025</p>
-    <p class="fw-lighter mt-3 fs-6">Dişsiad Kongre ve Kon.Org.Ltd.Şti.</p>
-    <hr>
+  <div id="eventsList" class="mt-4">
+      <!-- Events will be loaded here -->
   </div>
-  <div id="pagination" class="page-number d-flex">
-    <button class="btn btn-danger page-button">1</button>
-    <button class="btn btn-outline-danger page-button">2</button>
-    <button class="btn btn-outline-danger page-button">3</button>
-    <button class="btn btn-outline-danger page-button">4</button>
-    <button class="btn btn-outline-danger page-button">5</button>
+
+  <div class="pagination-container mt-4">
+      <nav aria-label="Page navigation">
+          <ul class="pagination" id="pagination">
+              <!-- Pagination will be generated here -->
+          </ul>
+      </nav>
   </div>
 </div>
-</section>
 <!-- Fuar İnformation End -->
 
 <!-- Card Slider-2 -->
