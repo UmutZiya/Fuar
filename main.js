@@ -626,8 +626,134 @@ document.addEventListener('DOMContentLoaded', function() {
   swiperWrapper.appendChild(initialCards);
   initSwiper();
 });
+/*====== index.html js end =============*/
 
 
+/*====== iletisim.html js start ====*/
+ // Form gönderme işlemi
+ document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // CAPTCHA doğrulama
+  const captchaText = document.getElementById('captchaText').textContent;
+  const captchaInput = document.getElementById('captchaInput').value;
+  
+  if (captchaText !== captchaInput) {
+      alert('CAPTCHA kodu hatalı!');
+      return;
+  }
+  
+  // Form verilerini al
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  
+  // Normalde burada bir AJAX isteği ile form verileri sunucuya gönderilir
+  console.log('Form gönderildi:', { name, phone, email, message });
+  alert('Mesajınız başarıyla gönderildi!');
+  
+  // Formu sıfırla
+  this.reset();
+});
 
+// CAPTCHA yenileme
+document.querySelector('.captcha-refresh').addEventListener('click', function() {
+  // Rastgele CAPTCHA kodu oluştur
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let captcha = '';
+  for (let i = 0; i < 5; i++) {
+      captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  document.getElementById('captchaText').textContent = captcha;
+});
 
+/*================ Hakkımızda Js ===============*/
+document.addEventListener("DOMContentLoaded", () => {
+  // Disable Bootstrap's built-in collapse functionality
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle")
+
+  dropdownToggles.forEach((toggle) => {
+    // Remove Bootstrap's data attribute to prevent automatic handling
+    toggle.removeAttribute("data-bs-toggle")
+
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault()
+      e.stopPropagation() // Stop event propagation
+
+      // Get the target submenu
+      const targetId = this.getAttribute("data-bs-target")
+      const targetSubmenu = document.querySelector(targetId)
+
+      // Close all other open menus first (optional)
+      document.querySelectorAll(".collapse.show").forEach((openMenu) => {
+        if (openMenu !== targetSubmenu && !openMenu.contains(targetSubmenu)) {
+          openMenu.classList.remove("show")
+          const relatedToggle = document.querySelector(`[data-bs-target="#${openMenu.id}"]`)
+          if (relatedToggle) {
+            relatedToggle.setAttribute("aria-expanded", "false")
+          }
+        }
+      })
+
+      // Toggle the current menu
+      const isCurrentlyOpen = targetSubmenu.classList.contains("show")
+
+      if (isCurrentlyOpen) {
+        targetSubmenu.classList.remove("show")
+        this.setAttribute("aria-expanded", "false")
+      } else {
+        targetSubmenu.classList.add("show")
+        this.setAttribute("aria-expanded", "true")
+      }
+    })
+  })
+
+  // Mobile menu toggle
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle")
+  const sidebar = document.querySelector(".sidebar")
+
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("show")
+    })
+  }
+
+  // Close sidebar when clicking outside on mobile
+  document.addEventListener("click", (event) => {
+    const isClickInsideSidebar = sidebar.contains(event.target)
+    const isClickOnToggle = mobileMenuToggle && mobileMenuToggle.contains(event.target)
+
+    if (!isClickInsideSidebar && !isClickOnToggle && window.innerWidth < 768 && sidebar.classList.contains("show")) {
+      sidebar.classList.remove("show")
+    }
+  })
+
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+      sidebar.classList.remove("show")
+    }
+  })
+
+  // Add active class to current page link
+  const currentPath = window.location.pathname
+  const navLinks = document.querySelectorAll(".sidebar .nav-link")
+
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active")
+
+      // If it's a submenu item, expand its parent
+      const parentSubmenu = link.closest(".collapse")
+      if (parentSubmenu) {
+        parentSubmenu.classList.add("show")
+        const parentToggle = document.querySelector(`[data-bs-target="#${parentSubmenu.id}"]`)
+        if (parentToggle) {
+          parentToggle.setAttribute("aria-expanded", "true")
+        }
+      }
+    }
+  })
+})
 
