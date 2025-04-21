@@ -41,7 +41,7 @@ body.menu-open {
 
   /* Container sadece navbar içeriğini sarmalar */
 .container-navbar {
-    max-width: 1300px; /* İçeriğin genişliğini ayarla */
+    max-width: 1800px; /* İçeriğin genişliğini ayarla */
     margin: 0 auto;
     padding: 0 15px;
     display: flex;
@@ -65,8 +65,9 @@ body.menu-open {
 
   /* Logo ayarı */
   .logo img {
-    height: 120px; /* Logonuzun boyutuna göre ayarlayın */
+    height: 150px; /* Logonuzun boyutuna göre ayarlayın */
     display: block;
+    margin-top: 30px;
   }
   
   .main-nav {
@@ -398,8 +399,9 @@ body.menu-open {
   }
 
   .logo img {
-    height: 150px !important; /* Mobil logo boyutu */
+    height: 100px !important; /* Mobil logo boyutu */
     margin-top: -47px !important;
+    margin-right: 95px;
   }
 
   /* Header'ı daha kompakt hale getir */
@@ -1204,7 +1206,13 @@ body.menu-open {
   --sidebar-hover: #e9ecef;
   --text-color: #212529;
   --border-color: #dee2e6;
-  --transition-duration: 3s;
+  --transition-duration: 1s;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  background-color: #fff;
 }
 
 /* Container Styles */
@@ -1292,15 +1300,16 @@ body.menu-open {
   font-size: 0.9rem;
 }
 
-/* Collapse Animation */
+/* Simplified Collapse Animation */
 .collapse {
-  max-height: 0;
+  display: block !important; /* Override Bootstrap's display:none */
+  height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-duration) ease;
+  transition: height var(--transition-duration) ease;
 }
 
 .collapse.show {
-  max-height: 1000px; /* Large enough to contain all content */
+  /* Height is set dynamically in JavaScript */
 }
 
 /* Nav Item Styling */
@@ -1350,9 +1359,9 @@ body.menu-open {
   color: var(--primary-color);
 }
 
-.page-title-2 {
+.page-title {
   font-size: 2.5rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
@@ -1427,3 +1436,171 @@ body.menu-open {
     max-width: 95%;
   }
 }
+
+/*============ Fuar Single Page ============*/
+/* Fuar Başlık Bölümü */
+.organizer-info {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.fair-title {
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.takvim-ekle-btn {
+  padding: 8px 16px;
+  font-weight: 500;
+}
+
+.share-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fuar Açıklaması */
+.fair-description h2 {
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.fair-description p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Fuar Takvimi */
+.calendar-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.calendar-dates {
+  font-size: 16px;
+  font-weight: normal;
+  color: #666;
+}
+
+.calendar-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.calendar-card .card-header {
+  background-color: #f8f9fa;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.calendar-card .card-body {
+  padding: 15px;
+  font-size: 14px;
+}
+
+.salon-info {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.salon-label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.salon-number {
+  color: #dc3545;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Fuar Künyesi */
+.fair-info-panel {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.fair-info-panel h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.info-value {
+  color: #dc3545;
+}
+
+.info-value a {
+  color: #dc3545;
+  text-decoration: none;
+}
+
+.info-value a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+  .fair-title {
+      font-size: 24px;
+  }
+  
+  .calendar-title {
+      font-size: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .calendar-dates {
+      margin-top: 5px;
+  }
+  
+  .info-item {
+      margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .fair-title {
+      font-size: 22px;
+  }
+  
+  .calendar-cards .row {
+      margin-left: -10px;
+      margin-right: -10px;
+  }
+  
+  .calendar-cards .col-sm-6 {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+}
+
