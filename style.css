@@ -1018,7 +1018,6 @@ body.menu-open {
   background-color: #008384;
 }
 
-
 .swiper-button-next:after,
 .swiper-button-prev:after {
   font-size: 18px !important;
@@ -1302,14 +1301,14 @@ body {
 
 /* Simplified Collapse Animation */
 .collapse {
-  display: block !important; /* Override Bootstrap's display:none */
-  height: 0;
+  /* display: block !important; /* Bootstrap handles display */
+  max-height: 0;
   overflow: hidden;
-  transition: height var(--transition-duration) ease;
+  transition: max-height 0.5s ease; /* Adjusted duration for smoother feel */
 }
 
 .collapse.show {
-  /* Height is set dynamically in JavaScript */
+  max-height: 1000px; /* Set a large enough max-height to accommodate content */
 }
 
 /* Nav Item Styling */
@@ -1359,10 +1358,10 @@ body {
   color: var(--primary-color);
 }
 
-.page-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+.page-title-2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 1.7rem;
 }
 
 .content-text {
