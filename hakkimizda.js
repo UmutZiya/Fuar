@@ -29,4 +29,23 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch (error) {
     console.error("Error in sidebar active link script:", error)
   }
+
+  // Sidebar mobile toggle functionality
+  const sidebarToggleButton = document.querySelector('.sidebar-toggle-button');
+  const sidebar = document.querySelector('.sidebar');
+
+  if (sidebarToggleButton && sidebar) {
+    sidebarToggleButton.addEventListener('click', () => {
+      sidebar.classList.toggle('show');
+    });
+
+    // Optional: Close sidebar if clicking outside of it on mobile
+    document.addEventListener('click', (event) => {
+      if (window.innerWidth < 768 && sidebar.classList.contains('show') && 
+          !sidebar.contains(event.target) && 
+          !sidebarToggleButton.contains(event.target)) {
+        sidebar.classList.remove('show');
+      }
+    });
+  }
 })
