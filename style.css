@@ -472,6 +472,7 @@ body.menu-open {
 .carousel-item {
     position: relative;
     overflow: hidden;
+    height: 100vh; /* Set carousel item height to viewport height */
   }
 
   .carousel-caption {
@@ -522,7 +523,23 @@ body.menu-open {
 
 /* Slider image */
 .img-1{
-   filter: brightness(42%);
+    filter: brightness(42%); /* No longer needed for video */
+}
+
+/* Video Styling */
+.video-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Place video behind content */
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
+  filter: brightness(42%); /* Apply brightness to the video */
 }
 
 /* Card Slider-1 Css */
