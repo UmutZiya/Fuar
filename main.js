@@ -362,6 +362,18 @@ const events = [
     organizer: "MNO Fuarcılık A.Ş.",
     url: "event-details.html?id=10",
   },
+
+  {
+    id: 11,
+    title: "İnşaat ve Gayrimenkul Fuarı",
+    date: "24 - 27 Nisan 2025",
+    year: "2025",
+    month: "Nisan",
+    sector: "İnşaat",
+    location: "Bursa",
+    organizer: "Bursa Fuar Merkezi",
+    url: "./fuar-single-page.html",
+  },
 ]
 // DOM elements
 const yearFilter = document.getElementById("yearFilter")
