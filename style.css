@@ -955,11 +955,23 @@ body.menu-open {
   font-weight: 700;
   margin-bottom: 1rem;
   flex-grow: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit to 3 lines */
-  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  /* Add a min-height to prevent collapse if title is very short */
+  min-height: 3em; /* Adjust based on line-height and font-size (e.g., 2 lines * 1.5em line-height) */ 
+}
+
+.card-discover-link-2 { /* Add styles for the link */
+  display: block; /* Ensure it takes its own line */
+  margin-top: auto; /* Push it to the bottom */
+  padding-top: 0.5rem; /* Add some space above the link */
+  color: #03adad; /* Style the link */
+  font-weight: 600;
+  text-decoration: none;
+  align-self: flex-start;
 }
 
 .read-more-2 {
