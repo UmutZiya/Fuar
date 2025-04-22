@@ -194,7 +194,11 @@ body.menu-open {
     /* Aktif durum: Görünür ve yerinde */
     opacity: 1;
     visibility: visible; /* Görünür ve tıklanabilir */
+    background-image: url(./images/bfm-opak-logo.png);
+    background-repeat: no-repeat;
+    background-position: center; /* Ortalar */
     transform: translateY(0); /* Son pozisyonuna (normal yerine) kaydır */
+   
   
     /* Aktif olurken visibility gecikmesini sıfırlamak/kaldırmak için transition'ı tekrar tanımlayabiliriz
        veya base'deki tanım yeterli olacaktır. Genellikle base'deki tanım yeterlidir.
@@ -1892,4 +1896,79 @@ body {
 .section-title-k {
   font-weight: bold;
   margin-top: 2rem;
+}
+
+
+/* Blog-single-page.html CSS */
+.news-container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 35px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+.news-title {
+  font-size: 30px;
+  color: #2c3e50;
+  margin-bottom: 35px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+.news-content {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #444;
+}
+.highlight-section {
+  background-color: #f8f9fa;
+  border-left: 4px solid #3498db;
+  padding: 25px;
+  margin: 30px 0;
+}
+.subtitle {
+  font-size: 26px;
+  color: #000000;
+  margin: 30px 0 20px;
+  font-weight: 500;
+}
+.news-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 25px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.image-caption {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: -15px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .news-container {
+      max-width: 95%;
+      margin: 20px auto;
+  }
+}
+@media (max-width: 768px) {
+  .news-container {
+      padding: 25px;
+      margin: 10px;
+  }
+  .news-title {
+      font-size: 26px;
+  }
+  .subtitle {
+      font-size: 21px;
+  }
+  .news-content {
+      font-size: 16px;
+  }
+  .image-caption {
+      font-size: 13px;
+  }
 }
