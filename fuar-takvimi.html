@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <!-- Css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+:root{
+  --primarycolor: #008384;
+}
+
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.view-buttons {
+  display: flex;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  background-color: #f5f5f5;
+}
+
+.view-btn {
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  color: #777;
+}
+
+.view-btn.active {
+  background-color: var(--primarycolor);
+  color: white;
+  font-weight: bold;
+}
+
+.search-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+.content-container {
+  min-height: 300px;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.view-content {
+  display: none;
+}
+
+.view-content.active {
+  display: block;
+}
+
+/* Liste Görünümü Stilleri */
+.fair-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fair-item {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.fair-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primarycolor);
+  color: white;
+  padding: 15px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.fair-date .day {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.fair-date .month {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.fair-date .year {
+  font-size: 14px;
+}
+
+.fair-details {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.fair-details h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.fair-details p {
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.fair-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  color: #666;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Aylık Görünüm Stilleri */
+.monthly-calendar {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.month-header {
+  background-color: #f5f5f5;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.month-grid {
+  padding: 15px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.weekdays div {
+  padding: 10px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.day {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.day.empty {
+  border: none;
+}
+
+.day.has-event {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.event-indicator {
+  position: absolute;
+  bottom: 5px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primarycolor);
+  border-radius: 50%;
+}
+
+.event-popup {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px;
+  width: 200px;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.day.has-event:hover .event-popup {
+  display: block;
+}
+
+.month-events {
+  padding: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.month-events h3 {
+  margin-bottom: 15px;
+}
+
+.month-event-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.event-date {
+  min-width: 120px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.event-details h4 {
+  margin-bottom: 5px;
+}
+
+/* Haftalık Görünüm Stilleri */
+.weekly-calendar {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.week-header {
+  background-color: #f5f5f5;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  padding: 15px;
+}
+
+.day-column {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.day-column.has-event {
+  border-color: var(--primarycolor);
+}
+
+.day-header {
+  background-color: #f5f5f5;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.day-date {
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.day-events {
+  padding: 10px;
+  min-height: 100px;
+}
+
+.week-event {
+  background-color: #f8f8f8;
+  border-left: 3px solid var(--primarycolor);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.week-event h4 {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.week-event p {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 3px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .view-buttons {
+    width: 100%;
+  }
+
+  .view-btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  .fair-item {
+    flex-direction: column;
+  }
+
+  .fair-date {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .week-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .month-event-item {
+    flex-direction: column;
+  }
+
+  .event-date {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .view-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .days {
+    font-size: 12px;
+  }
+
+  .day {
+    height: 30px;
+  }
+}
+
+    </style>
+
+
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="container-navbar">
+            <a href="index.html" class="logo mt-5">
+                <!-- Gerçek logo dosyanızın yolunu buraya ekleyin -->
+                <img src="./images/logo-beyaz.png" alt="">
+            </a>
+
+            <nav class="main-nav mt-5">
+                <ul class="">
+                    <!-- nav-toggle-button class'ı menüyü açar -->
+                    <li><a href="#" class="nav-toggle-button">BFM'yi Keşfedin <i class="fas fa-chevron-down"></i></a>
+                    </li>
+                    <li><a href="#" class="nav-toggle-button">BFM'de Fuar Organize Edin <i
+                                class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#" class="nav-toggle-button">BFM'yi Ziyaret Edin <i
+                                class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#" class="nav-toggle-button">ETKİNLİKLER <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#" class="nav-toggle-button">Bize Ulaşın</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="lang-switch mt-4 ms-4">
+                    <a href="#" class="active">TR</a> | <a href="#" class="">EN</a>
+                </div>
+                <!-- nav-toggle-button class'ı menüyü açar -->
+
+            </div>
+
+            <!-- Mobil için Hamburger İkonu (nav-toggle-button class'ı menüyü açar/kapatır) -->
+            <button class="mobile-menu-toggle nav-toggle-button" aria-label="Menüyü Aç/Kapat">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- Tam Ekran Overlay Menü -->
+    <div class="fullscreen-menu">
+        <div class="menu-header">
+            <a href="index.html" class="logo-menu">
+                <!-- Menüdeki logo -->
+                <img src="./images/logo-beyaz.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo" class="fs-2">
+            </a>
+            <div class="menu-search-container">
+                <input type="text" placeholder="Katılım..." class="menu-search-input">
+                <button class="menu-search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="menu-header-actions">
+                <div class="lang-switch">
+                    <a href="#" class="active">TR</a> | <a href="#">EN</a>
+                </div>
+                <button class="close-menu-btn" aria-label="Menüyü Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="menu-content">
+            <div class="menu-column">
+                <!-- Başlığa tıklanınca menüyü kapatmak için nav-toggle-button ekledik -->
+                <h3 class="nav-toggle-button">BFM'yi Keşfedin</h3>
+                <ul>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="fuar-takvimi.html">BFM Fuar Takvimi</a></li>
+                    <li><a href="#">Hazır Ofisler ve Toplantı Salonları</a></li>
+                </ul>
+            </div>
+            <div class="menu-column">
+                <h3 class="nav-toggle-button">BFM'de Fuar Organize Edin</h3>
+                <ul>
+                    <li><a href="#">Organizatör</a></li>
+                </ul>
+            </div>
+            <div class="menu-column">
+                <h3 class="nav-toggle-button">BFM'yi Ziyaret Edin</h3>
+                <ul>
+                    <li><a href="ulasim.html">Ulaşım</a></li>
+                    <li><a href="konaklama.html">Konaklama</a></li>
+                    <li><a href="restoran-ve-kafeler.html">Restoran Ve Kafeler</a></li>
+                    <li><a href="hizmetler.html">Hizmetler</a></li>
+                </ul>
+            </div>
+            <div class="menu-column">
+                <h3 class="nav-toggle-button">ETKİNLİKLER</h3>
+                <ul>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="menu-column">
+                <h3 class="nav-toggle-button">İLETİŞİM</h3>
+                <ul>
+                    <li><a href="iletisim.html" class="fw-normal">İletişim Bilgileri</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-footer">
+            <span>Bizi Takip Edin</span>
+            <div class="social-icons-menu">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="images/iletisim-banner.png" class="" alt="">
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Fuar Takvimi</h1>
+            <div class="view-buttons">
+                <button class="view-btn active" data-view="list">Liste Görünüm</button>
+                <button class="view-btn" data-view="monthly">Aylık Görünüm</button>
+                <button class="view-btn" data-view="weekly">Haftalık Görünüm</button>
+            </div>
+        </header>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Arama Yap...">
+            <span class="search-icon">&#128269;</span>
+        </div>
+        
+        <div class="content-container">
+            <div id="listView" class="view-content active">
+                <!-- Liste görünümü içeriği -->
+                <div class="fair-list">
+                    <div class="fair-item">
+                        <div class="fair-date">
+                            <span class="day">24</span>
+                            <span class="month">Nisan</span>
+                            <span class="year">2025</span>
+                        </div>
+                        <div class="fair-details">
+                            <h3> <a href="fuar-single-page.html">Rising City Yapı ve Yaşam Fuarı </a></h3>
+                            <p class="location"><strong>Yer:</strong> Bursa Fuar Merkezi</p>
+                            <p class="description">Türkiye'nin en büyük inşaat ve gayrimenkul fuarı,</p>
+                            <div class="fair-tags">
+                                <span class="tag">İnşaat</span>
+                                <span class="tag">Gayrimenkul</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fair-item">
+                        <div class="fair-date">
+                            <span class="day">28</span>
+                            <span class="month">Nisan</span>
+                            <span class="year">2025</span>
+                        </div>
+                        <div class="fair-details">
+                            <h3> <a href="#">TURKISH FASHION FABRICS SHOW </a></h3>
+                            <p class="location"><strong>Yer:</strong> Bursa Fuar Merkezi</p>
+                            <p class="description">Türkiye'nin en büyük moda fuarı,</p>
+                            <div class="fair-tags">
+                                <span class="tag">Moda</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="fair-item">
+                        <div class="fair-date">
+                            <span class="day">20</span>
+                            <span class="month">Mayıs</span>
+                            <span class="year">2025</span>
+                        </div>
+                        <div class="fair-details">
+                            <h3> <a href="#">HOMOTEX </a></h3>
+                            <p class="location"><strong>Yer:</strong> Bursa Fuar Merkezi</p>
+                            <p class="description">Türkiye'nin en büyük Tekstil fuarı</p>
+                            <div class="fair-tags">
+                                <span class="tag">Tekstil</span>
+                                <span class="tag">Giyim</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="monthlyView" class="view-content">
+                <!-- Aylık görünüm içeriği -->
+                <div class="monthly-calendar">
+                    <div class="month-header">
+                        <h2>Nisan 2025</h2>
+                    </div>
+                    
+                    <div class="month-grid">
+                        <div class="weekdays">
+                            <div>Pzt</div>
+                            <div>Sal</div>
+                            <div>Çar</div>
+                            <div>Per</div>
+                            <div>Cum</div>
+                            <div>Cmt</div>
+                            <div>Paz</div>
+                        </div>
+                        
+                        <div class="days">
+                            <div class="day empty"></div>
+                            <div class="day">1</div>
+                            <div class="day">2</div>
+                            <div class="day">3</div>
+                            <div class="day">4</div>
+                            <div class="day">5</div>
+                            <div class="day">6</div>
+                            <div class="day">7</div>
+                            <div class="day">8</div>
+                            <div class="day">9</div>
+                            <div class="day">10</div>
+                            <div class="day">11</div>
+                            <div class="day">12</div>
+                            <div class="day">13</div>
+                            <div class="day">14</div>
+                            <div class="day">15</div>
+                            <div class="day">16</div>
+                            <div class="day">17</div>
+                            <div class="day">18</div>
+                            <div class="day">19</div>
+                            <div class="day">20</div>
+                            <div class="day">21</div>
+                            <div class="day">22</div>
+                            <div class="day">23</div>
+                            <div class="day has-event">24
+                                <div class="event-indicator"></div>
+                                <div class="event-popup">
+                                    <p><strong>Rising City & Yapı ve Yaşam Fuarı </strong></p>
+                                    <p>Bursa Fuar Merkezi</p>
+                                </div>
+                            </div>
+                            <div class="day has-event">25
+                                <div class="event-indicator"></div>
+                                <div class="event-popup">
+                                    <p><strong>Rising City & Yapı ve Yaşam Fuarı </strong></p>
+                                    <p>Bursa Fuar Merkezi</p>
+                                </div>
+                            </div>
+                            <div class="day has-event">26
+                                <div class="event-indicator"></div>
+                                <div class="event-popup">
+                                    <p><strong>Rising City & Yapı ve Yaşam Fuarı </strong></p>
+                                    <p>Bursa Fuar Merkezi</p>
+                                </div>
+                            </div>
+                            <div class="day has-event">27
+                                <div class="event-indicator"></div>
+                                <div class="event-popup">
+                                    <p><strong>Rising City & Yapı ve Yaşam Fuarı </strong></p>
+                                    <p>Bursa Fuar Merkezi</p>
+                                </div>
+                            </div>
+                            <div class="day">28</div>
+                            <div class="day">29</div>
+                            <div class="day">30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="month-events">
+                        <h3>Bu Aydaki Fuarlar</h3>
+                        <div class="month-event-item">
+                            <div class="event-date">24 Nisan 2025</div>
+                            <div class="event-details">
+                                <h4>Rising City & Yapı ve Yaşam Fuarı</h4>
+                                <p>Bursa Fuar Merkezi</p>
+                                <p>İnşaat, Gayrimenkul</p>
+                            </div>
+                        </div>                  
+                    </div>
+                </div>
+
+                <div class="monthly-calendar">
+                    <div class="month-header">
+                        <h2>Mayıs 2025</h2>
+                    </div>
+                    
+                    <div class="month-grid">
+                        <div class="weekdays">
+                            <div>Pzt</div>
+                            <div>Sal</div>
+                            <div>Çar</div>
+                            <div>Per</div>
+                            <div>Cum</div>
+                            <div>Cmt</div>
+                            <div>Paz</div>
+                        </div>
+                        
+                        <div class="days">
+                            <div class="day empty"></div>
+                            <div class="day empty"></div>
+                            <div class="day empty"></div>
+                            <div class="day">1</div>
+                            <div class="day">2</div>
+                            <div class="day">3</div>
+                            <div class="day">4</div>
+                            <div class="day">5</div>
+                            <div class="day">6</div>
+                            <div class="day">7</div>
+                            <div class="day">8</div>
+                            <div class="day">9</div>
+                            <div class="day">10</div>
+                            <div class="day">11</div>
+                            <div class="day">12</div>
+                            <div class="day">13</div>
+                            <div class="day">14</div>
+                            <div class="day">15</div>
+                            <div class="day">16</div>
+                            <div class="day">17</div>
+                            <div class="day">18</div>
+                            <div class="day">19</div>
+                            <div class="day has-event">20
+                                <div class="event-indicator"></div>
+                                <div class="event-popup">
+                                    <p><strong>HOMETEX Ev Tekstili Fuarı</strong></p>
+                                    <p>Bursa Fuar Merkezi</p>
+                                </div>
+                            </div>
+                            <div class="day has-event">21
+                                <div class="event-indicator"></div>
+                                <div class="event-popup">
+                                    <p><strong>HOMETEX Ev Tekstili Fuarı </strong></p>
+                                    <p>Bursa Fuar Merkezi</p>
+                                </div>
+                            </div>
+                            <div class="day has-event">22
+                                <div class="event-indicator"></div>
+                                <div class="event-popup">
+                                    <p><strong>HOMETEX Ev Tekstili Fuarı </strong></p>
+                                    <p>Bursa Fuar Merkezi</p>
+                                </div>
+                            </div>
+                            <div class="day has-event">23
+                                <div class="event-indicator"></div>
+                                <div class="event-popup">
+                                    <p><strong>HOMETEX Ev Tekstili Fuarı </strong></p>
+                                    <p>Bursa Fuar Merkezi</p>
+                                </div>
+                            </div>
+                            <div class="day">24</div>
+                            <div class="day">25</div>
+                            <div class="day">26</div>
+                            <div class="day">27</div>
+                            <div class="day">28</div>
+                            <div class="day">29</div>
+                            <div class="day">30</div>
+                            <div class="day">31</div>
+                        </div>
+                    </div>
+                    
+                    <div class="month-events">
+                        <h3>Bu Aydaki Fuarlar</h3>
+                        <div class="month-event-item">
+                            <div class="event-date">20 Mayıs 2025</div>
+                            <div class="event-details">
+                                <h4>HOMETEX Ev Tekstili Fuarı </h4>
+                                <p>Bursa Fuar Merkezi</p>
+                                <p>Tekstil</p>
+                            </div>
+                        </div>                  
+                    </div>
+                </div>
+            </div>
+            
+            <div id="weeklyView" class="view-content">
+                <!-- Haftalık görünüm içeriği -->
+                <div class="weekly-calendar">
+                    <div class="week-header">
+                        <h2>24 - 27 Nisan 2025</h2>
+                    </div>
+                    
+                    <div class="week-grid">
+                        <div class="day-column">
+                            <div class="day-header">Pazartesi</div>
+                            <div class="day-date">21 Nisan</div>
+                            <div class="day-events">
+                                <p>Fuar yok</p>
+                            </div>
+                        </div>
+                        
+                        <div class="day-column">
+                            <div class="day-header">Salı</div>
+                            <div class="day-date">22 Nisan</div>
+                            <div class="day-events">
+                                <p>Fuar yok</p>
+                            </div>
+                        </div>
+                        
+                        <div class="day-column">
+                            <div class="day-header">Çarşamba</div>
+                            <div class="day-date">23 Nisan</div>
+                            <div class="day-events">
+                                <p>Fuar yok</p>
+                            </div>
+                        </div>
+                        
+                        <div class="day-column has-event">
+                            <div class="day-header">Perşembe</div>
+                            <div class="day-date">24 Nisan</div>
+                            <div class="day-events">
+                                <div class="week-event">
+                                    <h4>İstanbul Mobilya Fuarı</h4>
+                                    <p>09:00 - 18:00</p>
+                                    <p>İstanbul Fuar Merkezi</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="day-column has-event">
+                            <div class="day-header">Cuma</div>
+                            <div class="day-date">25 Nisan</div>
+                            <div class="day-events">
+                                <div class="week-event">
+                                    <h4>İstanbul Mobilya Fuarı</h4>
+                                    <p>09:00 - 18:00</p>
+                                    <p>İstanbul Fuar Merkezi</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="day-column has-event">
+                            <div class="day-header">Cumartesi</div>
+                            <div class="day-date">26 Nisan</div>
+                            <div class="day-events">
+                                <div class="week-event">
+                                    <h4>İstanbul Mobilya Fuarı</h4>
+                                    <p>09:00 - 18:00</p>
+                                    <p>İstanbul Fuar Merkezi</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="day-column has-event">
+                            <div class="day-header">Pazar</div>
+                            <div class="day-date">27 Nisan</div>
+                            <div class="day-events">
+                                <div class="week-event">
+                                    <h4>İstanbul Mobilya Fuarı</h4>
+                                    <p>09:00 - 18:00</p>
+                                    <p>İstanbul Fuar Merkezi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Start -->
+    <footer class="bg-dark text-white pt-5 pb-4 footer">
+
+        <div class="container text-md-left">
+
+            <div class="row text-md-left">
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold ">BFM'yi Keşfedin</h5>
+                    <p>
+                        <a href="hakkimizda.html" class="text-white" style="text-decoration: none;">BFM Hakkında</a>
+                    </p>
+                    <p>
+                        <a href="ekibimiz.html" class="text-white" style="text-decoration: none;">Ekibimiz</a>
+                    </p>
+                    <p>
+                        <a href="kalite-politimiz.html" class="text-white" style="text-decoration: none;">Kalite
+                            Politikamız</a>
+                    </p>
+                    <p>
+                        <a href="kvkk-dokumanları.html" class="text-white" style="text-decoration: none;">KVKK
+                            Dökümanları</a>
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h5 class="text-uppercase mb-4 font-weight-bold ">BFM'de Fuar Organize Edin</h5>
+
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">Planlar</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">E-Broşürler</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">Toplantı Salonları</a>
+                    </p>
+                    <p>
+                        <a href="hizmetler.html" class="text-white" style="text-decoration: none;">Ek Hizmetler</a>
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h5 class="text-uppercase mb-4 font-weight-bold ">BFM Gündem</h5>
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">Fuar Duyuruları</a>
+                    </p>
+
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">BFM'den Haberler</a>
+                    </p>
+
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;">Fuar Haberleri</a>
+                    </p>
+
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Bize Ulaşın</h5>
+                    <p>
+                        Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA
+                    </p>
+
+                    <p>
+                        info@kfa.com.tr
+                    </p>
+
+                    <p>
+                        (0224) 211 50 82
+                    </p>
+
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3 ps-5">
+                    <img src="images/logo-beyaz.png" class="logo-footer" alt="">
+                    <hr>
+                </div>
+
+            </div>
+
+            <hr class="mb-4">
+
+            <div class="row align-item-center">
+                <div class="col-md-7 col-lg-8">
+                    <a>
+                        Powered By <a class="footer-poweredby" href="https://f2fbilisim.com" target="_blank"
+                            style="text-decoration: none;">F2F Bilişim Reklam ve Danışmanlık Hizmetleri</a>
+                    </a>
+
+                </div>
+
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-right">
+
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <a href="#" class="btn-floating btn-sm text-white fw-normal">
+                                    Hüküm Ve Koşullar
+                                </a>
+                                <a href="#" class="btn-floating btn-sm text-white ms-4 fw-normal">
+                                    Gizlilik Politikası
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <br> <br> <br>
+        </div>
+    </footer>
+
+
+    <script>
+        const buttons = document.querySelectorAll('#pagination .page-button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(btn => {
+                    btn.classList.remove('btn-danger');
+                    btn.classList.add('btn-outline-danger');
+                });
+
+                button.classList.remove('btn-outline-danger');
+                button.classList.add('btn-danger');
+            });
+        });
+
+    </script>
+
+    <!-- Bootstrap Bundle JS (includes Popper) - Load BEFORE custom scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom Scripts -->
+     <script src="fuar-takvimi.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
