@@ -16,6 +16,51 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <style>
+        .container--2 {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #212529;
+        }
+        .content p {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .chairman-img {
+            max-width: 100%;
+            height: auto;
+        }
+        .signature {
+            font-weight: bold;
+            color: #212529;
+            margin-top: 20px;
+        }
+        .title {
+            font-weight: normal;
+            color: #6c757d;
+        }
+        .divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 20px 0;
+        }
+        .highlight {
+            color: #e21a2b;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -90,7 +135,7 @@
             <div class="menu-column">
                 <h3 class="nav-toggle-button">BFM'de Fuar Organize Edin</h3>
                 <ul>
-                    <li><a href="#">Organizatör</a></li>
+                    <li><a href="organizator.html">Organizatör</a></li>
                 </ul>
             </div>
             <div class="menu-column">
@@ -146,24 +191,7 @@
                         </div>
 
                         <ul class="nav flex-column">
-                            <!-- İDTM İş Merkezi -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="collapse"
-                                    data-bs-target="#idtmSubmenu" aria-expanded="false">
-                                    <span class="menu-icon"><i class="fas fa-building"></i></span>
-                                    <span>İDTM İş Merkezi</span>
-                                </a>
-                                <div class="collapse" id="idtmSubmenu">
-                                    <ul class="nav flex-column submenu">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#link1">
-                                                <i class="fas fa-angle-right me-2"></i>
-                                                WT Club Hazır Ofis ve Toplantı Salonları
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                           
 
                             <!-- Hakkımızda -->
                             <li class="nav-item dropdown">
@@ -175,7 +203,7 @@
                                 <div class="collapse show" id="hakkimizdaSubmenu">
                                     <ul class="nav flex-column submenu">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="hakkimizda.html">
+                                            <a class="nav-link" href="hakkimizda.html">
                                                 <i class="fas fa-angle-right me-2"></i>
                                                 BFM Hakkında
                                             </a>
@@ -254,32 +282,51 @@
                 <div class="content-header">
                     <div class="breadcrumb">
                         <a href="index.html">Ana Sayfa</a> /
-                        <a href="hakkimizda.html">Hakkımızda</a> /
-                        <a href="raporlar.html">Raporlar</a>
+                        <a href="hakkimizda.html">Hakkımızda</a>
                     </div>
                 </div>
 
                 <div class="content-body">
-                    <div class="document-header">BFM KVKK Dökümanları</div>
+                    <div class="container--2">
+                        <div class="header">
+                        </div>
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h1>Başkan Mesajı</h1>
+                                    
+                                    <p>Rekabetin her geçen gün arttığı günümüzde temel amacımız üretim ve istihdama daha fazla katkı sağlamak, dünya ticaret pastasından daha fazla pay almaktır. Ülkemizin ihracata dayalı kalkınma hedeflerinde en <span class="highlight">önemli aktörlerden biri olan Bursa'da evrensel ticaretin noktası olarak kurulduğumuz</span> Küresel Fuar Acentesi projemiz de 2014 yılında bu hedefler doğrultusunda hayata geçirdik.
+                                        BTSO olarak Ticaret Bakanlığımız ve KOSGEB ile birlikte sunduğumuz destekler ve ayıncalıklı hizmetlerle bugüne kadar Asya'dan Avrupa'ya, Amerika'dan Afrika'ya kadar gerçekleştirdiğimiz 250'ün üzerinde yurt dışı ticaret organizasyonu ile firmalarımıza küresel ölçekte rekabetin yolunu açtık. Binlerce üyemiz fuar organizasyonlarımıza birlikte ile kez pasaport çıkararak, ürettikleri mal ve hizmeti dünya pazarlarına sunma fırsatına sahip oldu. KFA Fuarcılık ve ihracat odaklı projelerimizin de katkısıyla Bursa, 7 bini aşkın ihracatçı firmasıyla ürettiği mal ve hizmeti dünyanın dört bir yanındaki pazarlara sunma ayrıcalığı taşıyor.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="images/ibrahim-burkay.jpg" alt="Başkan" class="chairman-img">
+                                </div>
+                            </div>
+                            
+                            <div class="divider"></div>
+                            
+                            <p>Organizasyon becerisini her geçen yıl güçlendiren, tecrübesini, bilgi ve becerisini firmalarımız için yüksek değer üreten bir yapıya kavuşturan KFA Fuarcılık, Ticaret Bakanlığı'ndan "Yurt Dışı Fuar Düzenleme Yetki Belgesi"ne de sahiptir. Ülkemiz adına yurt dışı fuarlara katılım organizasyonları ve alım heyetleri düzenleyen KFA Fuarcılık, firmalarımızın uluslararası alıcılarla buluşturarak, sektörlerimize dış ticaret operasyonları için rehberlik etmektedir.</p>
+                            
+                            <p>KFA Fuarcılık ayrıca fuarcılık alanında deneyimli ve uzman personeliyle ev tekstili alanında dünyanın en büyük fuarları arasında yer alan HOMETEX, savunma sanayimizin en önemli buluşmalarından Uluslararası Savunma Sanayi Fuarı IDEF, Bursa Textile Show ve Bursa Tech Point gibi nitelikli fuarların da organizasyonunu yürütmektedir.</p>
+                            
+                            <p>Bursa Büyürse Türkiye Büyür" inancıyla firmalarımızın yeni pazarlara açılarak ortaya çıkabilecek riskleri en iyişekilde yönetebilmeleri, küresel trendleri yakından takip edebilmeleri ve ihracatçı olmanın verdiği avantajla işletmelerini daha rekabetçi bir yapıya kavuşturmaları adına çalışmalarımız hız kesmeden sürdüreceğiz.</p>
+                            
+                            <p>İnanıyorum ki KFA Fuarcılık'ın katkılarıyla birlikte iş dünyamız, ihracatı daha da güçlendirecek, firmalarımız küresel çapta yeni başarı hikayeleri yazacaktır. İhracata dayalı büyüme hedeflerimizin temelini oluşturan projemizden tüm firmalarımızın en yüksek düzeyde faydalanmalarını arzu ediyor, saygılarımı sunuyorum.</p>
+                            
+                            <div class="signature">
+                                İbrahim BURKAY<br>
+                                <span class="title">BTSO Yönetim Kurulu Başkanı</span>
+                            </div>
+                        </div>
+                    </div>
+                
 
-                    <table class="document-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 70%">Belge Adı</th>
-                                <th>İndirme Linki</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2024 Faaliyet Raporu</td>
-                                <td><button class="download-btn" onclick="downloadDocument(this)">İndir</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                    
+                </div>
             </main>
         </div>
     </div>
+
     <!-- Sidebar mobile toggle button -->
     <button class="sidebar-toggle-button d-md-none">
         <i class="fas fa-bars"></i>
@@ -306,7 +353,8 @@
                             Politikamız</a>
                     </p>
                     <p>
-                        <a href="kvkk-dokumanları.html" class="text-white" style="text-decoration: none;">KVKK Dökümanları</a>
+                        <a href="kvkk-dokumanları.html" class="text-white" style="text-decoration: none;">KVKK
+                            Dökümanları</a>
                     </p>
                 </div>
 
@@ -415,37 +463,6 @@
                 button.classList.add('btn-danger');
             });
         });
-
-        // Gerçek çalışan indirme fonksiyonu
-        function downloadDocument(button) {
-            const documentMappings = {
-                '2024 Faaliyet Raporu': {
-                    url: 'documents/kfa-sartname.pdf',
-                    filename: 'kfa-sartname.pdf'
-                },
-                // Diğer belgeler
-            };
-
-            const row = button.closest('tr');
-            const documentName = row.querySelector('td:first-child').textContent;
-
-            if (documentMappings[documentName]) {
-                const { url, filename } = documentMappings[documentName];
-                forceDownload(url, filename);
-            } else {
-                alert('Belge bulunamadı!');
-            }
-        }
-
-        // Dosya indirme fonksiyonu
-        function forceDownload(url, filename) {
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
 
     </script>
 
