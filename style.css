@@ -562,6 +562,44 @@ body.menu-open {
   transition: 1s opacity;
   filter: brightness(42%); /* Apply brightness to the video */
 }
+
+/* Sağ Alt Köşedeki Butonlar */
+.action-buttons {
+  position: absolute;
+  bottom: 60px;
+  right: 170px;
+  display: flex;
+  gap: 22px;
+  z-index: 10; /* Slider'ın üzerinde görünmesi için yüksek z-index */
+}
+
+.action-button {
+  display: inline-block;
+  padding: 18px 34px;
+  background-color: var(--primarycolor);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #03adad;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .action-buttons {
+      bottom: 20px;
+      right: 20px;
+  }
+  
+  .action-button {
+      padding: 10px 16px;
+      font-size: 14px;
+  }
+}
+
 /* Under Slide Kısmı */
 
 .container-1 {
