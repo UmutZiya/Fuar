@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bursa Fuar Merkezi</title>
+   <!-- Jquery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 
@@ -28,105 +31,104 @@
       </a>
 
       <nav class="main-nav mt-5">
-          <ul class="">
-              <!-- nav-toggle-button class'ı menüyü açar -->
-              <li><a href="#" class="nav-toggle-button">BFM'yi Keşfedin <i class="fas fa-chevron-down"></i></a></li>
-              <li><a href="#" class="nav-toggle-button">BFM'de Fuar Organize Edin <i class="fas fa-chevron-down"></i></a></li>
-              <li><a href="#" class="nav-toggle-button">BFM'yi Ziyaret Edin <i class="fas fa-chevron-down"></i></a></li>
-              <li><a href="#" class="nav-toggle-button">ETKİNLİKLER <i class="fas fa-chevron-down"></i></a></li>
-              <li><a href="#" class="nav-toggle-button">Bize Ulaşın</a></li>
-          </ul>
+        <ul class="">
+            <!-- nav-toggle-button class'ı menüyü açar -->
+            <li><a href="#" class="nav-toggle-button" data-translate="nav.discoverBFM">BFM'yi Keşfedin <i class="fas fa-chevron-down"></i></a></li>
+            <li><a href="#" class="nav-toggle-button" data-translate="nav.organizeFair">BFM'de Fuar Organize Edin <i class="fas fa-chevron-down"></i></a></li>
+            <li><a href="#" class="nav-toggle-button" data-translate="nav.visitBFM">BFM'yi Ziyaret Edin <i class="fas fa-chevron-down"></i></a></li>
+            <li><a href="#" class="nav-toggle-button" data-translate="nav.events">ETKİNLİKLER <i class="fas fa-chevron-down"></i></a></li>
+            <li><a href="#" class="nav-toggle-button" data-translate="nav.contactUs">Bize Ulaşın</a></li>
+        </ul>
       </nav>
 
       <div class="header-actions">
-          <div class="lang-switch mt-4 ms-4">
-              <a href="#" class="active">TR</a> | <a href="" class="">EN</a>
-          </div>
+        <div class="lang-switch mt-4 ms-4">
+            <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="#" class="" data-lang="en" data-translate="lang.en">EN</a>
+        </div>
           <!-- nav-toggle-button class'ı menüyü açar -->
           
       </div>
 
       <!-- Mobil için Hamburger İkonu (nav-toggle-button class'ı menüyü açar/kapatır) -->
-      <button class="mobile-menu-toggle nav-toggle-button" aria-label="Menüyü Aç/Kapat">
-          <i class="fas fa-bars"></i>
-      </button>
+      <button class="mobile-menu-toggle nav-toggle-button" data-translate-aria-label="menu.toggleAriaLabel" aria-label="Menüyü Aç/Kapat">
+        <i class="fas fa-bars"></i>
+    </button>
   </div>
 </header>
 <!-- Header End -->
 <!-- Tam Ekran Overlay Menü -->
 <div class="fullscreen-menu">
-  <div class="menu-header">
-       <a href="index.html" class="logo-menu">
-           <!-- Menüdeki logo -->
-          <img src="./images/logo-beyaz.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo" class="fs-2">
-      </a>
-      <div class="menu-search-container">
-           <input type="text" placeholder="aramak istediğiniz kelimeyi yazınız..." class="menu-search-input">
-           <button class="menu-search-button"><i class="fas fa-search"></i></button>
-      </div>
-       <div class="menu-header-actions">
-          <div class="lang-switch">
-              <a href="#" class="active">TR</a> | <a href="#">EN</a>
-          </div>
-          <button class="close-menu-btn" aria-label="Menüyü Kapat">
-              <i class="fas fa-times"></i>
-          </button>
-       </div>
-  </div>
+    <div class="menu-header">
+         <a href="index.html" class="logo-menu">
+             <!-- Menüdeki logo -->
+            <img src="./images/logo-beyaz.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo" class="fs-2">
+        </a>
+        <div class="menu-search-container">
+             <input type="text" data-translate-placeholder="menu.searchPlaceholder" placeholder="aramak istediğiniz kelimeyi yazınız..." class="menu-search-input">
+             <button class="menu-search-button"><i class="fas fa-search"></i></button>
+        </div>
+         <div class="menu-header-actions">
+            <div class="lang-switch">
+                <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="#" data-lang="en" data-translate="lang.en">EN</a>
+            </div>
+            <button class="close-menu-btn" data-translate-aria-label="menu.closeAriaLabel" aria-label="Menüyü Kapat">
+                <i class="fas fa-times"></i>
+            </button>
+         </div>
+    </div>
 
-  <div class="menu-content">
-      <div class="menu-column">
-          <!-- Başlığa tıklanınca menüyü kapatmak için nav-toggle-button ekledik -->
-          <h3 class="nav-toggle-button">BFM'yi Keşfedin</h3>
-          <ul>
-              <li><a href="hakkimizda.html">Hakkımızda</a></li>
-              <li><a href="fuar-takvimi.html">BFM Fuar Takvimi</a></li>
-
-              <li><a href="toplanti-salonlari.html">Hazır Ofisler ve Toplantı Salonları</a></li>
+    <div class="menu-content">
+        <div class="menu-column">
+            <!-- Başlığa tıklanınca menüyü kapatmak için nav-toggle-button ekledik -->
+            <h3 class="nav-toggle-button" data-translate="menu.discoverBFM">BFM'yi Keşfedin</h3>
+            <ul>
+                <li><a href="hakkimizda.html" data-translate="menu.aboutUs">Hakkımızda</a></li>
+                <li><a href="fuar-takvimi.html" data-translate="menu.fairCalendar">BFM Fuar Takvimi</a></li>
+                <li><a href="toplanti-salonlari.html" data-translate="menu.officesAndMeetingRooms">Hazır Ofisler ve Toplantı Salonları</a></li>
+            </ul>
+        </div>
+        <div class="menu-column">
+            <h3 class="nav-toggle-button" data-translate="menu.organizeFair">BFM'de Fuar Organize Edin</h3>
+            <ul>
+                <li><a href="organizator.html" data-translate="menu.organizer">Organizatör</a></li>
+            </ul>
+        </div>
+        <div class="menu-column">
+            <h3 class="nav-toggle-button" data-translate="menu.visitBFM">BFM'yi Ziyaret Edin</h3>
+            <ul>
+                <li><a href="ulasim.html" data-translate="menu.transport">Ulaşım</a></li>
+                <li><a href="konaklama.html" data-translate="menu.accommodation">Konaklama</a></li>
+                <li><a href="restoran-ve-kafeler.html" data-translate="menu.restaurantsAndCafes">Restoran Ve Kafeler</a></li>
+                <li><a href="hizmetler.html" data-translate="menu.services">Hizmetler</a></li>
+            </ul>
+        </div>
+         <div class="menu-column">
+            <h3 class="nav-toggle-button" data-translate="menu.events">ETKİNLİKLER</h3>
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+        <div class="menu-column">
+            <h3 class="nav-toggle-button" data-translate="menu.contact">İLETİŞİM</h3>
+            <ul>
+              <li><a href="iletisim.html" class="fw-normal" data-translate="menu.contactInfo">İletişim Bilgileri</a></li>
           </ul>
-      </div>
-      <div class="menu-column">
-          <h3 class="nav-toggle-button">BFM'de Fuar Organize Edin</h3>
-          <ul>
-              <li><a href="organizator.html">Organizatör</a></li>
-          </ul>
-      </div>
-      <div class="menu-column">
-          <h3 class="nav-toggle-button">BFM'yi Ziyaret Edin</h3>
-          <ul>
-              <li><a href="ulasim.html">Ulaşım</a></li>
-              <li><a href="konaklama.html">Konaklama</a></li>
-              <li><a href="restoran-ve-kafeler.html">Restoran Ve Kafeler</a></li>
-              <li><a href="hizmetler.html">Hizmetler</a></li>
-          </ul>
-      </div>
-       <div class="menu-column">
-          <h3 class="nav-toggle-button">ETKİNLİKLER</h3>
-          <ul>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-          </ul>
-      </div>
-      <div class="menu-column">
-          <h3 class="nav-toggle-button">İLETİŞİM</h3>
-          <ul>
-            <li><a href="iletisim.html" class="fw-normal">İletişim Bilgileri</a></li>
-        </ul>
-      </div>
+        </div>
+    </div>
+  
+    <div class="menu-footer">
+        <span data-translate="menu.followUs">Bizi Takip Edin</span>
+        <div class="social-icons-menu">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+             <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
   </div>
-
-  <div class="menu-footer">
-      <span>Bizi Takip Edin</span>
-      <div class="social-icons-menu">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-           <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-  </div>
-</div>
 
 <!-- Slider Start -->
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -144,13 +146,13 @@
           Your browser does not support the video tag.
       </video>
       <div class="container">
-    <div class="row">
-        <div class="carousel-caption text-start col-6">
-          <h1 class="fw-bold">Bursa'nın sesini duyuran Rising City & Yapı ve Yaşam Fuarı</h1>
-          <p>Yükselen Şehir Bursa'nın yatırım rotasındaki seyrini değerlendiriyor.</p>
-          <p><a class="btn btn-lg text-white btn-slider" href="fuar-single-page.html">Göz at</a></p>
+        <div class="row">
+            <div class="carousel-caption text-start col-6">
+              <h1 class="fw-bold" data-translate="slider.mainTitle">Bursa'nın sesini duyuran Rising City & Yapı ve Yaşam Fuarı</h1>
+              <p data-translate="slider.mainSubtitle">Yükselen Şehir Bursa'nın yatırım rotasındaki seyrini değerlendiriyor.</p>
+              <p><a class="btn btn-lg text-white btn-slider" href="fuar-single-page.html" data-translate="slider.browseButton">Göz at</a></p>
+            </div>
         </div>
-    </div>
       </div>
     </div>
     <!-- <div class="carousel-item">
@@ -187,380 +189,407 @@
     <span class="visually-hidden">Next</span>
   </button> -->
   <div class="action-buttons">
-    <a href="#e-bilet" class="action-button">E-Bilet</a>
-    <a href="#stant-talebi" class="action-button">Stant Talebi</a>
+    <button class="trigger-button" id="openModalBtn">E-Bilet</button>
+    <a href="stant-talebi-form.html" target="_blank" class="action-button">Stant Talebi</a>
+</div>
+ <!-- Modal Overlay -->
+ <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3 class="modal-title">E-Bilet</h3>
+            <button class="close-button" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="modal-content">
+            <!-- Ana Logo -->    
+            <!-- Resim Galerisi -->
+            <div class="image-gallery">
+                <a href="https://risingcity.com.tr/katilimci-stant-talebi" target="_blank" class="gallery-item">
+                    <img src="./images/rising.jpg" alt="Rising">
+                    <p>Rising City</p>
+                </a>
+                <a href="https://hometex.com.tr/online-bilet" class="gallery-item">
+                    <img src="./images/hometex.jpg" alt="HOMOTEX">
+                    <p>HOMOTEX</p>
+                </a>
+                <a href="https://junioshow.com.tr/online-bilet" class="gallery-item">
+                    <img src="./images/junioshow.jpg" alt="JuniShow">
+                    <p>JuniShow</p>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 
 </div>
   <!-- Slider End -->
   <div class="container-1">
-    <h1>Rakamlarla Bursa Fuar Merkezi</h1>
+    <h1 data-translate="stats.title">Rakamlarla Bursa Fuar Merkezi</h1>
     
     <div class="stats-container">
         <div class="stat-item">
             <div class="stat-number">10+</div>
-            <div class="stat-label">Gerçekleşen Fuar</div>
+            <div class="stat-label" data-translate="stats.fairsHeld">Gerçekleşen Fuar</div>
         </div>
 
         <div class="stat-item">
             <div class="stat-number">70+</div>
-            <div class="stat-label">Farklı Ülkeden</div>
+            <div class="stat-label" data-translate="stats.countries">Farklı Ülkeden</div>
         </div>
         
         <div class="stat-item">
             <div class="stat-number">1000</div>
-            <div class="stat-label">İş insanı</div>
+            <div class="stat-label" data-translate="stats.businessPeople">İş insanı</div>
         </div>
         
         <div class="stat-item">
             <div class="stat-number">7000</div>
-            <div class="stat-label">Ziyaretçi</div>
+            <div class="stat-label" data-translate="stats.visitors">Ziyaretçi</div>
         </div>
 
         
         
         <div class="stat-item">
             <div class="stat-number">140.000</div>
-            <div class="stat-label">m² alan</div>
+            <div class="stat-label" data-translate="stats.area">m² alan</div>
         </div>
     </div>
 </div>
 
-  <!-- Card Slide Start -->
+   <!-- Card Slide Start -->
    <section class="card-1-section">
-       <div class="container">
-        <h2 class="fw-bold fs-1 mb-5 ms-5 mt-5">Yaklaşan Fuarlar</h2>
+    <div class="container">
+     <h2 class="fw-bold fs-1 mb-5 ms-5 mt-5" data-translate="upcomingFairs.title">Yaklaşan Fuarlar</h2>
+    </div>
+ <div class="slider-container">
+   <div class="slider">
+       <!-- Kart 1 -->
+       <div class="card" style="background-image: url('./images/junioshow.jpg')">
+           <div class="card-overlay">
+               <div class="card-content">
+                   <div class="card-organizer" data-translate="upcomingFairs.card1.category">Tekstil & Giyim</div>
+                   <h2 class="card-title" data-translate="upcomingFairs.card1.title">Bebek ve Çocuk Hazır Giyim Sektörünün Kalbi "JUNIOSHOW" ile Bursa'da Atıyor</h2>
+                   <a href="#" class="card-link" data-translate="upcomingFairs.card1.details">Fuar Detayı <i class="fas fa-arrow-right"></i></a>
+               </div>
+               <div class="card-date">
+                   <div class="date-box">
+                       <div class="date-day">28</div>
+                       <div class="date-month">30</div>
+                       <div class="date-info" data-translate="upcomingFairs.card1.month">Ocak</div>
+                   </div>
+               </div>
+           </div>
        </div>
-    <div class="slider-container">
-      <div class="slider">
-          <!-- Kart 1 -->
-          <div class="card" style="background-image: url('./images/junioshow.jpg')">
-              <div class="card-overlay">
-                  <div class="card-content">
-                      <div class="card-organizer">Tekstil & Giyim</div>
-                      <h2 class="card-title">Bebek ve Çocuk Hazır Giyim Sektörünün Kalbi "JUNIOSHOW" ile Bursa'da Atıyor</h2>
-                      <a href="#" class="card-link">Fuar Detayı <i class="fas fa-arrow-right"></i></a>
-                  </div>
-                  <div class="card-date">
-                      <div class="date-box">
-                          <div class="date-day">28</div>
-                          <div class="date-month">30</div>
-                          <div class="date-info">Ocak</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
 
-          <!-- Kart 2 -->
-          <div class="card" style="background-image: url('./images/hometex.jpg')">
-              <div class="card-overlay">
-                  <div class="card-content">
-                      <div class="card-organizer">Tekstil & Giyim</div>
-                      <h2 class="card-title">Ev Tekstilinde Tüm Yenilikler Yeniden HOMETEX 2025'te, Büyük Buluşmayı Kaçırmayın!</h2>
-                      <a href="#" class="card-link">Fuar Detayı <i class="fas fa-arrow-right"></i></a>
-                  </div>
-                  <div class="card-date">
-                      <div class="date-box">
-                          <div class="date-day">20</div>
-                          <div class="date-month">23</div>
-                          <div class="date-info">Mayıs</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+       <!-- Kart 2 -->
+       <div class="card" style="background-image: url('./images/hometex.jpg')">
+           <div class="card-overlay">
+               <div class="card-content">
+                   <div class="card-organizer" data-translate="upcomingFairs.card2.category">Tekstil & Giyim</div>
+                   <h2 class="card-title" data-translate="upcomingFairs.card2.title">Ev Tekstilinde Tüm Yenilikler Yeniden HOMETEX 2025'te, Büyük Buluşmayı Kaçırmayın!</h2>
+                   <a href="#" class="card-link" data-translate="upcomingFairs.card2.details">Fuar Detayı <i class="fas fa-arrow-right"></i></a>
+               </div>
+               <div class="card-date">
+                   <div class="date-box">
+                       <div class="date-day">20</div>
+                       <div class="date-month">23</div>
+                       <div class="date-info" data-translate="upcomingFairs.card2.month">Mayıs</div>
+                   </div>
+               </div>
+           </div>
+       </div>
 
-          <!-- Kart 3 -->
-          <div class="card" style="background-image: url('images/rising.jpg')">
-              <div class="card-overlay">
-                  <div class="card-content">
-                      <div class="card-organizer">İnşaat</div>
-                      <h2 class="card-title">Bursa'nın sesini duyuran Rising City & Yapı ve Yaşam Fuarı</h2>
-                      <a href="fuar-single-page.html" class="card-link">Fuar Detayı <i class="fas fa-arrow-right"></i></a>
-                  </div>
-                  <div class="card-date">
-                      <div class="date-box">
-                          <div class="date-day">24</div>
-                          <div class="date-month">26</div>
-                          <div class="date-info">Nis</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+       <!-- Kart 3 -->
+       <div class="card" style="background-image: url('images/rising.jpg')">
+           <div class="card-overlay">
+               <div class="card-content">
+                   <div class="card-organizer" data-translate="upcomingFairs.card3.category">İnşaat</div>
+                   <h2 class="card-title" data-translate="upcomingFairs.card3.title">Bursa'nın sesini duyuran Rising City & Yapı ve Yaşam Fuarı</h2>
+                   <a href="fuar-single-page.html" class="card-link" data-translate="upcomingFairs.card3.details">Fuar Detayı <i class="fas fa-arrow-right"></i></a>
+               </div>
+               <div class="card-date">
+                   <div class="date-box">
+                       <div class="date-day">24</div>
+                       <div class="date-month">26</div>
+                       <div class="date-info" data-translate="upcomingFairs.card3.month">Nis</div>
+                   </div>
+               </div>
+           </div>
+       </div>
 
-          <!-- Kart 4 -->
-          <div class="card" style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/card-4.jpg-cXyxi26zYczAM0pOFYynwm8z8YO0kW.jpeg')">
-              <div class="card-overlay">
-                  <div class="card-content">
-                      <div class="card-organizer">HKF Fuarcılık A.Ş.</div>
-                      <h2 class="card-title">FOTEG İstanbul 2025 - Gıda İşleme Teknolojileri Uluslararası İhtisas Fuarı</h2>
-                      <a href="#" class="card-link">Fuar Detayı <i class="fas fa-arrow-right"></i></a>
-                  </div>
-                  <div class="card-date">
-                      <div class="date-box">
-                          <div class="date-day">24</div>
-                          <div class="date-month">26</div>
-                          <div class="date-info">Nis</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+       <!-- Kart 4 -->
+       <div class="card" style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/card-4.jpg-cXyxi26zYczAM0pOFYynwm8z8YO0kW.jpeg')">
+           <div class="card-overlay">
+               <div class="card-content">
+                   <div class="card-organizer" data-translate="upcomingFairs.card4.category">HKF Fuarcılık A.Ş.</div>
+                   <h2 class="card-title" data-translate="upcomingFairs.card4.title">FOTEG İstanbul 2025 - Gıda İşleme Teknolojileri Uluslararası İhtisas Fuarı</h2>
+                   <a href="#" class="card-link" data-translate="upcomingFairs.card4.details">Fuar Detayı <i class="fas fa-arrow-right"></i></a>
+               </div>
+               <div class="card-date">
+                   <div class="date-box">
+                       <div class="date-day">24</div>
+                       <div class="date-month">26</div>
+                       <div class="date-info" data-translate="upcomingFairs.card4.month">Nis</div>
+                   </div>
+               </div>
+           </div>
+       </div>
 
-          <!-- Kart 5 -->
-          <div class="card" style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/card-5.jpg-LofrNfu3GRqHYqW8u9wis5LBOOVIMh.jpeg')">
-              <div class="card-overlay">
-                  <div class="card-content">
-                      <div class="card-organizer">Sektörel Fuarcılık A.Ş.</div>
-                      <h2 class="card-title">Electricity Eurasia 2025 - Elektrik ve Elektrik Ekipmanları Fuarı</h2>
-                      <a href="#" class="card-link">Fuar Detayı <i class="fas fa-arrow-right"></i></a>
-                  </div>
-                  <div class="card-date">
-                      <div class="date-box">
-                          <div class="date-day">24</div>
-                          <div class="date-month">26</div>
-                          <div class="date-info">Nis</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+       <!-- Kart 5 -->
+       <div class="card" style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/card-5.jpg-LofrNfu3GRqHYqW8u9wis5LBOOVIMh.jpeg')">
+           <div class="card-overlay">
+               <div class="card-content">
+                   <div class="card-organizer" data-translate="upcomingFairs.card5.category">Sektörel Fuarcılık A.Ş.</div>
+                   <h2 class="card-title" data-translate="upcomingFairs.card5.title">Electricity Eurasia 2025 - Elektrik ve Elektrik Ekipmanları Fuarı</h2>
+                   <a href="#" class="card-link" data-translate="upcomingFairs.card5.details">Fuar Detayı <i class="fas fa-arrow-right"></i></a>
+               </div>
+               <div class="card-date">
+                   <div class="date-box">
+                       <div class="date-day">24</div>
+                       <div class="date-month">26</div>
+                       <div class="date-info" data-translate="upcomingFairs.card5.month">Nis</div>
+                   </div>
+               </div>
+           </div>
+       </div>
 
-      </div>
+   </div>
 
-      <!-- Slider Kontrolleri -->
-      <div class="slider-controls">
-          <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-          <div class="slider-progress">
-              <div class="progress-bar">
-                  <div class="progress-fill"></div>
-              </div>
-          </div>
-          <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
-      </div>
-  </div>
+   <!-- Slider Kontrolleri -->
+   <div class="slider-controls">
+       <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+       <div class="slider-progress">
+           <div class="progress-bar">
+               <div class="progress-fill"></div>
+           </div>
+       </div>
+       <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+   </div>
+</div>
 </section>
 <!-- Card Slider End -->
 
 <!-- Fuar İnformation Start -->
 <div class="container mt-5">
-  <div class="row mb-4">
-      <div class="col-md-3 mb-3">
-          <select id="yearFilter" class="form-select custom-select">
-              <option value="">Yıl seçiniz</option>
-              <option value="2025">2025</option>
-              <option value="2026">2026</option>
-          </select>
-      </div>
-      <div class="col-md-3 mb-3">
-          <select id="monthFilter" class="form-select custom-select">
-              <option value="">Ay Seçiniz</option>
-              <option value="Ocak">Ocak</option>
-              <option value="Şubat">Şubat</option>
-              <option value="Mart">Mart</option>
-              <option value="Nisan">Nisan</option>
-              <option value="Mayıs">Mayıs</option>
-              <option value="Haziran">Haziran</option>
-              <option value="Temmuz">Temmuz</option>
-              <option value="Ağustos">Ağustos</option>
-              <option value="Eylül">Eylül</option>
-              <option value="Ekim">Ekim</option>
-              <option value="Kasım">Kasım</option>
-              <option value="Aralık">Aralık</option>
-          </select>
-      </div>
-      <div class="col-md-3 mb-3">
-          <select id="sectorFilter" class="form-select custom-select">
-              <option value="">Sektör Seçiniz</option>
-              <option value="Mücevherat">Mücevherat</option>
-              <option value="Teknoloji">Teknoloji</option>
-              <option value="Tavukçuluk">Tavukçuluk</option>
-              <option value="Gıda İşleme">Gıda İşleme</option>
-              <option value="İnşaat">İnşaat</option>
-              <option value="Otomotiv">Otomotiv</option>
-              <option value="Turizm">Turizm</option>
-              <option value="Mobilya">Mobilya</option>
-          </select>
-      </div>
-      <div class="col-md-3 mb-3">
-          <select id="locationFilter" class="form-select custom-select">
-              <option value="">Lokasyon Seçiniz</option>
-              <option value="İstanbul">İstanbul</option>
-              <option value="Ankara">Ankara</option>
-              <option value="Bursa">Bursa</option>
-              <option value="Agora">Agora</option>
-              <option value="Antalya">Antalya</option>
-          </select>
-      </div>
-  </div>
+<div class="row mb-4">
+   <div class="col-md-3 mb-3">
+       <select id="yearFilter" class="form-select custom-select">
+           <option value="" data-translate="filter.selectYear">Yıl seçiniz</option>
+           <option value="2025">2025</option>
+           <option value="2026">2026</option>
+       </select>
+   </div>
+   <div class="col-md-3 mb-3">
+       <select id="monthFilter" class="form-select custom-select">
+           <option value="" data-translate="filter.selectMonth">Ay Seçiniz</option>
+           <option value="Ocak" data-translate="filter.month.january">Ocak</option>
+           <option value="Şubat" data-translate="filter.month.february">Şubat</option>
+           <option value="Mart" data-translate="filter.month.march">Mart</option>
+           <option value="Nisan" data-translate="filter.month.april">Nisan</option>
+           <option value="Mayıs" data-translate="filter.month.may">Mayıs</option>
+           <option value="Haziran" data-translate="filter.month.june">Haziran</option>
+           <option value="Temmuz" data-translate="filter.month.july">Temmuz</option>
+           <option value="Ağustos" data-translate="filter.month.august">Ağustos</option>
+           <option value="Eylül" data-translate="filter.month.september">Eylül</option>
+           <option value="Ekim" data-translate="filter.month.october">Ekim</option>
+           <option value="Kasım" data-translate="filter.month.november">Kasım</option>
+           <option value="Aralık" data-translate="filter.month.december">Aralık</option>
+       </select>
+   </div>
+   <div class="col-md-3 mb-3">
+       <select id="sectorFilter" class="form-select custom-select">
+           <option value="" data-translate="filter.selectSector">Sektör Seçiniz</option>
+           <option value="Mücevherat" data-translate="filter.sector.jewelry">Mücevherat</option>
+           <option value="Teknoloji" data-translate="filter.sector.technology">Teknoloji</option>
+           <option value="Tavukçuluk" data-translate="filter.sector.poultry">Tavukçuluk</option>
+           <option value="Gıda İşleme" data-translate="filter.sector.foodProcessing">Gıda İşleme</option>
+           <option value="İnşaat" data-translate="filter.sector.construction">İnşaat</option>
+           <option value="Otomotiv" data-translate="filter.sector.automotive">Otomotiv</option>
+           <option value="Turizm" data-translate="filter.sector.tourism">Turizm</option>
+           <option value="Mobilya" data-translate="filter.sector.furniture">Mobilya</option>
+       </select>
+   </div>
+   <div class="col-md-3 mb-3">
+       <select id="locationFilter" class="form-select custom-select">
+           <option value="" data-translate="filter.selectLocation">Lokasyon Seçiniz</option>
+           <option value="İstanbul" data-translate="filter.location.istanbul">İstanbul</option>
+           <option value="Ankara" data-translate="filter.location.ankara">Ankara</option>
+           <option value="Bursa" data-translate="filter.location.bursa">Bursa</option>
+           <option value="Agora" data-translate="filter.location.agora">Agora</option>
+           <option value="Antalya" data-translate="filter.location.antalya">Antalya</option>
+       </select>
+   </div>
+</div>
 
-  <div id="eventsList" class="mt-4">
-      <!-- Events will be loaded here -->
-  </div>
+<div id="eventsList" class="mt-4">
+   <!-- Events will be loaded here -->
+</div>
 
-  <div class="pagination-container mt-4">
-      <nav aria-label="Page navigation">
-          <ul class="pagination" id="pagination">
-              <!-- Pagination will be generated here -->
-          </ul>
-      </nav>
-  </div>
+<div class="pagination-container mt-4">
+   <nav aria-label="Page navigation">
+       <ul class="pagination" id="pagination">
+           <!-- Pagination will be generated here -->
+       </ul>
+   </nav>
+</div>
 </div>
 <!-- Fuar İnformation End -->
 
 <!-- Card Slider-2 -->
 <div class="container-2">
-    <!-- Category Tabs -->
-    <div class="category-tabs-2">
-      <button class="category-tab-2 active" data-category="gundem">GÜNDEM</button>
-      <button class="category-tab-2" data-category="blog">BLOG</button>
-      <button class="category-tab-2" data-category="duyurular">DUYURULAR</button>
-      <button class="category-tab-2" data-category="haberler">HABERLER</button>
-    </div>
+ <!-- Category Tabs -->
+ <div class="category-tabs-2">
+   <button class="category-tab-2 active" data-category="gundem" data-translate="tabs.agenda">GÜNDEM</button>
+   <button class="category-tab-2" data-category="blog" data-translate="tabs.blog">BLOG</button>
+   <button class="category-tab-2" data-category="duyurular" data-translate="tabs.announcements">DUYURULAR</button>
+   <button class="category-tab-2" data-category="haberler" data-translate="tabs.news">HABERLER</button>
+ </div>
 
-    <!-- Card Slider -->
-    <div class="card-slider-container-2">
-      <!-- Navigation Arrows -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      
-      <!-- Swiper -->
-      <div class="swiper card-slider-2">
-        <div class="swiper-wrapper">
-          <!-- Cards will be dynamically inserted here -->
-        </div>
-      </div>
-    </div>
-  </div>
+ <!-- Card Slider -->
+ <div class="card-slider-container-2">
+   <!-- Navigation Arrows -->
+   <div class="swiper-button-prev"></div>
+   <div class="swiper-button-next"></div>
+   
+   <!-- Swiper -->
+   <div class="swiper card-slider-2">
+     <div class="swiper-wrapper">
+       <!-- Cards will be dynamically inserted here -->
+     </div>
+   </div>
+ </div>
+</div>
 
-  <!-- Card Template -->
-  <template id="card-template-2">
-    <div class="swiper-slide">
-      <div class="card-2">
-        <div class="card-image-2">
-          <img src="/placeholder.svg" alt="">
-          <div class="card-date-2">
-            <div class="date-year-2"></div>
-            <div class="date-day-2"></div>
-          </div>
-        </div>
-        <div class="card-content-2">
-          <div class="card-tag-2"></div>
-          <h3 class="card-title-2"></h3>
-          <a href="#" class="card-discover-link-2">keşfet</a>
-        </div>
-      </div>
-    </div>
-  </template>
-  <br><br><br><br>
+<!-- Card Template -->
+<template id="card-template-2">
+ <div class="swiper-slide">
+   <div class="card-2">
+     <div class="card-image-2">
+       <img src="/placeholder.svg" alt="">
+       <div class="card-date-2">
+         <div class="date-year-2"></div>
+         <div class="date-day-2"></div>
+       </div>
+     </div>
+     <div class="card-content-2">
+       <div class="card-tag-2"></div>
+       <h3 class="card-title-2"></h3>
+       <a href="#" class="card-discover-link-2" data-translate="cardSlider2.discover">keşfet</a>
+     </div>
+   </div>
+ </div>
+</template>
+<br><br><br><br>
 <!-- Footer Start -->
 <footer class="bg-dark text-white pt-5 pb-4 footer">
 
-  <div class="container text-md-left">
+<div class="container text-md-left">
 
-      <div class="row text-md-left">
+   <div class="row text-md-left">
 
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h5 class="text-uppercase mb-4 font-weight-bold ">BFM'yi Keşfedin</h5>
-              <p>
-                  <a href="hakkimizda.html" class="text-white" style="text-decoration: none;">BFM Hakkında</a>
-              </p>
-              <p>
-                  <a href="ekibimiz.html" class="text-white" style="text-decoration: none;">Ekibimiz</a>
-              </p>
-              <p>
-                  <a href="kalite-politimiz.html" class="text-white" style="text-decoration: none;">Kalite Politikamız</a>
-              </p>
-              <p>
-                  <a href="kvkk-dokumanları.html" class="text-white" style="text-decoration: none;">KVKK Dökümanları</a>
-              </p>
-          </div>
+       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+           <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.discoverBFM">BFM'yi Keşfedin</h5>
+           <p>
+               <a href="hakkimizda.html" class="text-white" style="text-decoration: none;" data-translate="footer.aboutBFM">BFM Hakkında</a>
+           </p>
+           <p>
+               <a href="ekibimiz.html" class="text-white" style="text-decoration: none;" data-translate="footer.ourTeam">Ekibimiz</a>
+           </p>
+           <p>
+               <a href="kalite-politimiz.html" class="text-white" style="text-decoration: none;" data-translate="footer.qualityPolicy">Kalite Politikamız</a>
+           </p>
+           <p>
+               <a href="kvkk-dokumanları.html" class="text-white" style="text-decoration: none;" data-translate="footer.kvkkDocuments">KVKK Dökümanları</a>
+           </p>
+       </div>
 
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
-              <h5 class="text-uppercase mb-4 font-weight-bold ">BFM'de Fuar Organize Edin</h5>
+       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+           <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.organizeFair">BFM'de Fuar Organize Edin</h5>
 
-              <p>
-                  <a href="planlar.html" class="text-white" style="text-decoration: none;">Planlar</a>
-              </p>
-              <p>
-                  <a href="organizator.html" class="text-white" style="text-decoration: none;">E-Broşürler</a>
-              </p>
-              <p>
-                  <a href="toplanti-salonlari.html" class="text-white" style="text-decoration: none;">Toplantı Salonları</a>
-              </p>
-              <p>
-                  <a href="hizmetler.html" class="text-white" style="text-decoration: none;">Ek Hizmetler</a>
-              </p>
-          </div>
+           <p>
+               <a href="planlar.html" class="text-white" style="text-decoration: none;" data-translate="footer.plans">Planlar</a>
+           </p>
+           <p>
+               <a href="organizator.html" class="text-white" style="text-decoration: none;" data-translate="footer.eBrochures">E-Broşürler</a>
+           </p>
+           <p>
+               <a href="toplanti-salonlari.html" class="text-white" style="text-decoration: none;" data-translate="footer.meetingRooms">Toplantı Salonları</a>
+           </p>
+           <p>
+               <a href="hizmetler.html" class="text-white" style="text-decoration: none;" data-translate="footer.extraServices">Ek Hizmetler</a>
+           </p>
+       </div>
 
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
-              <h5 class="text-uppercase mb-4 font-weight-bold ">BFM Gündem</h5>
-              <p>
-                  <a href="#" class="text-white" style="text-decoration: none;">Fuar Duyuruları</a> 
-              </p>
+       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+           <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.bfmAgenda">BFM Gündem</h5>
+           <p>
+               <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.fairAnnouncements">Fuar Duyuruları</a> 
+           </p>
 
-              <p>
-                  <a href="#" class="text-white" style="text-decoration: none;">BFM'den Haberler</a> 
-              </p>
+           <p>
+               <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.newsFromBFM">BFM'den Haberler</a> 
+           </p>
 
-              <p>
-                  <a href="#" class="text-white" style="text-decoration: none;">Fuar Haberleri</a>
-              </p>
+           <p>
+               <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.fairNews">Fuar Haberleri</a>
+           </p>
 
-          </div>
+       </div>
 
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
-              <h5 class="text-uppercase mb-4 font-weight-bold">Bize Ulaşın</h5>
-              <p>
-                Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA
-              </p>
+       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+           <h5 class="text-uppercase mb-4 font-weight-bold" data-translate="footer.contactUs">Bize Ulaşın</h5>
+           <p data-translate="footer.address">
+             Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA
+           </p>
 
-              <p>
-                info@kfa.com.tr
-              </p>
+           <p>
+             info@kfa.com.tr
+           </p>
 
-              <p>
-                (0224) 211 50 82
-              </p>
+           <p>
+             (0224) 211 50 82
+           </p>
 
-          </div>
+       </div>
 
-          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3 ps-5">
-              <img src="images/logo-beyaz.png" class="logo-footer" alt="">
-              <hr>
-          </div>
+       <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3 ps-5">
+           <img src="images/logo-beyaz.png" class="logo-footer" alt="">
+           <hr>
+       </div>
 
-      </div>
+   </div>
 
-      <hr class="mb-4">
+   <hr class="mb-4">
 
-      <div class="row align-item-center">
-          <div class="col-md-7 col-lg-8">
-              <a>
-                  Powered By <a class="footer-poweredby" href="https://f2fbilisim.com" target="_blank"
-                      style="text-decoration: none;">F2F Bilişim Reklam ve Danışmanlık Hizmetleri</a>
-              </a>
+   <div class="row align-item-center">
+       <div class="col-md-7 col-lg-8">
+           <a>
+               <span data-translate="footer.poweredBy">Powered By</span> <a class="footer-poweredby" href="https://f2fbilisim.com" target="_blank"
+                   style="text-decoration: none;" data-translate="footer.poweredByCompany">F2F Bilişim Reklam ve Danışmanlık Hizmetleri</a>
+           </a>
 
-          </div>
+       </div>
 
-          <div class="col-md-5 col-lg-4">
-              <div class="text-center text-md-right">
+       <div class="col-md-5 col-lg-4">
+           <div class="text-center text-md-right">
 
-                  <ul class="list-unstyled list-inline">
-                      <li>
-                          <a href="#" class="btn-floating btn-sm text-white fw-normal">
-                              Hüküm Ve Koşullar
-                          </a>
-                          <a href="#" class="btn-floating btn-sm text-white ms-4 fw-normal">
-                              Gizlilik Politikası
-                          </a>
-                      </li>
+               <ul class="list-unstyled list-inline">
+                   <li>
+                       <a href="#" class="btn-floating btn-sm text-white fw-normal" data-translate="footer.termsAndConditions">
+                           Hüküm Ve Koşullar
+                       </a>
+                       <a href="#" class="btn-floating btn-sm text-white ms-4 fw-normal" data-translate="footer.privacyPolicy">
+                           Gizlilik Politikası
+                       </a>
+                   </li>
 
-                  </ul>
+               </ul>
 
-              </div>
-          </div>
+           </div>
+       </div>
 
-      </div>
-      <br> <br> <br> 
-  </div>
+   </div>
+   <br> <br> <br> 
+</div>
 </footer>
 
 
@@ -579,9 +608,48 @@ buttons.forEach(button => {
   });
 });
 
+
+
+
+ // Modal elementlerini seç
+ const modalOverlay = document.getElementById('modalOverlay');
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        // Modal açma fonksiyonu
+        function openModal() {
+            modalOverlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Sayfa kaydırmayı engelle
+        }
+
+        // Modal kapatma fonksiyonu
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Sayfa kaydırmayı etkinleştir
+        }
+
+        // Buton tıklama olayları
+        openModalBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Modal dışına tıklayınca kapatma
+        modalOverlay.addEventListener('click', function(event) {
+            if (event.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // ESC tuşuna basınca kapatma
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
 </script>
 
 
+<script src="stant-talebi.js"></script>
   <script src="main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
     integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"

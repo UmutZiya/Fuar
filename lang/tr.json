@@ -1,0 +1,342 @@
+{
+    "title": "Bursa Fuar Merkezi",
+    "nav": {
+      "discoverBFM": "BFM'yi Keşfedin",
+      "organizeFair": "BFM'de Fuar Organize Edin",
+      "visitBFM": "BFM'yi Ziyaret Edin",
+      "events": "Etkinlikler",
+      "contactUs": "Bize Ulaşın"
+    },
+    "lang": {
+      "tr": "TR",
+      "en": "EN"
+    },
+    "menu": {
+      "toggleAriaLabel": "Menüyü Aç/Kapat",
+      "searchPlaceholder": "aramak istediğiniz kelimeyi yazınız...",
+      "closeAriaLabel": "Menüyü Kapat",
+      "discoverBFM": "BFM'yi Keşfedin",
+      "aboutUs": "Hakkımızda",
+      "fairCalendar": "BFM Fuar Takvimi",
+      "officesAndMeetingRooms": "Hazır Ofisler ve Toplantı Salonları",
+      "organizeFair": "BFM'de Fuar Organize Edin",
+      "organizer": "Organizatör",
+      "visitBFM": "BFM'yi Ziyaret Edin",
+      "transport": "Ulaşım",
+      "accommodation": "Konaklama",
+      "restaurantsAndCafes": "Restoran Ve Kafeler",
+      "services": "Hizmetler",
+      "events": "Etkinlikler",
+      "contact": "İletişim",
+      "contactInfo": "İletişim Bilgileri",
+      "followUs": "Bizi Takip Edin"
+    },
+    "slider": {
+      "mainTitle": "Bursa'nın sesini duyuran Rising City & Yapı ve Yaşam Fuarı",
+      "mainSubtitle": "Yükselen Şehir Bursa'nın yatırım rotasındaki seyrini değerlendiriyor.",
+      "browseButton": "Göz at"
+    },
+    "stats": {
+      "title": "Rakamlarla Bursa Fuar Merkezi",
+      "fairsHeld": "Gerçekleşen Fuar",
+      "countries": "Farklı Ülkeden",
+      "businessPeople": "İş insanı",
+      "visitors": "Ziyaretçi",
+      "area": "m² alan"
+    },
+    "upcomingFairs": {
+      "title": "Yaklaşan Fuarlar",
+      "card1": {
+        "category": "Tekstil & Giyim",
+        "title": "Bebek ve Çocuk Hazır Giyim Sektörünün Kalbi \"JUNIOSHOW\" ile Bursa'da Atıyor",
+        "details": "Fuar Detayı",
+        "month": "Ocak"
+      },
+      "card2": {
+        "category": "Tekstil & Giyim",
+        "title": "Ev Tekstilinde Tüm Yenilikler Yeniden HOMETEX 2025'te, Büyük Buluşmayı Kaçırmayın!",
+        "details": "Fuar Detayı",
+        "month": "Mayıs"
+      },
+      "card3": {
+        "category": "İnşaat",
+        "title": "Bursa'nın sesini duyuran Rising City & Yapı ve Yaşam Fuarı",
+        "details": "Fuar Detayı",
+        "month": "Nis"
+      },
+      "card4": {
+        "category": "HKF Fuarcılık A.Ş.",
+        "title": "FOTEG İstanbul 2025 - Gıda İşleme Teknolojileri Uluslararası İhtisas Fuarı",
+        "details": "Fuar Detayı",
+        "month": "Nis"
+      },
+      "card5": {
+        "category": "Sektörel Fuarcılık A.Ş.",
+        "title": "Electricity Eurasia 2025 - Elektrik ve Elektrik Ekipmanları Fuarı",
+        "details": "Fuar Detayı",
+        "month": "Nis"
+      }
+    },
+    "filter": {
+      "selectYear": "Yıl seçiniz",
+      "selectMonth": "Ay Seçiniz",
+      "month": {
+        "january": "Ocak",
+        "february": "Şubat",
+        "march": "Mart",
+        "april": "Nisan",
+        "may": "Mayıs",
+        "june": "Haziran",
+        "july": "Temmuz",
+        "august": "Ağustos",
+        "september": "Eylül",
+        "october": "Ekim",
+        "november": "Kasım",
+        "december": "Aralık"
+      },
+      "selectSector": "Sektör Seçiniz",
+      "sector": {
+        "jewelry": "Mücevherat",
+        "technology": "Teknoloji",
+        "poultry": "Tavukçuluk",
+        "foodProcessing": "Gıda İşleme",
+        "construction": "İnşaat",
+        "automotive": "Otomotiv",
+        "tourism": "Turizm",
+        "furniture": "Mobilya"
+      },
+      "selectLocation": "Lokasyon Seçiniz",
+      "location": {
+        "istanbul": "İstanbul",
+        "ankara": "Ankara",
+        "bursa": "Bursa",
+        "agora": "Agora",
+        "antalya": "Antalya"
+      }
+    },
+    "tabs": {
+      "agenda": "GÜNDEM",
+      "blog": "BLOG",
+      "announcements": "DUYURULAR",
+      "news": "HABERLER"
+    },
+    "cardSlider2": {
+      "discover": "keşfet"
+    },
+    "footer": {
+      "discoverBFM": "BFM'yi Keşfedin",
+      "aboutBFM": "BFM Hakkında",
+      "ourTeam": "Ekibimiz",
+      "qualityPolicy": "Kalite Politikamız",
+      "kvkkDocuments": "KVKK Dökümanları",
+      "organizeFair": "BFM'de Fuar Organize Edin",
+      "plans": "Planlar",
+      "eBrochures": "E-Broşürler",
+      "meetingRooms": "Toplantı Salonları",
+      "extraServices": "Ek Hizmetler",
+      "bfmAgenda": "BFM Gündem",
+      "fairAnnouncements": "Fuar Duyuruları",
+      "newsFromBFM": "BFM'den Haberler",
+      "fairNews": "Fuar Haberleri",
+      "contactUs": "Bize Ulaşın",
+      "address": "Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA",
+      "poweredBy": "Powered By",
+      "poweredByCompany": "F2F Bilişim Reklam ve Danışmanlık Hizmetleri",
+      "termsAndConditions": "Hüküm Ve Koşullar",
+      "privacyPolicy": "Gizlilik Politikası",
+      "url": "https://www.bursatso.org.tr/",
+      "copyright": "Tüm hakları saklıdır."
+    },
+    "fuarSinglePage": {
+      "menu": {
+        "searchPlaceholder": "Katılım..."
+      },
+      "main": {
+        "organizerInfo": "Bursa Fuar Merkezi",
+        "fairTitle": "RISING CITY & YAPI VE YAŞAM FUARI 2025",
+        "addToCalendar": "Takvime Ekle"
+      },
+      "description": {
+        "title": "Bursa'nın sesini duyuran Rising City & Yapı ve Yaşam Fuarı",
+        "p1": "Bursa Ticaret ve Sanayi Odası öncülüğünde KFA Fuarcılık'ın profesyonel organizasyonu ile yılda bir kez düzenlenen Rising City &Yapı ve Yaşam Fuarı Bursa İnşaat, İnşaat Malzemeleri ve Teknolojileri Fuarı ve Rising City &Yapı ve Yaşam Fuarı Bursa Gayrimenkul Fuarı, İnşaat ve Gayrimenkul alanında faaliyet gösteren yerli üreticilere yeni pazarlar bulmak, iş fırsatları oluşturmak ve iş ortaklıkları sağlamayı hedefliyor.",
+        "p2": "Bursa Uluslararası Fuar Merkezi'nde 10 bin metrekarenin üzerinde alanda İnşaat ve Gayrimenkul alanında hizmetlerin sergilediği fuar, hem ziyaretçilere hem de katılımcılara teknoloji ve trendlerin ön planda olduğu iş odaklı bir deneyim sunuyor."
+      },
+      "calendar": {
+        "title": "Fuar Takvimi",
+        "dayThu": "PER",
+        "dayFri": "CUM",
+        "daySat": "CMT",
+        "daySun": "PAZ",
+        "dayMon": "PZT",
+        "eventDesc": "Bursa'nın sesini duyuran Rising City & Yapı ve Yaşam Fuarı",
+        "noEvent": "Etkinlik yok",
+        "hallLabel": "Salon"
+      },
+      "infoPanel": {
+        "title": "Fuar Künyesi",
+        "startDateLabel": "Başlangıç Tarihi:",
+        "endDateLabel": "Bitiş Tarihi:",
+        "hallLabel": "Fuar Salonu:",
+        "subjectLabel": "Fuar Konusu:",
+        "organizerLabel": "Organizatör Firma:",
+        "visitorHoursLabel": "Ziyaret Saatleri:",
+        "locationLabel": "Fuar Alanı:",
+        "websiteLabel": "Web Sitesi:",
+        "contactLabel": "İletişim:",
+        "socialMediaLabel": "Sosyal Medya:",
+        "subjectValue": "İnşaat ve Gayrimenkul",
+        "organizerValue": "Bursa Fuar Merkezi",
+        "locationValue": "Bursa Uluslararası Fuar ve Kongre Merkezi",
+        "onlineInviteButton": "ONLİNE DAVETİYE"
+      },
+      "relatedFairs": {
+        "title": "Benzer Fuarlar"
+      }
+    },
+    "hakkimizda": {
+      "sidebar": {
+        "mainTitle": "BFM",
+        "subTitle": "Bursa Fuar Merkezi",
+        "aboutUs": "Hakkımızda",
+        "bfmAbout": "BFM Hakkında",
+        "presidentMessage": "Başkan Mesajı",
+        "qualityPolicy": "Kalite Politikamız",
+        "ourTeam": "Ekibimiz",
+        "boardOfDirectors": "Yönetim Kurulumuz",
+        "kvkkDocuments": "KVKK Dokümanları",
+        "informationSocietyServices": "Bilgi Toplumu Hizmetleri",
+        "reports": "Raporlar",
+        "bfmOffices": "BFM Ofisleri",
+        "bfmReadyOffices": "BFM Hazır Ofis ve Toplantı Salonları"
+      },
+      "breadcrumb": {
+        "home": "Ana Sayfa",
+        "aboutUs": "Hakkımızda"
+      },
+      "content": {
+        "pageTitle": "BFM Hakkında",
+        "missionTitle": "Misyonumuz:",
+        "missionText": "Firmalarımızın yeni pazarlara açılmasını ve mevcut pazarlarını geliştirmesini sağlayarak, ülkemizin ihracatına katkıda bulunmak.",
+        "visionTitle": "Vizyonumuz:",
+        "visionText": "Fuarcılık sektöründe katılımcı ve ziyaretçilerimizin beklentilerini sürekli aşarak, uluslararası standartlarda hizmet sunan lider bir fuar merkezi olmak.",
+        "valuesTitle": "Değerlerimiz:",
+        "values": [
+          "Müşteri Odaklılık",
+          "Şeffaflık",
+          "Güvenilirlik",
+          "Yenilikçilik",
+          "Takım Çalışması",
+          "Sürdürülebilirlik"
+        ],
+        "historyTitle": "Tarihçemiz:",
+        "historyText1": "Bursa Fuar Merkezi (BFM), KFA Fuarcılık A.Ş. tarafından 2015 yılında kurulmuştur. KFA Fuarcılık, fuarcılık sektöründe 30 yılı aşkın deneyime sahip profesyonel bir ekip tarafından yönetilmektedir.",
+        "historyText2": "BFM, Bursa'nın stratejik konumu ve sanayi potansiyelini değerlendirerek, bölgedeki firmaların ulusal ve uluslararası pazarlarda rekabet gücünü artırmayı hedeflemektedir.",
+        "historyText3": "Modern altyapısı, geniş sergi alanları ve sunduğu kapsamlı hizmetlerle BFM, kısa sürede Türkiye'nin önemli fuar merkezlerinden biri haline gelmiştir.",
+        "statsTitle": "Rakamlarla BFM:",
+        "statsArea": "Toplam Alan: 140.000 m²",
+        "statsIndoorArea": "Kapalı Alan: 75.000 m²",
+        "statsOutdoorArea": "Açık Alan: 65.000 m²",
+        "statsHalls": "Salon Sayısı: 8",
+        "statsMeetingRooms": "Toplantı Salonu Sayısı: 15",
+        "statsCapacity": "Yıllık Fuar Kapasitesi: 50+",
+        "locationTitle": "Konum ve Ulaşım:",
+        "locationText1": "BFM, Bursa şehir merkezine yakın konumu ve kolay ulaşım imkanları ile avantaj sağlamaktadır.",
+        "locationText2": "Yenişehir Havalimanı'na 45 km, İstanbul Sabiha Gökçen Havalimanı'na ise yaklaşık 1,5 saat mesafededir.",
+        "locationText3": "Toplu taşıma ve özel araçlarla rahatlıkla ulaşım sağlanabilmektedir.",
+        "servicesTitle": "Hizmetlerimiz:",
+        "servicesText": "BFM, katılımcı ve ziyaretçilerine fuar organizasyonu, stant tasarımı ve kurulumu, teknik destek, konaklama, ulaşım, yeme-içme ve diğer destek hizmetleri gibi geniş bir yelpazede hizmet sunmaktadır.",
+        "collaborationTitle": "İş Birlikleri:",
+        "collaborationText": "BFM, Bursa Ticaret ve Sanayi Odası (BTSO) başta olmak üzere, yerel ve ulusal birçok kurum ve kuruluşla iş birliği içerisindedir. Bu iş birlikleri sayesinde, fuarlarımızın etkinliğini ve katılımcı memnuniyetini en üst düzeye çıkarmayı hedeflemekteyiz."
+      },
+      "title": "Hakkımızda",
+      "text1": "Bursa Ticaret ve Sanayi Odası (BTSO), kuruluşundan bu yana üyelerinin ticari faaliyetlerini kolaylaştırmak, sektörel sorunlarına çözüm üretmek, Bursa ve ülke ekonomisine katkı sağlamak amacıyla çalışmalar yürütmektedir.",
+      "text2": "BTSO, 40.000'i aşkın üyesiyle Türkiye'nin en büyük ticaret ve sanayi odalarından biridir. Oda bünyesinde faaliyet gösteren 60'ı aşkın sektör konseyi, üyelerinin sektörel sorunlarını ve çözüm önerilerini belirleyerek ilgili platformlara taşımaktadır.",
+      "text3": "BTSO, üyelerinin uluslararası rekabet gücünü artırmak amacıyla çeşitli projeler yürütmektedir. Bu projeler arasında Ur-Ge (Uluslararası Rekabetçiliğin Geliştirilmesi), Küresel Fuar Acentesi, Ticari Safari gibi çalışmalar bulunmaktadır.",
+      "text4": "BTSO, Bursa ekonomisinin gelişimine katkı sağlamak amacıyla çeşitli yatırımlar gerçekleştirmektedir. Bu yatırımlar arasında Bursa Teknoloji Organize Sanayi Bölgesi (TEKNOSAB), Bursa Model Fabrika, Enerji Verimliliği Merkezi (EVM) gibi projeler yer almaktadır.",
+      "text5": "BTSO, sosyal sorumluluk projeleriyle de Bursa'ya değer katmaktadır. Oda tarafından hayata geçirilen projeler arasında BTSO Eğitim Vadisi, BTSO Mesleki Yeterlilik Sınav ve Belgelendirme Merkezi (MESYEB) gibi çalışmalar bulunmaktadır."
+    },
+    "baskanMesaji": {
+      "title": "Başkanın Mesajı",
+      "name": "İbrahim BURKAY",
+      "position": "Yönetim Kurulu Başkanı",
+      "greeting": "Değerli İş Dünyası Temsilcileri,",
+      "paragraph1": "Bursa Ticaret ve Sanayi Odası olarak, kentimizin ve ülkemizin ekonomik kalkınmasına liderlik etme vizyonuyla çalışmalarımızı sürdürüyoruz. Bu doğrultuda, Bursa'nın sahip olduğu potansiyeli en üst düzeyde değerlendirerek, iş dünyamızın rekabet gücünü artırmak ve sürdürülebilir bir büyüme sağlamak en temel önceliğimizdir.",
+      "paragraph2": "Bursa Fuar Merkezi (BFM), bu vizyonumuzun önemli bir parçasıdır. Modern altyapısı, geniş sergi alanları ve sunduğu kapsamlı hizmetlerle BFM, sadece Bursa'nın değil, tüm bölgenin ve Türkiye'nin önemli bir fuarcılık merkezi haline gelmiştir. Her yıl onlarca ulusal ve uluslararası fuara ev sahipliği yapan merkezimiz, farklı sektörlerden binlerce firmayı ve profesyoneli bir araya getirerek yeni iş birliklerinin kurulmasına, ticari ilişkilerin geliştirilmesine ve sektörlerdeki son yeniliklerin takip edilmesine olanak tanımaktadır.",
+      "paragraph3": "BFM, aynı zamanda kongreler, seminerler, toplantılar ve çeşitli kurumsal etkinlikler için de ideal bir mekandır. Sahip olduğu teknolojik donanım ve esnek salon yapısı, her türlü organizasyonun başarıyla gerçekleştirilmesine imkan sağlamaktadır.",
+      "paragraph4": "Bizler, Bursa Ticaret ve Sanayi Odası olarak, BFM'nin sürekli gelişimini ve uluslararası standartlarda hizmet vermesini sağlamak için yatırımlarımıza devam ediyoruz. Amacımız, BFM'yi dünya çapında tanınan ve tercih edilen bir fuar ve kongre merkezi haline getirmektir.",
+      "paragraph5": "Bu hedefe ulaşmada, siz değerli iş dünyası temsilcilerinin katkıları ve katılımları büyük önem taşımaktadır. BFM'de düzenlenen fuar ve etkinliklere katılarak, hem kendi işletmeleriniz için yeni fırsatlar yaratabilir hem de Bursa'nın ve Türkiye'nin tanıtımına ve ekonomik gelişimine destek olabilirsiniz.",
+      "paragraph6": "Geleceğe umutla bakarken, iş birliğimizin ve ortak çalışmalarımızın Bursa'mızı ve ülkemizi daha da ileriye taşıyacağına olan inancım tamdır.",
+      "salutation": "Saygılarımla,"
+    },
+    "hizmetler": {
+      "sidebar": {
+        "mainTitle": "BFM",
+        "subTitle": "Bursa Fuar Merkezi",
+        "servicesTitle": "Hizmetler",
+        "prayerRoom": "Mescit",
+        "florist": "Çiçekçi",
+        "atms": "ATM'ler",
+        "infirmary": "Revir",
+        "lostAndFound": "Kayıp ve Buluntu Eşyalar",
+        "restaurantsCafesTitle": "Restoran ve Kafeler",
+        "restaurantsCafesList": "Restoran ve Kafeler Listesi",
+        "transportTitle": "Ulaşım",
+        "transportToBFM": "BFM'ye Ulaşım",
+        "parking": "Otopark",
+        "accommodationTitle": "Konaklama",
+        "nearbyHotels": "Yakın Oteller"
+      },
+      "breadcrumb": {
+        "home": "Ana Sayfa",
+        "visitBFM": "BFM'yi Ziyaret Edin",
+        "services": "Hizmetler"
+      },
+      "content": {
+        "pageTitle": "Hizmetler",
+        "prayerRoomTitle": "Mescit",
+        "prayerRoomText": "Bursa Fuar Merkezi'nde, ziyaretçilerimizin ve katılımcılarımızın ibadetlerini rahatça yerine getirebilmeleri için bay ve bayan mescitleri bulunmaktadır. Mescitlerimiz, fuar alanının kolayca erişilebilen noktalarında yer almaktadır."
+      }
+    },
+    "organizator": {
+      "sidebar": {
+        "mainTitle": "BFM",
+        "subTitle": "Bursa Fuar Merkezi",
+        "organizerTitle": "Organizatör",
+        "eBrochures": "E-Broşürler",
+        "otherServices": "Diğer Hizmetler",
+        "plans": "Planlar",
+        "meetingRooms": "Toplantı Salonları",
+        "extraServices": "Ek Hizmetler"
+      },
+      "breadcrumb": {
+        "home": "Ana Sayfa",
+        "eBrochures": "E-Broşürler"
+      },
+      "content": {
+        "pageTitle": "E-Broşürler",
+        "tableHeaderDocName": "Belge Adı",
+        "tableHeaderDownloadLink": "İndirme Linki",
+        "docNameExample": "BFM Gündem - Nisan 2024",
+        "downloadButton": "İndir"
+      }
+    },
+    "iletisim": {
+      "pageTitle": "Bursa Fuar Merkezi",
+      "address": "Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA",
+      "email": "info@kfa.com.tr",
+      "formTitle": "BFM Fuarcılık ve organizasyonları ile ilgili soru, öneri ve görüşleriniz için lütfen bize yazın.",
+      "formLabels": {
+        "name": "Adınız Soyadınız",
+        "phone": "Telefon",
+        "email": "E-Posta Adresiniz",
+        "message": "Mesajınız"
+      },
+      "formPlaceholders": {
+        "phone": "501 234 56 78",
+        "captcha": "KODU GİRİNİZ"
+      },
+      "privacyText": "İndirimler ve ürün bilgileri içeren özel e-postalar almak isterim (isteğe bağlı) Kişisel verileriniz siparişinizi işleme almak, bu web sitesindeki deneyimlerinizi desteklemek ve gizlilik ilkesi sayfamızda açıklanan diğer amaçlar için kullanılacaktır.",
+      "termsText": "Web sitesinin şartlar ve koşullar sayfasını okudum ve kabul ediyorum *",
+      "submitButton": "GÖNDER"
+    }
+  } 

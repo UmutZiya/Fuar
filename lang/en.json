@@ -1,0 +1,340 @@
+{
+    "title": "Bursa Fair Center",
+    "nav": {
+      "discoverBFM": "Discover BFM",
+      "organizeFair": "Organize a Fair at BFM",
+      "visitBFM": "Visit BFM",
+      "events": "Events",
+      "contactUs": "Contact Us"
+    },
+    "lang": {
+      "tr": "TR",
+      "en": "EN"
+    },
+    "menu": {
+      "toggleAriaLabel": "Toggle Menu",
+      "searchPlaceholder": "type the word you want to search...",
+      "closeAriaLabel": "Close Menu",
+      "discoverBFM": "Discover BFM",
+      "aboutUs": "About Us",
+      "fairCalendar": "BFM Fair Calendar",
+      "officesAndMeetingRooms": "Ready Offices and Meeting Rooms",
+      "organizeFair": "Organize a Fair at BFM",
+      "organizer": "Organizer",
+      "visitBFM": "Visit BFM",
+      "transport": "Transportation",
+      "accommodation": "Accommodation",
+      "restaurantsAndCafes": "Restaurants And Cafes",
+      "services": "Services",
+      "events": "Events",
+      "contact": "Contact",
+      "contactInfo": "Contact Information",
+      "followUs": "Follow Us"
+    },
+    "slider": {
+      "mainTitle": "Rising City & Building and Life Fair that makes Bursa's voice heard",
+      "mainSubtitle": "Evaluating the course of Rising City Bursa on its investment route.",
+      "browseButton": "Browse"
+    },
+    "stats": {
+      "title": "Bursa Fair Center in Numbers",
+      "fairsHeld": "Fairs Held",
+      "countries": "From Different Countries",
+      "businessPeople": "Business People",
+      "visitors": "Visitors",
+      "area": "m² area"
+    },
+    "upcomingFairs": {
+      "title": "Upcoming Fairs",
+      "card1": {
+        "category": "Textile & Clothing",
+        "title": "The Heart of Baby and Children's Ready-to-Wear Sector Beats in Bursa with \"JUNIOSHOW\"",
+        "details": "Fair Detail",
+        "month": "Jan"
+      },
+      "card2": {
+        "category": "Textile & Clothing",
+        "title": "All Innovations in Home Textiles are at HOMETEX 2025 Again, Don't Miss the Big Meeting!",
+        "details": "Fair Detail",
+        "month": "May"
+      },
+      "card3": {
+        "category": "Construction",
+        "title": "Rising City & Building and Life Fair that makes Bursa's voice heard",
+        "details": "Fair Detail",
+        "month": "Apr"
+      },
+      "card4": {
+        "category": "HKF Fuarcılık A.Ş.",
+        "title": "FOTEG Istanbul 2025 - International Food Processing Technologies Exhibition",
+        "details": "Fair Detail",
+        "month": "Apr"
+      },
+      "card5": {
+        "category": "Sektörel Fuarcılık A.Ş.",
+        "title": "Electricity Eurasia 2025 - Electricity and Electrical Equipment Fair",
+        "details": "Fair Detail",
+        "month": "Apr"
+      }
+    },
+    "filter": {
+      "selectYear": "Select Year",
+      "selectMonth": "Select Month",
+      "month": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+      },
+      "selectSector": "Select Sector",
+      "sector": {
+        "jewelry": "Jewelry",
+        "technology": "Technology",
+        "poultry": "Poultry",
+        "foodProcessing": "Food Processing",
+        "construction": "Construction",
+        "automotive": "Automotive",
+        "tourism": "Tourism",
+        "furniture": "Furniture"
+      },
+      "selectLocation": "Select Location",
+      "location": {
+        "istanbul": "Istanbul",
+        "ankara": "Ankara",
+        "bursa": "Bursa",
+        "agora": "Agora",
+        "antalya": "Antalya"
+      }
+    },
+    "tabs": {
+      "agenda": "AGENDA",
+      "blog": "BLOG",
+      "announcements": "ANNOUNCEMENTS",
+      "news": "NEWS"
+    },
+    "cardSlider2": {
+      "discover": "discover"
+    },
+    "footer": {
+      "discoverBFM": "Discover BFM",
+      "aboutBFM": "About BFM",
+      "ourTeam": "Our Team",
+      "qualityPolicy": "Quality Policy",
+      "kvkkDocuments": "KVKK Documents",
+      "organizeFair": "Organize a Fair at BFM",
+      "plans": "Plans",
+      "eBrochures": "E-Brochures",
+      "meetingRooms": "Meeting Rooms",
+      "extraServices": "Extra Services",
+      "bfmAgenda": "BFM Agenda",
+      "fairAnnouncements": "Fair Announcements",
+      "newsFromBFM": "News From BFM",
+      "fairNews": "Fair News",
+      "contactUs": "Contact Us",
+      "address": "Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA",
+      "poweredBy": "Powered By",
+      "poweredByCompany": "F2F Bilişim Reklam ve Danışmanlık Hizmetleri",
+      "termsAndConditions": "Terms And Conditions",
+      "privacyPolicy": "Privacy Policy"
+    },
+    "fuarSinglePage": {
+      "menu": {
+        "searchPlaceholder": "Participation..."
+      },
+      "main": {
+        "organizerInfo": "Bursa Fair Center",
+        "fairTitle": "RISING CITY & BUILDING AND LIFE FAIR 2025",
+        "addToCalendar": "Add to Calendar"
+      },
+      "description": {
+        "title": "Rising City & Building and Life Fair that makes Bursa's voice heard",
+        "p1": "Organized once a year under the leadership of Bursa Chamber of Commerce and Industry with the professional organization of KFA Fuarcılık, Rising City & Building and Life Fair Bursa Construction, Building Materials and Technologies Fair and Rising City & Building and Life Fair Bursa Real Estate Fair aim to find new markets for domestic producers operating in the construction and real estate sectors, create business opportunities, and establish business partnerships.",
+        "p2": "Held in an area of over 10,000 square meters at the Bursa International Fair Center, the fair, showcasing services in the construction and real estate sectors, offers a business-oriented experience focused on technology and trends to both visitors and exhibitors."
+      },
+      "calendar": {
+        "title": "Fair Calendar",
+        "dayThu": "THU",
+        "dayFri": "FRI",
+        "daySat": "SAT",
+        "daySun": "SUN",
+        "dayMon": "MON",
+        "eventDesc": "Rising City & Building and Life Fair that makes Bursa's voice heard",
+        "noEvent": "No event",
+        "hallLabel": "Hall"
+      },
+      "infoPanel": {
+        "title": "Fair Information",
+        "startDateLabel": "Start Date:",
+        "endDateLabel": "End Date:",
+        "hallLabel": "Fair Hall:",
+        "subjectLabel": "Fair Subject:",
+        "organizerLabel": "Organizer Company:",
+        "visitorHoursLabel": "Visiting Hours:",
+        "locationLabel": "Fairground:",
+        "websiteLabel": "Website:",
+        "contactLabel": "Contact:",
+        "socialMediaLabel": "Social Media:",
+        "subjectValue": "Construction and Real Estate",
+        "organizerValue": "Bursa Fair Center",
+        "locationValue": "Bursa International Fair and Congress Center",
+        "onlineInviteButton": "ONLINE INVITATION"
+      },
+      "relatedFairs": {
+        "title": "Related Fairs"
+      }
+    },
+    "hakkimizda": {
+      "sidebar": {
+        "mainTitle": "BFM",
+        "subTitle": "Bursa Fair Center",
+        "aboutUs": "About Us",
+        "bfmAbout": "About BFM",
+        "presidentMessage": "President's Message",
+        "qualityPolicy": "Quality Policy",
+        "ourTeam": "Our Team",
+        "boardOfDirectors": "Board of Directors",
+        "kvkkDocuments": "KVKK Documents",
+        "informationSocietyServices": "Information Society Services",
+        "reports": "Reports",
+        "bfmOffices": "BFM Offices",
+        "bfmReadyOffices": "BFM Ready Offices and Meeting Rooms"
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "aboutUs": "About Us"
+      },
+      "content": {
+        "pageTitle": "About BFM",
+        "missionTitle": "Our Mission:",
+        "missionText": "To contribute to our country's exports by enabling our companies to open up to new markets and develop their existing markets.",
+        "visionTitle": "Our Vision:",
+        "visionText": "To be a leading fair center providing services at international standards by continuously exceeding the expectations of our exhibitors and visitors in the exhibition sector.",
+        "valuesTitle": "Our Values:",
+        "values": [
+          "Customer Focus",
+          "Transparency",
+          "Reliability",
+          "Innovation",
+          "Teamwork",
+          "Sustainability"
+        ],
+        "historyTitle": "Our History:",
+        "historyText1": "Bursa Fair Center (BFM) was established in 2015 by KFA Fuarcılık A.Ş. KFA Fuarcılık is managed by a professional team with over 30 years of experience in the exhibition sector.",
+        "historyText2": "BFM aims to increase the competitiveness of companies in the region in national and international markets by leveraging Bursa's strategic location and industrial potential.",
+        "historyText3": "With its modern infrastructure, large exhibition areas, and comprehensive services, BFM has quickly become one of Turkey's important fair centers.",
+        "statsTitle": "BFM in Numbers:",
+        "statsArea": "Total Area: 140,000 m²",
+        "statsIndoorArea": "Indoor Area: 75,000 m²",
+        "statsOutdoorArea": "Outdoor Area: 65,000 m²",
+        "statsHalls": "Number of Halls: 8",
+        "statsMeetingRooms": "Number of Meeting Rooms: 15",
+        "statsCapacity": "Annual Fair Capacity: 50+",
+        "locationTitle": "Location and Transportation:",
+        "locationText1": "BFM provides an advantage with its close location to Bursa city center and easy transportation facilities.",
+        "locationText2": "It is 45 km from Yenişehir Airport and approximately 1.5 hours from Istanbul Sabiha Gökçen Airport.",
+        "locationText3": "Transportation is easily accessible by public transport and private vehicles.",
+        "servicesTitle": "Our Services:",
+        "servicesText": "BFM offers a wide range of services to its exhibitors and visitors, such as fair organization, stand design and construction, technical support, accommodation, transportation, catering, and other support services.",
+        "collaborationTitle": "Collaborations:",
+        "collaborationText": "BFM collaborates with many local and national institutions and organizations, especially the Bursa Chamber of Commerce and Industry (BTSO). Through these collaborations, we aim to maximize the effectiveness of our fairs and participant satisfaction."
+      },
+      "title": "About Us",
+      "text1": "Since its establishment, Bursa Chamber of Commerce and Industry (BTSO) has been working to facilitate the commercial activities of its members, find solutions to sectoral problems, and contribute to the economy of Bursa and the country.",
+      "text2": "With over 40,000 members, BTSO is one of the largest chambers of commerce and industry in Turkey. More than 60 sector councils operating within the Chamber identify the sectoral problems and solution proposals of their members and bring them to the relevant platforms.",
+      "text3": "BTSO carries out various projects to increase the international competitiveness of its members. These projects include Ur-Ge (Development of International Competitiveness), Global Fair Agency, and Commercial Safari.",
+      "text4": "BTSO makes various investments to contribute to the development of Bursa's economy. These investments include projects such as Bursa Technology Organized Industrial Zone (TEKNOSAB), Bursa Model Factory, and Energy Efficiency Center (EVM).",
+      "text5": "BTSO also adds value to Bursa with its social responsibility projects. Projects implemented by the Chamber include BTSO Education Valley and BTSO Vocational Qualification Testing and Certification Center (MESYEB)."
+    },
+    "baskanMesaji": {
+      "title": "President's Message",
+      "name": "İbrahim BURKAY",
+      "position": "Chairman of the Board",
+      "greeting": "Dear Business World Representatives,",
+      "paragraph1": "As Bursa Chamber of Commerce and Industry, we continue our work with the vision of leading the economic development of our city and country. In this direction, our primary priority is to maximize the potential of Bursa, increase the competitiveness of our business world, and ensure sustainable growth.",
+      "paragraph2": "Bursa Fair Center (BFM) is an important part of this vision. With its modern infrastructure, large exhibition areas, and comprehensive services, BFM has become a significant exhibition center not only for Bursa but also for the entire region and Turkey. Hosting dozens of national and international fairs every year, our center brings together thousands of companies and professionals from different sectors, enabling the establishment of new collaborations, the development of commercial relations, and the monitoring of the latest innovations in the sectors.",
+      "paragraph3": "BFM is also an ideal venue for congresses, seminars, meetings, and various corporate events. Its technological equipment and flexible hall structure allow for the successful execution of all kinds of organizations.",
+      "paragraph4": "As Bursa Chamber of Commerce and Industry, we continue our investments to ensure the continuous development of BFM and its provision of services at international standards. Our goal is to make BFM a globally recognized and preferred fair and congress center.",
+      "paragraph5": "The contributions and participation of you, our esteemed business world representatives, are of great importance in achieving this goal. By participating in the fairs and events held at BFM, you can both create new opportunities for your own businesses and support the promotion and economic development of Bursa and Turkey.",
+      "paragraph6": "Looking towards the future with hope, I fully believe that our cooperation and joint efforts will carry Bursa and our country even further.",
+      "salutation": "Sincerely,"
+    },
+    "hizmetler": {
+      "sidebar": {
+        "mainTitle": "BFM",
+        "subTitle": "Bursa Fair Center",
+        "servicesTitle": "Services",
+        "prayerRoom": "Prayer Room",
+        "florist": "Florist",
+        "atms": "ATMs",
+        "infirmary": "Infirmary",
+        "lostAndFound": "Lost and Found",
+        "restaurantsCafesTitle": "Restaurants and Cafes",
+        "restaurantsCafesList": "Restaurants and Cafes List",
+        "transportTitle": "Transportation",
+        "transportToBFM": "Transportation to BFM",
+        "parking": "Parking",
+        "accommodationTitle": "Accommodation",
+        "nearbyHotels": "Nearby Hotels"
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "visitBFM": "Visit BFM",
+        "services": "Services"
+      },
+      "content": {
+        "pageTitle": "Services",
+        "prayerRoomTitle": "Prayer Room",
+        "prayerRoomText": "Bursa Fair Center has separate prayer rooms for men and women to allow our visitors and exhibitors to perform their prayers comfortably. Our prayer rooms are located at easily accessible points within the fairground."
+      }
+    },
+    "organizator": {
+      "sidebar": {
+        "mainTitle": "BFM",
+        "subTitle": "Bursa Fair Center",
+        "organizerTitle": "Organizer",
+        "eBrochures": "E-Brochures",
+        "otherServices": "Other Services",
+        "plans": "Plans",
+        "meetingRooms": "Meeting Rooms",
+        "extraServices": "Extra Services"
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "eBrochures": "E-Brochures"
+      },
+      "content": {
+        "pageTitle": "E-Brochures",
+        "tableHeaderDocName": "Document Name",
+        "tableHeaderDownloadLink": "Download Link",
+        "docNameExample": "BFM Agenda - April 2024",
+        "downloadButton": "Download"
+      }
+    },
+    "iletisim": {
+      "pageTitle": "Bursa Fair Center",
+      "address": "Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA",
+      "email": "info@kfa.com.tr",
+      "formTitle": "Please write to us for your questions, suggestions, and opinions regarding BFM Fairs and organizations.",
+      "formLabels": {
+        "name": "Your Name and Surname",
+        "phone": "Phone",
+        "email": "Your E-Mail Address",
+        "message": "Your Message"
+      },
+      "formPlaceholders": {
+        "phone": "501 234 56 78",
+        "captcha": "ENTER THE CODE"
+      },
+      "privacyText": "I would like to receive special emails containing discounts and product information (optional). Your personal data will be used to process your order, support your experience on this website, and for other purposes described in our privacy policy page.",
+      "termsText": "I have read and agree to the website terms and conditions *",
+      "submitButton": "SEND"
+    }
+  } 

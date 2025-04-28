@@ -62,6 +62,101 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
+/*=============== Language Switcher =============================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const languageButtons = document.querySelectorAll('.lang-switch a');
+  let translations = {};
+  let currentLang = localStorage.getItem('language') || 'tr'; // Default to Turkish or load saved language
+
+  async function loadTranslations(lang) {
+      try {
+          const response = await fetch(`lang/${lang}.json`);
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          translations = await response.json();
+          applyTranslations(lang);
+      } catch (error) {
+          console.error("Could not load translations:", error);
+      }
+  }
+
+  function applyTranslations(lang) {
+      document.documentElement.lang = lang; // Update HTML lang attribute
+      document.querySelectorAll('[data-translate]').forEach(element => {
+          const key = element.getAttribute('data-translate');
+          const translation = getTranslation(key);
+          if (translation !== undefined) {
+              // Handle potential HTML content within the element (like icons)
+              const icon = element.querySelector('i');
+              if (icon) {
+                  element.innerHTML = translation + ' ' + icon.outerHTML;
+              } else {
+                  element.textContent = translation;
+              }
+          } else {
+              console.warn(`Translation key not found: ${key}`);
+          }
+      });
+
+      // Handle placeholder translations
+      document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+          const key = element.getAttribute('data-translate-placeholder');
+          const translation = getTranslation(key);
+          if (translation !== undefined) {
+              element.placeholder = translation;
+          } else {
+              console.warn(`Translation key not found for placeholder: ${key}`);
+          }
+      });
+
+      // Handle aria-label translations
+      document.querySelectorAll('[data-translate-aria-label]').forEach(element => {
+          const key = element.getAttribute('data-translate-aria-label');
+          const translation = getTranslation(key);
+          if (translation !== undefined) {
+              element.setAttribute('aria-label', translation);
+          } else {
+              console.warn(`Translation key not found for aria-label: ${key}`);
+          }
+      });
+
+      // Update active class on buttons
+      languageButtons.forEach(button => {
+          if (button.getAttribute('data-lang') === lang) {
+              button.classList.add('active');
+          } else {
+              button.classList.remove('active');
+          }
+      });
+  }
+
+  // Helper function to get nested translation values
+  function getTranslation(key) {
+      return key.split('.').reduce((obj, i) => (obj ? obj[i] : undefined), translations);
+  }
+
+  languageButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = button.getAttribute('data-lang');
+          if (lang && lang !== currentLang) {
+              currentLang = lang;
+              localStorage.setItem('language', lang); // Save selected language
+              loadTranslations(lang);
+          }
+      });
+  });
+
+  // Initial load
+  loadTranslations(currentLang);
+});
+
+
+
+
 /*================== Card-Slider-1 Js ======================*/
 document.addEventListener('DOMContentLoaded', function() {
   const slider = document.querySelector('.slider');
