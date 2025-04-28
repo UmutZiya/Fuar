@@ -1,3 +1,84 @@
+// =====================================================================
+// Language Switching Logic (Top Level Scope)
+// =====================================================================
+let i18n_translations = {}; // Renamed to avoid potential global conflicts
+let i18n_currentLang = localStorage.getItem('language') || 'tr'; // Renamed
+
+// Helper function to get nested translation values
+function i18n_getTranslation(key) {
+    return key.split('.').reduce((obj, i) => (obj ? obj[i] : undefined), i18n_translations);
+}
+
+// Apply translations to the document
+function i18n_applyTranslations(lang) {
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+
+    // Translate elements with data-translate
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        const translation = i18n_getTranslation(key);
+        if (translation !== undefined) {
+            const icon = element.querySelector('i'); // Keep icon if present
+            if (icon) {
+                element.innerHTML = translation + ' ' + icon.outerHTML;
+            } else {
+                element.textContent = translation;
+            }
+        } else {
+            console.warn(`Translation key not found: ${key}`);
+        }
+    });
+
+    // Translate elements with data-translate-placeholder
+    document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-translate-placeholder');
+        const translation = i18n_getTranslation(key);
+        if (translation !== undefined) {
+            element.placeholder = translation;
+        } else {
+            console.warn(`Translation key not found for placeholder: ${key}`);
+        }
+    });
+
+    // Translate elements with data-translate-aria-label
+    document.querySelectorAll('[data-translate-aria-label]').forEach(element => {
+        const key = element.getAttribute('data-translate-aria-label');
+        const translation = i18n_getTranslation(key);
+        if (translation !== undefined) {
+            element.setAttribute('aria-label', translation);
+        } else {
+            console.warn(`Translation key not found for aria-label: ${key}`);
+        }
+    });
+
+    // Update active class on language buttons (assuming they are available)
+    document.querySelectorAll('.lang-switch a').forEach(button => {
+         if (button.getAttribute('data-lang') === lang) {
+             button.classList.add('active');
+         } else {
+             button.classList.remove('active');
+         }
+     });
+}
+
+// Load translation file and apply
+async function i18n_loadTranslations(lang) {
+    try {
+        const response = await fetch(`lang/${lang}.json`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        i18n_translations = await response.json();
+        i18n_applyTranslations(lang); // Apply immediately after loading
+    } catch (error) {
+        console.error("Could not load translations:", error);
+    }
+}
+
+// Initial language load triggered later by DOMContentLoaded
+// =====================================================================
+
 /*=============== Navbar js =============================== */
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggleButtons = document.querySelectorAll('.nav-toggle-button'); // Menüyü açan/kapatan tüm butonlar/linkler
@@ -62,100 +143,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-
-/*=============== Language Switcher =============================== */
+/*=============== Language Switcher Event Listener Setup =============================== */
+// Setup language button listeners and trigger initial load
 document.addEventListener('DOMContentLoaded', () => {
-  const languageButtons = document.querySelectorAll('.lang-switch a');
-  let translations = {};
-  let currentLang = localStorage.getItem('language') || 'tr'; // Default to Turkish or load saved language
+    const languageButtons = document.querySelectorAll('.lang-switch a');
 
-  async function loadTranslations(lang) {
-      try {
-          const response = await fetch(`lang/${lang}.json`);
-          if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          translations = await response.json();
-          applyTranslations(lang);
-      } catch (error) {
-          console.error("Could not load translations:", error);
-      }
-  }
+    languageButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = button.getAttribute('data-lang');
+            if (lang && lang !== i18n_currentLang) {
+                i18n_currentLang = lang;
+                localStorage.setItem('language', lang); // Save selected language
+                i18n_loadTranslations(lang); // Use top-level function
+            }
+        });
+    });
 
-  function applyTranslations(lang) {
-      document.documentElement.lang = lang; // Update HTML lang attribute
-      document.querySelectorAll('[data-translate]').forEach(element => {
-          const key = element.getAttribute('data-translate');
-          const translation = getTranslation(key);
-          if (translation !== undefined) {
-              // Handle potential HTML content within the element (like icons)
-              const icon = element.querySelector('i');
-              if (icon) {
-                  element.innerHTML = translation + ' ' + icon.outerHTML;
-              } else {
-                  element.textContent = translation;
-              }
-          } else {
-              console.warn(`Translation key not found: ${key}`);
-          }
-      });
-
-      // Handle placeholder translations
-      document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
-          const key = element.getAttribute('data-translate-placeholder');
-          const translation = getTranslation(key);
-          if (translation !== undefined) {
-              element.placeholder = translation;
-          } else {
-              console.warn(`Translation key not found for placeholder: ${key}`);
-          }
-      });
-
-      // Handle aria-label translations
-      document.querySelectorAll('[data-translate-aria-label]').forEach(element => {
-          const key = element.getAttribute('data-translate-aria-label');
-          const translation = getTranslation(key);
-          if (translation !== undefined) {
-              element.setAttribute('aria-label', translation);
-          } else {
-              console.warn(`Translation key not found for aria-label: ${key}`);
-          }
-      });
-
-      // Update active class on buttons
-      languageButtons.forEach(button => {
-          if (button.getAttribute('data-lang') === lang) {
-              button.classList.add('active');
-          } else {
-              button.classList.remove('active');
-          }
-      });
-  }
-
-  // Helper function to get nested translation values
-  function getTranslation(key) {
-      return key.split('.').reduce((obj, i) => (obj ? obj[i] : undefined), translations);
-  }
-
-  languageButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-          e.preventDefault();
-          const lang = button.getAttribute('data-lang');
-          if (lang && lang !== currentLang) {
-              currentLang = lang;
-              localStorage.setItem('language', lang); // Save selected language
-              loadTranslations(lang);
-          }
-      });
-  });
-
-  // Initial load
-  loadTranslations(currentLang);
+    // Initial language load
+    i18n_loadTranslations(i18n_currentLang); // Use top-level function and variable
 });
-
-
-
 
 /*================== Card-Slider-1 Js ======================*/
 document.addEventListener('DOMContentLoaded', function() {
@@ -706,10 +713,20 @@ document.addEventListener('DOMContentLoaded', function() {
     swiperWrapper.innerHTML = '';
     swiperWrapper.appendChild(newCards);
     
+    // Apply translations to the newly added cards
+    if (typeof i18n_applyTranslations === 'function') {
+        i18n_applyTranslations(i18n_currentLang); // Re-apply translations to the whole page
+    } else {
+        console.error("Translation function (i18n_applyTranslations) not accessible.");
+        // As a fallback, you might manually translate items within swiperWrapper if needed
+    }
+    
     // Swiper'ı güncelle
     if (swiperInstance) {
       swiperInstance.update();
       swiperInstance.slideTo(0, 0);
+    } else {
+      initSwiper(); // Initialize if it wasn't (should be initialized on load)
     }
     
     // Kartları göster
@@ -731,42 +748,69 @@ document.addEventListener('DOMContentLoaded', function() {
 /*====== index.html js end =============*/
 
 /*====== iletisim.html js start ====*/
- // Form gönderme işlemi
- document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  // CAPTCHA doğrulama
-  const captchaText = document.getElementById('captchaText').textContent;
-  const captchaInput = document.getElementById('captchaInput').value;
-  
-  if (captchaText !== captchaInput) {
-      alert('CAPTCHA kodu hatalı!');
-      return;
-  }
-  
-  // Form verilerini al
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-  
-  // Normalde burada bir AJAX isteği ile form verileri sunucuya gönderilir
-  console.log('Form gönderildi:', { name, phone, email, message });
-  alert('Mesajınız başarıyla gönderildi!');
-  
-  // Formu sıfırla
-  this.reset();
-});
+// Wrap in DOMContentLoaded if this script might run before the form exists
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-// CAPTCHA yenileme
-document.querySelector('.captcha-refresh').addEventListener('click', function() {
-  // Rastgele CAPTCHA kodu oluştur
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-  let captcha = '';
-  for (let i = 0; i < 5; i++) {
-      captcha += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  document.getElementById('captchaText').textContent = captcha;
+            // CAPTCHA doğrulama
+            const captchaTextEl = document.getElementById('captchaText');
+            const captchaInputEl = document.getElementById('captchaInput');
+            if (!captchaTextEl || !captchaInputEl) {
+                console.error("Captcha elements not found");
+                alert('CAPTCHA elements not found!');
+                return;
+            }
+            const captchaText = captchaTextEl.textContent;
+            const captchaInput = captchaInputEl.value;
+
+
+            if (captchaText !== captchaInput) {
+                alert('CAPTCHA kodu hatalı!');
+                return;
+            }
+
+            // Form verilerini al
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Normalde burada bir AJAX isteği ile form verileri sunucuya gönderilir
+            console.log('Form gönderildi:', { name, phone, email, message });
+            alert('Mesajınız başarıyla gönderildi!');
+
+            // Formu sıfırla
+            this.reset();
+             // Optionally refresh captcha after successful submission
+             refreshCaptcha();
+        });
+    }
+
+     // CAPTCHA yenileme
+     const refreshButton = document.querySelector('.captcha-refresh');
+     if (refreshButton) {
+         refreshButton.addEventListener('click', refreshCaptcha);
+         // Initial captcha generation
+         refreshCaptcha();
+     }
+
+     function refreshCaptcha() {
+        const captchaTextEl = document.getElementById('captchaText');
+        if(!captchaTextEl) return;
+        // Rastgele CAPTCHA kodu oluştur
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let captcha = '';
+        for (let i = 0; i < 5; i++) {
+            captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        captchaTextEl.textContent = captcha;
+        // Clear previous input
+        const captchaInputEl = document.getElementById('captchaInput');
+        if(captchaInputEl) captchaInputEl.value = '';
+     }
 });
 
 /*================ Hakkımızda Js ===============*/
