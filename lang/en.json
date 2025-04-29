@@ -34,7 +34,9 @@
     "slider": {
       "mainTitle": "Rising City & Building and Life Fair that makes Bursa's voice heard",
       "mainSubtitle": "Evaluating the course of Rising City Bursa on its investment route.",
-      "browseButton": "Browse"
+      "browseButton": "Browse",
+      "triggerButton1": "E-Ticket",
+      "triggerButton2": "Stand Request"
     },
     "stats": {
       "title": "Bursa Fair Center in Numbers",

@@ -21,7 +21,6 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-
     <style>     
         .form-container {
             max-width: 700px;
@@ -114,111 +113,108 @@
         <div class="container-navbar">
             <a href="index.html" class="logo mt-5">
                 <!-- Gerçek logo dosyanızın yolunu buraya ekleyin -->
-                <img src="./images/logo-beyaz.png" alt="">
+                <img src="./images/logo-turkuaz.png" class="" alt="">
             </a>
-
+      
             <nav class="main-nav mt-5">
-                <ul class="">
-                    <!-- nav-toggle-button class'ı menüyü açar -->
-                    <li><a href="#" class="nav-toggle-button">BFM'yi Keşfedin <i class="fas fa-chevron-down"></i></a>
-                    </li>
-                    <li><a href="#" class="nav-toggle-button">BFM'de Fuar Organize Edin <i
-                                class="fas fa-chevron-down"></i></a></li>
-                    <li><a href="#" class="nav-toggle-button">BFM'yi Ziyaret Edin <i
-                                class="fas fa-chevron-down"></i></a></li>
-                    <li><a href="#" class="nav-toggle-button">ETKİNLİKLER <i class="fas fa-chevron-down"></i></a></li>
-                    <li><a href="#" class="nav-toggle-button">Bize Ulaşın</a></li>
-                </ul>
+              <ul class="">
+                  <!-- nav-toggle-button class'ı menüyü açar -->
+                  <li><a href="#" class="nav-toggle-button" data-translate="nav.discoverBFM">BFM'yi Keşfedin <i class="fas fa-chevron-down"></i></a></li>
+                  <li><a href="#" class="nav-toggle-button" data-translate="nav.organizeFair">BFM'de Fuar Organize Edin <i class="fas fa-chevron-down"></i></a></li>
+                  <li><a href="#" class="nav-toggle-button" data-translate="nav.visitBFM">BFM'yi Ziyaret Edin <i class="fas fa-chevron-down"></i></a></li>
+                  <li><a href="#" class="nav-toggle-button" data-translate="nav.events">ETKİNLİKLER <i class="fas fa-chevron-down"></i></a></li>
+                  <li><a href="#" class="nav-toggle-button" data-translate="nav.contactUs">Bize Ulaşın</a></li>
+              </ul>
             </nav>
-
+      
             <div class="header-actions">
-                <div class="lang-switch mt-4 ms-4">
-                    <a href="#" class="active">TR</a> | <a href="#" class="">EN</a>
-                </div>
+              <div class="lang-switch mt-4 ms-4">
+                  <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="#" class="" data-lang="en" data-translate="lang.en">EN</a>
+              </div>
                 <!-- nav-toggle-button class'ı menüyü açar -->
-
+                
             </div>
-
+      
             <!-- Mobil için Hamburger İkonu (nav-toggle-button class'ı menüyü açar/kapatır) -->
-            <button class="mobile-menu-toggle nav-toggle-button" aria-label="Menüyü Aç/Kapat">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="mobile-menu-toggle nav-toggle-button" data-translate-aria-label="menu.toggleAriaLabel" aria-label="Menüyü Aç/Kapat">
+              <i class="fas fa-bars"></i>
+          </button>
         </div>
-    </header>
-    <!-- Header End -->
-    <!-- Tam Ekran Overlay Menü -->
-    <div class="fullscreen-menu">
-        <div class="menu-header">
-            <a href="index.html" class="logo-menu">
-                <!-- Menüdeki logo -->
-                <img src="./images/logo-beyaz.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo" class="fs-2">
-            </a>
-            <div class="menu-search-container">
-                <input type="text" placeholder="Katılım..." class="menu-search-input">
-                <button class="menu-search-button"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="menu-header-actions">
-                <div class="lang-switch">
-                    <a href="#" class="active">TR</a> | <a href="#">EN</a>
-                </div>
-                <button class="close-menu-btn" aria-label="Menüyü Kapat">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
+      </header>
+      <!-- Header End -->
+      <!-- Tam Ekran Overlay Menü -->
+      <div class="fullscreen-menu">
+          <div class="menu-header">
+               <a href="index.html" class="logo-menu">
+                   <!-- Menüdeki logo -->
+                  <img src="./images/logo-beyaz.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo" class="fs-2">
+              </a>
+              <div class="menu-search-container">
+                   <input type="text" data-translate-placeholder="menu.searchPlaceholder" placeholder="aramak istediğiniz kelimeyi yazınız..." class="menu-search-input">
+                   <button class="menu-search-button"><i class="fas fa-search"></i></button>
+              </div>
+               <div class="menu-header-actions">
+                  <div class="lang-switch">
+                      <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="#" data-lang="en" data-translate="lang.en">EN</a>
+                  </div>
+                  <button class="close-menu-btn" data-translate-aria-label="menu.closeAriaLabel" aria-label="Menüyü Kapat">
+                      <i class="fas fa-times"></i>
+                  </button>
+               </div>
+          </div>
+      
+          <div class="menu-content">
+              <div class="menu-column">
+                  <!-- Başlığa tıklanınca menüyü kapatmak için nav-toggle-button ekledik -->
+                  <h3 class="nav-toggle-button" data-translate="menu.discoverBFM">BFM'yi Keşfedin</h3>
+                  <ul>
+                      <li><a href="hakkimizda.html" data-translate="menu.aboutUs">Hakkımızda</a></li>
+                      <li><a href="fuar-takvimi.html" data-translate="menu.fairCalendar">BFM Fuar Takvimi</a></li>
+                      <li><a href="toplanti-salonlari.html" data-translate="menu.officesAndMeetingRooms">Hazır Ofisler ve Toplantı Salonları</a></li>
+                  </ul>
+              </div>
+              <div class="menu-column">
+                  <h3 class="nav-toggle-button" data-translate="menu.organizeFair">BFM'de Fuar Organize Edin</h3>
+                  <ul>
+                      <li><a href="organizator.html" data-translate="menu.organizer">Organizatör</a></li>
+                  </ul>
+              </div>
+              <div class="menu-column">
+                  <h3 class="nav-toggle-button" data-translate="menu.visitBFM">BFM'yi Ziyaret Edin</h3>
+                  <ul>
+                      <li><a href="ulasim.html" data-translate="menu.transport">Ulaşım</a></li>
+                      <li><a href="konaklama.html" data-translate="menu.accommodation">Konaklama</a></li>
+                      <li><a href="restoran-ve-kafeler.html" data-translate="menu.restaurantsAndCafes">Restoran Ve Kafeler</a></li>
+                      <li><a href="hizmetler.html" data-translate="menu.services">Hizmetler</a></li>
+                  </ul>
+              </div>
+               <div class="menu-column">
+                  <h3 class="nav-toggle-button" data-translate="menu.events">ETKİNLİKLER</h3>
+                  <ul>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                  </ul>
+              </div>
+              <div class="menu-column">
+                  <h3 class="nav-toggle-button" data-translate="menu.contact">İLETİŞİM</h3>
+                  <ul>
+                    <li><a href="iletisim.html" class="fw-normal" data-translate="menu.contactInfo">İletişim Bilgileri</a></li>
+                </ul>
+              </div>
+          </div>
+        
+          <div class="menu-footer">
+              <span data-translate="menu.followUs">Bizi Takip Edin</span>
+              <div class="social-icons-menu">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+                   <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
         </div>
-
-        <div class="menu-content">
-            <div class="menu-column">
-                <!-- Başlığa tıklanınca menüyü kapatmak için nav-toggle-button ekledik -->
-                <h3 class="nav-toggle-button">BFM'yi Keşfedin</h3>
-                <ul>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                    <li><a href="fuar-takvimi.html">BFM Fuar Takvimi</a></li>
-
-                    <li><a href="toplanti-salonlari.html">Hazır Ofisler ve Toplantı Salonları</a></li>
-            </div>
-            <div class="menu-column">
-                <h3 class="nav-toggle-button">BFM'de Fuar Organize Edin</h3>
-                <ul>
-                    <li><a href="organizator.html">Organizatör</a></li>
-                </ul>
-            </div>
-            <div class="menu-column">
-                <h3 class="nav-toggle-button">BFM'yi Ziyaret Edin</h3>
-                <ul>
-                    <li><a href="ulasim.html">Ulaşım</a></li>
-                    <li><a href="konaklama.html">Konaklama</a></li>
-                    <li><a href="restoran-ve-kafeler.html">Restoran Ve Kafeler</a></li>
-                    <li><a href="hizmetler.html">Hizmetler</a></li>
-                </ul>
-            </div>
-            <div class="menu-column">
-                <h3 class="nav-toggle-button">ETKİNLİKLER</h3>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-            </div>
-            <div class="menu-column">
-                <h3 class="nav-toggle-button">İLETİŞİM</h3>
-                <ul>
-                    <li><a href="iletisim.html" class="fw-normal">İletişim Bilgileri</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="menu-footer">
-            <span>Bizi Takip Edin</span>
-            <div class="social-icons-menu">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </div>
 
     <div class="banner">
         <img src="images/iletisim-banner.png" class="" alt="">
@@ -277,116 +273,114 @@
      <footer class="bg-dark text-white pt-5 pb-4 footer">
 
         <div class="container text-md-left">
-
-            <div class="row text-md-left">
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold ">BFM'yi Keşfedin</h5>
-                    <p>
-                        <a href="hakkimizda.html" class="text-white" style="text-decoration: none;">BFM Hakkında</a>
-                    </p>
-                    <p>
-                        <a href="ekibimiz.html" class="text-white" style="text-decoration: none;">Ekibimiz</a>
-                    </p>
-                    <p>
-                        <a href="kalite-politimiz.html" class="text-white" style="text-decoration: none;">Kalite
-                            Politikamız</a>
-                    </p>
-                    <p>
-                        <a href="kvkk-dokumanları.html" class="text-white" style="text-decoration: none;">KVKK
-                            Dökümanları</a>
-                    </p>
-                </div>
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
-                    <h5 class="text-uppercase mb-4 font-weight-bold ">BFM'de Fuar Organize Edin</h5>
-
-                    <p>
-                        <a href="planlar.html" class="text-white" style="text-decoration: none;">Planlar</a>
-                    </p>
-                    <p>
-                        <a href="organizator.html" class="text-white" style="text-decoration: none;">E-Broşürler</a>
-                    </p>
-                    <p>
-                        <a href="toplanti-salonlari.html" class="text-white" style="text-decoration: none;">Toplantı Salonları</a>
-                    </p>
-                    <p>
-                        <a href="hizmetler.html" class="text-white" style="text-decoration: none;">Ek Hizmetler</a>
-                    </p>
-                </div>
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
-                    <h5 class="text-uppercase mb-4 font-weight-bold ">BFM Gündem</h5>
-                    <p>
-                        <a href="#" class="text-white" style="text-decoration: none;">Fuar Duyuruları</a>
-                    </p>
-
-                    <p>
-                        <a href="#" class="text-white" style="text-decoration: none;">BFM'den Haberler</a>
-                    </p>
-
-                    <p>
-                        <a href="#" class="text-white" style="text-decoration: none;">Fuar Haberleri</a>
-                    </p>
-
-                </div>
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
-                    <h5 class="text-uppercase mb-4 font-weight-bold">Bize Ulaşın</h5>
-                    <p>
-                        Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA
-                    </p>
-
-                    <p>
-                        info@kfa.com.tr
-                    </p>
-
-                    <p>
-                        (0224) 211 50 82
-                    </p>
-
-                </div>
-
-                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3 ps-5">
-                    <img src="images/logo-beyaz.png" class="logo-footer" alt="">
-                    <hr>
-                </div>
-
-            </div>
-
-            <hr class="mb-4">
-
-            <div class="row align-item-center">
-                <div class="col-md-7 col-lg-8">
-                    <a>
-                        Powered By <a class="footer-poweredby" href="https://f2fbilisim.com" target="_blank"
-                            style="text-decoration: none;">F2F Bilişim Reklam ve Danışmanlık Hizmetleri</a>
-                    </a>
-
-                </div>
-
-                <div class="col-md-5 col-lg-4">
-                    <div class="text-center text-md-right">
-
-                        <ul class="list-unstyled list-inline">
-                            <li>
-                                <a href="#" class="btn-floating btn-sm text-white fw-normal">
-                                    Hüküm Ve Koşullar
-                                </a>
-                                <a href="#" class="btn-floating btn-sm text-white ms-4 fw-normal">
-                                    Gizlilik Politikası
-                                </a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-                </div>
-
-            </div>
-            <br> <br> <br>
+        
+           <div class="row text-md-left">
+        
+               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                   <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.discoverBFM">BFM'yi Keşfedin</h5>
+                   <p>
+                       <a href="hakkimizda.html" class="text-white" style="text-decoration: none;" data-translate="footer.aboutBFM">BFM Hakkında</a>
+                   </p>
+                   <p>
+                       <a href="ekibimiz.html" class="text-white" style="text-decoration: none;" data-translate="footer.ourTeam">Ekibimiz</a>
+                   </p>
+                   <p>
+                       <a href="kalite-politimiz.html" class="text-white" style="text-decoration: none;" data-translate="footer.qualityPolicy">Kalite Politikamız</a>
+                   </p>
+                   <p>
+                       <a href="kvkk-dokumanları.html" class="text-white" style="text-decoration: none;" data-translate="footer.kvkkDocuments">KVKK Dökümanları</a>
+                   </p>
+               </div>
+        
+               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                   <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.organizeFair">BFM'de Fuar Organize Edin</h5>
+        
+                   <p>
+                       <a href="planlar.html" class="text-white" style="text-decoration: none;" data-translate="footer.plans">Planlar</a>
+                   </p>
+                   <p>
+                       <a href="organizator.html" class="text-white" style="text-decoration: none;" data-translate="footer.eBrochures">E-Broşürler</a>
+                   </p>
+                   <p>
+                       <a href="toplanti-salonlari.html" class="text-white" style="text-decoration: none;" data-translate="footer.meetingRooms">Toplantı Salonları</a>
+                   </p>
+                   <p>
+                       <a href="hizmetler.html" class="text-white" style="text-decoration: none;" data-translate="footer.extraServices">Ek Hizmetler</a>
+                   </p>
+               </div>
+        
+               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                   <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.bfmAgenda">BFM Gündem</h5>
+                   <p>
+                       <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.fairAnnouncements">Fuar Duyuruları</a> 
+                   </p>
+        
+                   <p>
+                       <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.newsFromBFM">BFM'den Haberler</a> 
+                   </p>
+        
+                   <p>
+                       <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.fairNews">Fuar Haberleri</a>
+                   </p>
+        
+               </div>
+        
+               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                   <h5 class="text-uppercase mb-4 font-weight-bold" data-translate="footer.contactUs">Bize Ulaşın</h5>
+                   <p data-translate="footer.address">
+                     Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA
+                   </p>
+        
+                   <p>
+                     info@kfa.com.tr
+                   </p>
+        
+                   <p>
+                     (0224) 211 50 82
+                   </p>
+        
+               </div>
+        
+               <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3 ps-5">
+                   <img src="images/logo-beyaz.png" class="logo-footer" alt="">
+                   <hr>
+               </div>
+        
+           </div>
+        
+           <hr class="mb-4">
+        
+           <div class="row align-item-center">
+               <div class="col-md-7 col-lg-8">
+                   <a>
+                       <span data-translate="footer.poweredBy">Powered By</span> <a class="footer-poweredby" href="https://f2fbilisim.com" target="_blank"
+                           style="text-decoration: none;" data-translate="footer.poweredByCompany">F2F Bilişim Reklam ve Danışmanlık Hizmetleri</a>
+                   </a>
+        
+               </div>
+        
+               <div class="col-md-5 col-lg-4">
+                   <div class="text-center text-md-right">
+        
+                       <ul class="list-unstyled list-inline">
+                           <li>
+                               <a href="#" class="btn-floating btn-sm text-white fw-normal" data-translate="footer.termsAndConditions">
+                                   Hüküm Ve Koşullar
+                               </a>
+                               <a href="#" class="btn-floating btn-sm text-white ms-4 fw-normal" data-translate="footer.privacyPolicy">
+                                   Gizlilik Politikası
+                               </a>
+                           </li>
+        
+                       </ul>
+        
+                   </div>
+               </div>
+        
+           </div>
+           <br> <br> <br> 
         </div>
-    </footer>
+        </footer>
 
 
     <script>

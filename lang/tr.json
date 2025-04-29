@@ -34,7 +34,9 @@
     "slider": {
       "mainTitle": "Bursa'nın sesini duyuran Rising City & Yapı ve Yaşam Fuarı",
       "mainSubtitle": "Yükselen Şehir Bursa'nın yatırım rotasındaki seyrini değerlendiriyor.",
-      "browseButton": "Göz at"
+      "browseButton": "Göz at",
+      "triggerButton1": "E-Bilet",
+      "triggerButton2": "Stant Talebi"
     },
     "stats": {
       "title": "Rakamlarla Bursa Fuar Merkezi",
