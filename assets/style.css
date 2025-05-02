@@ -23,6 +23,13 @@ body{
 /* Header */
 
 /* Menü açıkken scroll'u engelle */
+
+/* .up-menu-f2f{
+  position: absolute;
+  bottom: 24px;
+  left: 25px !important;
+} */
+
 body.menu-open {
     overflow: hidden;
   }

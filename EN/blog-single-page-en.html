@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bursa Fuar Merkezi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <!-- Css -->
+    <link rel="stylesheet" href="/assets/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="container-navbar">
+            <a href="index.html" class="logo mt-5">
+                <!-- Gerçek logo dosyanızın yolunu buraya ekleyin -->
+                <img src="./images/logo-beyaz.png" alt="">
+            </a>
+
+            <nav class="main-nav mt-5">
+                <ul class="">
+                    <!-- nav-toggle-button class'ı menüyü açar -->
+                    <li><a href="#" class="nav-toggle-button" data-translate="nav.discoverBFM">BFM'yi Keşfedin <i class="fas fa-chevron-down"></i></a>
+                    </li>
+                    <li><a href="#" class="nav-toggle-button" data-translate="nav.organizeFair">BFM'de Fuar Organize Edin <i
+                                class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#" class="nav-toggle-button" data-translate="nav.visitBFM">BFM'yi Ziyaret Edin <i
+                                class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#" class="nav-toggle-button" data-translate="nav.events">ETKİNLİKLER <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#" class="nav-toggle-button" data-translate="nav.contactUs">Bize Ulaşın</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="lang-switch mt-4 ms-4">
+                    <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="#" class="" data-lang="en" data-translate="lang.en">EN</a>
+                </div>
+                <!-- nav-toggle-button class'ı menüyü açar -->
+
+            </div>
+
+            <!-- Mobil için Hamburger İkonu (nav-toggle-button class'ı menüyü açar/kapatır) -->
+            <button class="mobile-menu-toggle nav-toggle-button" data-translate-aria-label="menu.toggleAriaLabel" aria-label="Menüyü Aç/Kapat">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- Tam Ekran Overlay Menü -->
+    <div class="fullscreen-menu">
+        <div class="menu-header">
+            <a href="index.html" class="logo-menu">
+                <!-- Menüdeki logo -->
+                <img src="./images/logo-beyaz.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo" class="fs-2">
+            </a>
+            <div class="menu-search-container">
+                <input type="text" data-translate-placeholder="menu.searchPlaceholder" placeholder="Katılım..." class="menu-search-input">
+                <button class="menu-search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="menu-header-actions">
+                <div class="lang-switch">
+                    <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="#" data-lang="en" data-translate="lang.en">EN</a>
+                </div>
+                <button class="close-menu-btn" data-translate-aria-label="menu.closeAriaLabel" aria-label="Menüyü Kapat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="menu-content">
+            <div class="menu-column">
+                <!-- Başlığa tıklanınca menüyü kapatmak için nav-toggle-button ekledik -->
+                <h3 class="nav-toggle-button" data-translate="menu.discoverBFM">BFM'yi Keşfedin</h3>
+                <ul>
+                    <li><a href="hakkimizda.html" data-translate="menu.aboutUs">Hakkımızda</a></li>
+                    <li><a href="fuar-takvimi.html" data-translate="menu.fairCalendar">BFM Fuar Takvimi</a></li>
+                    <li><a href="toplanti-salonlari.html" data-translate="menu.officesAndMeetingRooms">Hazır Ofisler ve Toplantı Salonları</a></li>
+                </ul>
+            </div>
+            <div class="menu-column">
+                <h3 class="nav-toggle-button" data-translate="menu.organizeFair">BFM'de Fuar Organize Edin</h3>
+                <ul>
+                    <li><a href="organizator.html" data-translate="menu.organizer">Organizatör</a></li>
+                </ul>
+            </div>
+            <div class="menu-column">
+                <h3 class="nav-toggle-button" data-translate="menu.visitBFM">BFM'yi Ziyaret Edin</h3>
+                <ul>
+                    <li><a href="ulasim.html" data-translate="menu.transport">Ulaşım</a></li>
+                    <li><a href="konaklama.html" data-translate="menu.accommodation">Konaklama</a></li>
+                    <li><a href="restoran-ve-kafeler.html" data-translate="menu.restaurantsAndCafes">Restoran Ve Kafeler</a></li>
+                    <li><a href="hizmetler.html" data-translate="menu.services">Hizmetler</a></li>
+                </ul>
+            </div>
+            <div class="menu-column">
+                <h3 class="nav-toggle-button" data-translate="menu.events">ETKİNLİKLER</h3>
+                <ul>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="menu-column">
+                <h3 class="nav-toggle-button" data-translate="menu.contact">İLETİŞİM</h3>
+                <ul>
+                    <li><a href="iletisim.html" class="fw-normal" data-translate="menu.contactInfo">İletişim Bilgileri</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-footer">
+            <span data-translate="menu.followUs">Bizi Takip Edin</span>
+            <div class="social-icons-menu">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="images/iletisim-banner.png" class="" alt="">
+    </div>
+    
+    <div class="container py-5">
+        <div class="breadcrumb justify-content-center">
+            <a href="index.html">Ana Sayfa</a> / 
+            <a href="hakkimizda.html">Bloglar</a> / 
+            <a href="kalite-politimiz.html">Textile Show Blog</a>  
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="news-container">
+
+                    <div class="news-content">
+                        <!-- Görsel Eklendi -->
+                        <h2 class="fw-normal">Tekstil sektörünün kalbi Bursa Textile Show Fuarı’nda attı.</h2>
+                        <p>Türkiye ekonomisinin lokomotif sektörlerinden olan tekstilde dış ticaret hacmine güç katan
+                            Bursa Textile Show Fuarı sona erdi. Bursa Uluslararası Fuar Merkezi’nde düzenlenen Bursa
+                            Textile Show Fuarı’na 2 ayrı salonda 80’i aşkın firma katıldı. Fuarda ayrıca trend alanları
+                            ve ilham verici seminerlerle katılımcılara sektördeki son yenilikleri keşfetme imkanı
+                            sunuldu.</p>
+                        <img src="./images/textileshow-blog.png" alt="KFA Fuarcılık Uluslararası Fuar Katılımı"
+                            class="news-image">
+                        <div class="image-caption">
+                            <!-- <div>KFA Fuarcılık ekibi Cairo International Fashion & Textile Expo'da</div>
+                            <div>73. kez düzenlenen fuarda Türk tekstil ürünleri sergileniyor</div>
+                            <div>Fotoğraf: KFA Fuarcılık Basın Servisi / 2025</div> -->
+                        </div>
+
+                        <h3 class="subtitle">40’a Yakın Ülkeden Alıcı Geldi</h3>
+                        <p class="mb-4">BTSO öncülüğünde yürütülen Giysilik Kumaş UR-GE projeleri kapsamında B2B
+                            organizasyonunda ise yabancı iş profesyonelleri Bursalı firmalarla iş görüşmesi
+                            gerçekleştirdi. Fuara, başta Avrupa, Afrika, Türk Cumhuriyetleri ve Orta Doğu ülkelerinden
+                            olmak üzere dünyanın dört bir yanından ziyaretçiler geldi.</p>
+
+                        <h3 class="subtitle">“Farklı Coğrafyalardan Müşteriler Kazandık”</h3>
+                        <p class="mb-4">Fuar katılımcılarından Marsala Tekstil firması Pazarlama Direktörü Özlem Özel,
+                            Bursa Textile Show Fuarı’na ikinci kez katıldığını belirterek, fuarda beklentilerinin
+                            üzerinde ziyaretçi yoğunluğu ile karşılaştıklarını söyledi. Özel, “Üretimimizin yüzde
+                            80’inini ihraç ediyoruz. Firma olarak fuardan memnunuz. 3 gün boyunca Rusya, Almanya,
+                            İspanya, İngiltere gibi farklı ülkelerden ziyaretçilerle görüşmeler gerçekleştirdik.” diye
+                            konuştu.</p>
+
+                        <h3 class="subtitle">“Afrika’dan İş Bağlantısı Kurdum”</h3>
+                        <p class="mb-4">Melba Tekstil firmasından Bahadır Yaşbey, fuara ilk defa katıldıklarını söyledi.
+                            Fuarın alanı ve atmosferinin güzel hazırlandığını belirten Yaşbey, “Fuarda yabancı
+                            alıcılardan yoğun ilgi gördük. İlerleyen dönemlerde fuarın daha iyi noktaya geleceğine
+                            inanıyorum. Bu sene fuarda özellikle Rusya, Beyaz Rusya, Ürdün’den alıcılar ağırladık.
+                            Siparişlerimizi de aldık. Bizim için olumlu bir fuar oldu.” dedi.</p>
+
+
+                        <h3 class="subtitle">“Fuar Fırsatlar Sunuyor”</h3>
+                        <p class="mb-4">Tende Tekstil firmasından İsmail Hasırcı, fuarın düzenlendiği ilk yıldan bu yana
+                            katılımcı olarak yer aldıklarını belirterek, “Özellikle bu sene Avrupa ve Balkanlar
+                            ağırlıklı olmak üzere birçok firma ile bağlantılar kurduk. Bizim için en önemli konu
+                            network. Bu konuda Bursa Textile Show bizlere büyük fırsatlar sağlıyor” diye konuştu.</p>
+
+                        <h3 class="subtitle">“Bursa’daki Firmalarla İletişim Halindeyiz”</h3>
+                        <p class="mb-4">Belçika’da tekstil sektörünün önemli firmalarından Tonickx’in tasarımcılarından
+                            Anton Frans, “Uzun süredir Türkiye’den ürün alıyoruz. Bursa’da işbirliği yaptığımız birçok
+                            firma var. Bursa’ya 2. kez geldim. Bu fuar bizim için çok önemli çünkü çalıştığımız tüm
+                            firmaları aynı mekanda görebiliyoruz.” dedi.</p>
+
+                        <h3 class="subtitle">“Ürünlerin Kalitesi Üst Seviyede”</h3>
+                        <p class="mb-4">Bursa Textile Show Fuarı’nda keten ve dokuma kumaş siparişi vererek ülkesine
+                            döneceğini söyleyen, Mısır’lı firma yetkilisi Menna Shalaby, “Fuarda dünyanın her
+                            coğrafyasından firmalar var. Kumaş kalitesi Bursa’da çok iyi konumda.” ifadelerini kullandı.
+                            Ukrayna’da faaliyet gösteren Promo Tex firmasından Antonina Pasichnyk, kadın giysi üretimi
+                            için kumaş tercihlerinin Bursa’dan olmasını istediğini belirterek, fuarda yeni iş
+                            bağlantıları kurduğunu söyledi.
+                            BTSO’nun iştiraki KFA Fuarcılık AŞ organizasyonuyla düzenlenen fuara, Ticaret Bakanlığı,
+                            KOSGEB ve UTİB de destek veriyor.</p>
+
+
+                            <!-- Eğer önemli bir kısım varsa highlight section kısmına yazılabilir -->
+                        <!-- <div class="highlight-section">
+                            <h3 class="subtitle mb-3">"İhracat Odaklı Büyüme Hedeflerine Katkımızı Sürdüreceğiz"</h3>
+                            <p class="mb-0">BTSO Yönetim Kurulu Başkanı <strong>İbrahim Burkay</strong>, Türkiye'nin
+                                büyüme ve kalkınma hedeflerinde ihracatçıların önemli bir rol üstlendiğini söyledi.
+                                BTSO'nun kentin dış ticaretine rehberlik eden birçok projeyi hayata geçirdiğini belirten
+                                Başkan Burkay, KFA Fuarcılık A.Ş. firmasının organizasyon becerisiyle milli katılım
+                                düzenleme yetkisine sahip olduğunu ifade etti.</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container gallery-container">
+        <h2 class="gallery-title">GALERİ</h2>
+        <div class="row">
+            <!-- Resim 1 -->
+            <div class="col-md-6 col-lg-3 img-container">
+                <img src="./images/gallery-1.png" alt="Resim 1" class="gallery-img">
+                <div class="img-caption">Bursa Food Point</div>
+            </div>
+            
+            <!-- Resim 2 -->
+            <div class="col-md-6 col-lg-3 img-container">
+                <img src="./images/gallery-2.png" alt="Resim 2" class="gallery-img">
+                <div class="img-caption">HOMETEX</div>
+            </div>
+            
+            <!-- Resim 3 -->
+            <div class="col-md-6 col-lg-3 img-container">
+                <img src="./images/gallery-3.png" alt="Resim 3" class="gallery-img">
+                <div class="img-caption">JunioShow</div>
+            </div>
+            
+            <!-- Resim 4 -->
+            <div class="col-md-6 col-lg-3 img-container">
+                <img src="./images/gallery-4.png" alt="Resim 4" class="gallery-img">
+                <div class="img-caption">TFF Show</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <footer class="bg-dark text-white pt-5 pb-4 footer">
+
+        <div class="container text-md-left">
+
+            <div class="row text-md-left">
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.discoverBFM">BFM'yi Keşfedin</h5>
+                    <p>
+                        <a href="hakkimizda.html" class="text-white" style="text-decoration: none;" data-translate="footer.aboutBFM">BFM Hakkında</a>
+                    </p>
+                    <p>
+                        <a href="ekibimiz.html" class="text-white" style="text-decoration: none;" data-translate="footer.ourTeam">Ekibimiz</a>
+                    </p>
+                    <p>
+                        <a href="kalite-politimiz.html" class="text-white" style="text-decoration: none;" data-translate="footer.qualityPolicy">Kalite Politikamız</a>
+                    </p>
+                    <p>
+                        <a href="kvkk-dokumanları.html" class="text-white" style="text-decoration: none;" data-translate="footer.kvkkDocuments">KVKK Dökümanları</a>
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.organizeFair">BFM'de Fuar Organize Edin</h5>
+
+                    <p>
+                        <a href="planlar.html" class="text-white" style="text-decoration: none;" data-translate="footer.plans">Planlar</a>
+                    </p>
+                    <p>
+                        <a href="organizator.html" class="text-white" style="text-decoration: none;" data-translate="footer.eBrochures">E-Broşürler</a>
+                    </p>
+                    <p>
+                        <a href="toplanti-salonlari.html" class="text-white" style="text-decoration: none;" data-translate="footer.meetingRooms">Toplantı Salonları</a>
+                    </p>
+                    <p>
+                        <a href="hizmetler.html" class="text-white" style="text-decoration: none;" data-translate="footer.extraServices">Ek Hizmetler</a>
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.bfmAgenda">BFM Gündem</h5>
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.fairAnnouncements">Fuar Duyuruları</a>
+                    </p>
+
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.newsFromBFM">BFM'den Haberler</a>
+                    </p>
+
+                    <p>
+                        <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.fairNews">Fuar Haberleri</a>
+                    </p>
+
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h5 class="text-uppercase mb-4 font-weight-bold" data-translate="footer.contactUs">Bize Ulaşın</h5>
+                    <p data-translate="footer.address">
+                      Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA
+                    </p>
+
+                    <p>
+                      info@kfa.com.tr
+                    </p>
+
+                    <p>
+                      (0224) 211 50 82
+                    </p>
+
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3 ps-5">
+                    <img src="images/logo-beyaz.png" class="logo-footer" alt="">
+                    <hr>
+                </div>
+
+            </div>
+
+            <hr class="mb-4">
+
+            <div class="row align-item-center">
+                <div class="col-md-7 col-lg-8">
+                    <a>
+                        <span data-translate="footer.poweredBy">Powered By</span> <a class="footer-poweredby" href="https://f2fbilisim.com" target="_blank"
+                            style="text-decoration: none;" data-translate="footer.poweredByCompany">F2F Bilişim Reklam ve Danışmanlık Hizmetleri</a>
+                    </a>
+
+                </div>
+
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-right">
+
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <a href="#" class="btn-floating btn-sm text-white fw-normal" data-translate="footer.termsAndConditions">
+                                    Hüküm Ve Koşullar
+                                </a>
+                                <a href="#" class="btn-floating btn-sm text-white ms-4 fw-normal" data-translate="footer.privacyPolicy">
+                                    Gizlilik Politikası
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <br> <br> <br>
+        </div>
+    </footer>
+
+
+    <script>
+        const buttons = document.querySelectorAll('#pagination .page-button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(btn => {
+                    btn.classList.remove('btn-danger');
+                    btn.classList.add('btn-outline-danger');
+                });
+
+                button.classList.remove('btn-outline-danger');
+                button.classList.add('btn-danger');
+            });
+        });
+
+    </script>
+
+    <!-- Bootstrap Bundle JS (includes Popper) - Load BEFORE custom scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="hakkimizda.js"></script>
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>

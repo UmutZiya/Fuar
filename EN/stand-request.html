@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bursa Fuar Merkezi</title>
+    <!-- reCAPTCHA api -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <!-- Css -->
+    <link rel="stylesheet" href="/assets/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>     
+        .form-container {
+            max-width: 700px;
+            margin: 35px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .name-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .name-group > div {
+            flex: 1;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .recaptcha {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background-color: #117557;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .name-group {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="container-navbar">
+            <a href="index.html" class="logo mt-5">
+                <!-- Gerçek logo dosyanızın yolunu buraya ekleyin -->
+                <img src="./images/logo-turkuaz.png" class="" alt="">
+            </a>
+      
+            <nav class="main-nav mt-5">
+              <ul class="">
+                  <!-- nav-toggle-button class'ı menüyü açar -->
+                  <li><a href="#" class="nav-toggle-button" data-translate="nav.discoverBFM">BFM'yi Keşfedin <i class="fas fa-chevron-down"></i></a></li>
+                  <li><a href="#" class="nav-toggle-button" data-translate="nav.organizeFair">BFM'de Fuar Organize Edin <i class="fas fa-chevron-down"></i></a></li>
+                  <li><a href="#" class="nav-toggle-button" data-translate="nav.visitBFM">BFM'yi Ziyaret Edin <i class="fas fa-chevron-down"></i></a></li>
+                  <li><a href="#" class="nav-toggle-button" data-translate="nav.events">ETKİNLİKLER <i class="fas fa-chevron-down"></i></a></li>
+                  <li><a href="#" class="nav-toggle-button" data-translate="nav.contactUs">Bize Ulaşın</a></li>
+              </ul>
+            </nav>
+      
+            <div class="header-actions">
+              <div class="lang-switch mt-4 ms-4">
+                  <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="#" class="" data-lang="en" data-translate="lang.en">EN</a>
+              </div>
+                <!-- nav-toggle-button class'ı menüyü açar -->
+                
+            </div>
+      
+            <!-- Mobil için Hamburger İkonu (nav-toggle-button class'ı menüyü açar/kapatır) -->
+            <button class="mobile-menu-toggle nav-toggle-button" data-translate-aria-label="menu.toggleAriaLabel" aria-label="Menüyü Aç/Kapat">
+              <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </header>
+      <!-- Header End -->
+      <!-- Tam Ekran Overlay Menü -->
+      <div class="fullscreen-menu">
+          <div class="menu-header">
+               <a href="index.html" class="logo-menu">
+                   <!-- Menüdeki logo -->
+                  <img src="./images/logo-beyaz.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo" class="fs-2">
+              </a>
+              <div class="menu-search-container">
+                   <input type="text" data-translate-placeholder="menu.searchPlaceholder" placeholder="aramak istediğiniz kelimeyi yazınız..." class="menu-search-input">
+                   <button class="menu-search-button"><i class="fas fa-search"></i></button>
+              </div>
+               <div class="menu-header-actions">
+                  <div class="lang-switch">
+                      <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="#" data-lang="en" data-translate="lang.en">EN</a>
+                  </div>
+                  <button class="close-menu-btn" data-translate-aria-label="menu.closeAriaLabel" aria-label="Menüyü Kapat">
+                      <i class="fas fa-times"></i>
+                  </button>
+               </div>
+          </div>
+      
+          <div class="menu-content">
+              <div class="menu-column">
+                  <!-- Başlığa tıklanınca menüyü kapatmak için nav-toggle-button ekledik -->
+                  <h3 class="nav-toggle-button" data-translate="menu.discoverBFM">BFM'yi Keşfedin</h3>
+                  <ul>
+                      <li><a href="hakkimizda.html" data-translate="menu.aboutUs">Hakkımızda</a></li>
+                      <li><a href="fuar-takvimi.html" data-translate="menu.fairCalendar">BFM Fuar Takvimi</a></li>
+                      <li><a href="toplanti-salonlari.html" data-translate="menu.officesAndMeetingRooms">Hazır Ofisler ve Toplantı Salonları</a></li>
+                  </ul>
+              </div>
+              <div class="menu-column">
+                  <h3 class="nav-toggle-button" data-translate="menu.organizeFair">BFM'de Fuar Organize Edin</h3>
+                  <ul>
+                      <li><a href="organizator.html" data-translate="menu.organizer">Organizatör</a></li>
+                  </ul>
+              </div>
+              <div class="menu-column">
+                  <h3 class="nav-toggle-button" data-translate="menu.visitBFM">BFM'yi Ziyaret Edin</h3>
+                  <ul>
+                      <li><a href="ulasim.html" data-translate="menu.transport">Ulaşım</a></li>
+                      <li><a href="konaklama.html" data-translate="menu.accommodation">Konaklama</a></li>
+                      <li><a href="restoran-ve-kafeler.html" data-translate="menu.restaurantsAndCafes">Restoran Ve Kafeler</a></li>
+                      <li><a href="hizmetler.html" data-translate="menu.services">Hizmetler</a></li>
+                  </ul>
+              </div>
+               <div class="menu-column">
+                  <h3 class="nav-toggle-button" data-translate="menu.events">ETKİNLİKLER</h3>
+                  <ul>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                  </ul>
+              </div>
+              <div class="menu-column">
+                  <h3 class="nav-toggle-button" data-translate="menu.contact">İLETİŞİM</h3>
+                  <ul>
+                    <li><a href="iletisim.html" class="fw-normal" data-translate="menu.contactInfo">İletişim Bilgileri</a></li>
+                </ul>
+              </div>
+          </div>
+        
+          <div class="menu-footer">
+              <span data-translate="menu.followUs">Bizi Takip Edin</span>
+              <div class="social-icons-menu">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+                   <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+        </div>
+
+    <div class="banner">
+        <img src="images/iletisim-banner.png" class="" alt="">
+    </div>
+
+    <div class="form-container">
+        <h2>Stant Talebi</h2>
+        <form id="standForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="exhibition">Fuar Seçiniz</label>
+                <select id="exhibition" required>
+                    <option value="">Lütfen bir fuar seçiniz</option>
+                    <option value="fuar1">HOMETEX</option>
+                    <option value="fuar2">TURKISH FASHION SHOW</option>
+                    <option value="fuar3">JUNIOSHOW</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Firma Ünvanı</label>
+                <input type="text" id="company" required>
+            </div>
+
+            <div class="name-group">
+                <div class="form-group">
+                    <label for="name">Adınız</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="surname">Soyadınız</label>
+                    <input type="text" id="surname" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-posta Adresiniz</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Cep Telefonu Numaranız</label>
+                <input type="tel" id="phone" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Talep/ Soru/ Görüş</label>
+                <textarea id="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Gönder</button>
+        </form>
+    </div>
+
+
+
+     <!-- Footer Start -->
+     <footer class="bg-dark text-white pt-5 pb-4 footer">
+
+        <div class="container text-md-left">
+        
+           <div class="row text-md-left">
+        
+               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                   <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.discoverBFM">BFM'yi Keşfedin</h5>
+                   <p>
+                       <a href="hakkimizda.html" class="text-white" style="text-decoration: none;" data-translate="footer.aboutBFM">BFM Hakkında</a>
+                   </p>
+                   <p>
+                       <a href="ekibimiz.html" class="text-white" style="text-decoration: none;" data-translate="footer.ourTeam">Ekibimiz</a>
+                   </p>
+                   <p>
+                       <a href="kalite-politimiz.html" class="text-white" style="text-decoration: none;" data-translate="footer.qualityPolicy">Kalite Politikamız</a>
+                   </p>
+                   <p>
+                       <a href="kvkk-dokumanları.html" class="text-white" style="text-decoration: none;" data-translate="footer.kvkkDocuments">KVKK Dökümanları</a>
+                   </p>
+               </div>
+        
+               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                   <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.organizeFair">BFM'de Fuar Organize Edin</h5>
+        
+                   <p>
+                       <a href="planlar.html" class="text-white" style="text-decoration: none;" data-translate="footer.plans">Planlar</a>
+                   </p>
+                   <p>
+                       <a href="organizator.html" class="text-white" style="text-decoration: none;" data-translate="footer.eBrochures">E-Broşürler</a>
+                   </p>
+                   <p>
+                       <a href="toplanti-salonlari.html" class="text-white" style="text-decoration: none;" data-translate="footer.meetingRooms">Toplantı Salonları</a>
+                   </p>
+                   <p>
+                       <a href="hizmetler.html" class="text-white" style="text-decoration: none;" data-translate="footer.extraServices">Ek Hizmetler</a>
+                   </p>
+               </div>
+        
+               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                   <h5 class="text-uppercase mb-4 font-weight-bold " data-translate="footer.bfmAgenda">BFM Gündem</h5>
+                   <p>
+                       <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.fairAnnouncements">Fuar Duyuruları</a> 
+                   </p>
+        
+                   <p>
+                       <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.newsFromBFM">BFM'den Haberler</a> 
+                   </p>
+        
+                   <p>
+                       <a href="#" class="text-white" style="text-decoration: none;" data-translate="footer.fairNews">Fuar Haberleri</a>
+                   </p>
+        
+               </div>
+        
+               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                   <h5 class="text-uppercase mb-4 font-weight-bold" data-translate="footer.contactUs">Bize Ulaşın</h5>
+                   <p data-translate="footer.address">
+                     Fuar ve Kongre Merkezi Altınova Mah. Fuar Cad. 25 / 1 16250 Osmangazi, BURSA
+                   </p>
+        
+                   <p>
+                     info@kfa.com.tr
+                   </p>
+        
+                   <p>
+                     (0224) 211 50 82
+                   </p>
+        
+               </div>
+        
+               <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3 ps-5">
+                   <img src="images/logo-beyaz.png" class="logo-footer" alt="">
+                   <hr>
+               </div>
+        
+           </div>
+        
+           <hr class="mb-4">
+        
+           <div class="row align-item-center">
+               <div class="col-md-7 col-lg-8">
+                   <a>
+                       <span data-translate="footer.poweredBy">Powered By</span> <a class="footer-poweredby" href="https://f2fbilisim.com" target="_blank"
+                           style="text-decoration: none;" data-translate="footer.poweredByCompany">F2F Bilişim Reklam ve Danışmanlık Hizmetleri</a>
+                   </a>
+        
+               </div>
+        
+               <div class="col-md-5 col-lg-4">
+                   <div class="text-center text-md-right">
+        
+                       <ul class="list-unstyled list-inline">
+                           <li>
+                               <a href="#" class="btn-floating btn-sm text-white fw-normal" data-translate="footer.termsAndConditions">
+                                   Hüküm Ve Koşullar
+                               </a>
+                               <a href="#" class="btn-floating btn-sm text-white ms-4 fw-normal" data-translate="footer.privacyPolicy">
+                                   Gizlilik Politikası
+                               </a>
+                           </li>
+        
+                       </ul>
+        
+                   </div>
+               </div>
+        
+           </div>
+           <br> <br> <br> 
+        </div>
+        </footer>
+
+
+    <script>
+        const buttons = document.querySelectorAll('#pagination .page-button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(btn => {
+                    btn.classList.remove('btn-danger');
+                    btn.classList.add('btn-outline-danger');
+                });
+
+                button.classList.remove('btn-outline-danger');
+                button.classList.add('btn-danger');
+            });
+        });
+
+    </script>
+
+    <!-- Bootstrap Bundle JS (includes Popper) - Load BEFORE custom scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="hakkimizda.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
